@@ -33,14 +33,15 @@ const Header = () => {
                   <i className="fa-brands fa-square-instagram"></i>
                 </div>
             </div>
-            <div className='header__navbar--link'>
+            <div className={ toggle ? 'header__navbar--link' : 'header__navbar--link close'}>
                 <ul>
-                  <li><NavLink style={styleActive} to={"/"}>HOME</NavLink></li>
-                  <li><NavLink style={styleActive} to={"/rooms"}>ROOMS</NavLink></li>
-                  <li><NavLink style={styleActive} to={"/reservation"}>RESERVATION</NavLink></li>
-                  <li><NavLink style={styleActive} to={"/about"}>ABOUT US</NavLink></li>
-                  <li><NavLink style={styleActive} to={"/blog"}>BLOG</NavLink></li>
-                  <li><NavLink style={styleActive} to={"/contact"}>CONTACT</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/"}>HOME</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/rooms"}>ROOMS</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle}  to={"/reservation"}>RESERVATION</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/about"}>ABOUT US</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/blog"}>BLOG</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/contact"}>CONTACT</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/login-layout"}><span>LOGIN</span></NavLink></li>
                 </ul>
             </div>
         </div>
