@@ -1,0 +1,30 @@
+.room {
+    margin-bottom: 400px;
+
+    &-container {
+        padding: 100px 120px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &-pagination {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .room {
+        
+        &-container {
+            padding: 100px 50px;
+            justify-content: center;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .room {
+        margin-bottom: 500px;
+    }
+}

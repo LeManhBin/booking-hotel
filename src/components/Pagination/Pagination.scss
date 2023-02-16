@@ -1,0 +1,23 @@
+.pagination {
+    display: flex;
+    gap: 10px;
+
+    button {
+        padding: 5px 12px;
+        background-color: #fff;
+        border: .5px solid #5a5a5a;
+        cursor: pointer;
+        transition: .4s;
+        font-weight: bold;
+    }
+
+    button:hover {
+        color: #fff;
+        background-color: #B99B6B;
+    }
+
+    .active {
+        color: #fff;
+        background-color: #B99B6B;
+    }
+}

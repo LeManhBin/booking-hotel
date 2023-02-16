@@ -1,0 +1,128 @@
+.card-container {
+    width: 290px;
+    height: 450px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+
+    .card__image {
+        width: 250px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            text-align: center;
+            
+        }
+
+        &--overlay {
+            background-color: #333;
+            position: absolute;
+            bottom: 23px;
+            width: 100%;
+            height: 0px;
+            // display: none;
+            transition: .5s;
+            overflow: hidden;
+
+            button {
+                padding: 5px 10px;
+                background-color: #B99B6B;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transform: translateY(400%);
+                opacity: 0;
+                transition: .5s;
+            }
+
+            button:hover {
+                background-color: #AD8E70;
+            }
+        }
+    }
+    .card__image:hover .card__image--overlay {
+        display: block;
+        height: 167px;
+    }
+
+    .card__image:hover .overlay-btn {
+        opacity: 1;
+        transform: translateY(200%);
+    }
+
+    .card__desc {
+
+        h4 {
+
+        }
+
+        &--kind {
+            background-color: #B99B6B;
+            display: inline;
+            padding: 3px 5px;
+            font-size: 13px;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        &--detail {
+            margin: 20px 0px;
+
+            p {
+                word-break: break-word;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                line-height: 24px; /* fallback */
+                max-height: 72px; /* fallback */
+                -webkit-line-clamp: 3; /* number of lines to show */
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+
+    .card__service {
+        display: flex;
+        justify-content: flex-start;
+        cursor: pointer;
+        gap: 20px;
+        width: 100%;
+
+        i {
+            transition: .3s;
+        }
+
+        i:hover {
+            color: #B99B6B;
+        }
+    }
+
+    .card__price {
+        margin-top: 30px;
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card__price::before {
+        content: "";
+        background-color: #5a5a5a;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: -10px;
+    }
+
+}

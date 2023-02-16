@@ -1,0 +1,111 @@
+.availability-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5a5a5a;
+    height: 100px;
+    right: 0;
+    left: 0;
+    bottom: 0px;
+    border-radius: 5px;
+
+    .availability__form {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+
+        &--input {
+
+            input {
+                padding: 10px 20px;
+                border-radius: 4px;
+                border: .5px solid #5a5a5a;
+                outline: none;
+            }
+
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #B99B6B;
+            color: #fff;
+            transition: .3s;
+        }
+        
+        button:hover {
+            background-color: #AD8E70;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .availability-container {
+        width: 100%;
+
+        .availability__form {
+            width: 100%;
+    
+            &--input {
+                
+                h4 {
+                    font-size: 14px;
+                }
+                input {
+                    padding: 7px 14px;
+                }
+    
+                .number {
+                    width: 90px;
+                }
+            }
+    
+            button {
+                padding: 7px 14px;
+            }
+            
+            button:hover {
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .availability-container {
+        width: 100%;
+        height: 190px;
+
+        .availability__form {
+            width: 100%;
+            flex-wrap: wrap;
+
+            &--input { 
+                
+                h4 {
+                    font-size: 12px;
+                }
+                input {
+                    padding: 5px 10px;
+                }
+    
+                .number {
+                    width: 90px;
+                }
+            }
+    
+            button {
+                margin-top: 10px;
+                padding: 5px 10px;
+                margin-left: 100%;
+                margin-right: 100%;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,230 @@
+.footer {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    background-color: #111111;
+    bottom: 0;
+    left: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    color: #fff;
+
+    &__body {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .footer__contact {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &--info {
+                font-size: 15px;
+            }
+
+            &--address {
+                font-size: 15px;
+            }
+        }
+
+        .footer__link {
+            display: flex;
+            gap: 100px;
+
+            ul {
+                list-style: none;
+
+                li {
+                    transition: .3s;
+                }
+
+                li:hover {
+                    color: #B99B6B;
+                }
+            }
+        }
+
+        .footer__sign {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h2 {
+                color: #fff;
+            }
+
+            &--form {
+                display: flex;
+                gap: 3px;
+
+                input {
+                    padding: 7px 20px;
+                    outline: none;
+                    border: none;
+                    border-radius: 4px;
+                }
+
+                button {
+                    outline: none;
+                    border: none;
+                    border-radius: 4px;
+                    color: #fff;
+                    font-weight: bold;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    background-color: #B99B6B;
+                    transition: .3s;
+                }
+
+                button:hover {
+                    background-color: #AD8E70;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .footer {
+        padding: 0 30px;
+    
+        &__body {
+    
+            .footer__contact {
+    
+                &--info {
+                    font-size: 12px;
+                }
+    
+                &--address {
+                    font-size: 12px;
+                    
+                }
+            }
+    
+            .footer__link {
+                display: flex;
+                gap: 30px;
+                font-size: 12px;
+    
+                ul {
+                    list-style: none;
+    
+                    li {
+                       
+                    }
+    
+                    li:hover {
+                        
+                    }
+                }
+            }
+    
+            .footer__sign {
+                gap: 10px;
+                margin-left: 20px;
+    
+                h2 {
+                    font-size: 20px;
+                }
+    
+                &--form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+    
+                    input {
+                       
+                    }
+    
+                    button {
+                       
+                    }
+    
+                    button:hover {
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        height: 400px;
+    
+        &__body {
+            flex-direction: column;
+    
+            .footer__contact {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+    
+                &--info {
+                    font-size: 12px;
+                }
+    
+                &--address {
+                    font-size: 12px;
+                }
+            }
+    
+            .footer__link {
+                margin-bottom: 30px;
+    
+                ul {
+         
+    
+                    li {
+               
+                    }
+    
+                    li:hover {
+              
+                    }
+                }
+            }
+    
+            .footer__sign {
+                margin-top: 10px;
+    
+                h2 {
+                    color: #fff;
+                }
+    
+                &--form {
+                    display: flex;
+                    gap: 3px;
+    
+                    input {
+                        padding: 7px 20px;
+                        outline: none;
+                        border: none;
+                        border-radius: 4px;
+                    }
+    
+                    button {
+                        outline: none;
+                        border: none;
+                        border-radius: 4px;
+                        color: #fff;
+                        font-weight: bold;
+                        padding: 5px 10px;
+                        cursor: pointer;
+                        background-color: #B99B6B;
+                        transition: .3s;
+                    }
+    
+                    button:hover {
+                        background-color: #AD8E70;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.card-service {
+    width: 270px;
+    height: 270px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0px;
+    border-radius: 5px;
+    gap: 10px;
+
+    .service__image {
+        width: 230px;
+        height: 150px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .service__desc {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px  30px;
+
+        &--detail {
+            font-size: 13px;
+            word-break: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 24px; /* fallback */
+            max-height: 72px; /* fallback */
+            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+    }
+}

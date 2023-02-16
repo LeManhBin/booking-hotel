@@ -1,0 +1,21 @@
+.homelayout {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .header-layout {
+
+    }
+
+    .outlet {
+        margin-top: 100px;
+        // margin-bottom: 400px;
+    }
+
+    .footer-layout {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
