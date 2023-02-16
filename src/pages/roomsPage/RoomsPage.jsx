@@ -6,7 +6,7 @@ import Pagination from '../../components/Pagination/Pagination'
 import { cardData } from '../../constants/cardData'
 const RoomsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [limit, setLimit] = useState(6)
+  const [limit, setLimit] = useState(8)
 
   const lastPageIndex = currentPage * limit;
   const firstPageIndex = lastPageIndex - limit;

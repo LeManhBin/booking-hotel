@@ -58,7 +58,7 @@ const HomePage = () => {
         <div className='card'>
             <Slider {...settings}>
               {
-                cardData.map(card => {
+                cardData.slice(0,8).map(card => {
                   return(
                     <div key={card.id}>
                       <Card card={card}/>
