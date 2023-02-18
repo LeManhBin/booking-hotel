@@ -4,7 +4,9 @@ import './RoomsPage.scss'
 import Card from '../../components/Card/Card'
 import Pagination from '../../components/Pagination/Pagination'
 import { cardData } from '../../constants/cardData'
+
 const RoomsPage = () => {
+
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(8)
 
@@ -13,6 +15,8 @@ const RoomsPage = () => {
   const currentItems = cardData.slice(firstPageIndex, lastPageIndex);
 
   const totalPage = cardData.length
+
+
   return (
     <div className='room'>
         <div className='room-banner'>

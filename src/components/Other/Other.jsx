@@ -66,8 +66,9 @@ const Other = () => {
                 </Slider>
             </div>
         </div>
-        <div className='instagram-container'>
-            <h3 className='title'>Instagram</h3>
+        <div className='map-container'>
+            <h3 className='title'>Address</h3>
+            {/* <iframe src="https://www.facebook.com/bin.lemanh/" frameborder="0"></iframe> */}
         </div>
     </div>
   )

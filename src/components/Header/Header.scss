@@ -12,6 +12,36 @@
     
 
     .header__logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 50px;
+
+        .header__navbar--cart {
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            background-color: #F0EEED;
+            position: relative;
+            cursor: pointer;
+            display: none;
+
+            .number-cart {
+                position: absolute;
+                top: -5px;
+                font-size: 12px;
+                font-weight: bold;
+                background-color: #B99B6B;
+                color: #3C2A21;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                align-items: center;
+                line-height: 15px;
+            }
+        }
 
     }
 
@@ -19,6 +49,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        
         
 
         .header__contact {
@@ -64,6 +95,7 @@
                         background-color: #fff;
                         width: 120%;
                         padding: 2px 5px;
+                        z-index: 999;
                         
                         li {
                             transition: .3s;
@@ -134,12 +166,38 @@
                             color: #fff;
                             border-radius: 5px;
                         }
+                        
                     }
 
                     a:hover {
                         color: #B99B6B;
                     }
-                }
+
+                    .cart {
+                        padding: 5px 10px;
+                        border-radius: 50%;
+                        background-color: #F0EEED;
+                        position: relative;
+
+                        &-number {
+                            background-color: #B99B6B;
+                            padding: 0;
+                            color: #3C2A21;
+                            font-size: 10px;
+                            font-weight: bold;  
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: 12px;
+                            position: absolute;
+                            top: -5px;
+                            right: 0;
+                        }
+                    }
+
+ 
+                }   
             }
         }
     }
@@ -157,16 +215,21 @@
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;  
         display: flex;
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 12px 20px;
+
        
 
         .header__logo {
-            font-size: 30px;
+            font-size: 20px;
             color: #B99B6B;
+
+            .header__navbar--cart {
+                display: block;
+            }
         }
     
         .header__navbar {
-            
+            position: relative;
 
             .header__contact {
   
@@ -252,6 +315,11 @@
                             padding: 5px 10px;
                             border-radius: 4px;
                         }
+                        
+                        .cart {
+                            display: none;
+                        }
+                    
                     }
                 }
             }
@@ -284,6 +352,8 @@
                             padding: 5px 10px;
                             border-radius: 4px;
                         }
+
+                        
                     }
                 }
                 

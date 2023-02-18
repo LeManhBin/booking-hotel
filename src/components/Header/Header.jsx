@@ -16,6 +16,10 @@ const Header = () => {
     <header className='header'>
         <div className='header__logo'>
             <h2>Logo</h2>
+            <div className='header__navbar--cart'>
+              <NavLink style={styleActive} onClick={handleToggle} to={"/cart-booking"}><i className="fa-solid fa-suitcase-rolling"></i></NavLink>
+              <span className='number-cart'>1</span>
+            </div>
         </div>
         <div className='header__navbar'>
             <div className='header__contact'>
@@ -35,13 +39,14 @@ const Header = () => {
             </div>
             <div className={ toggle ? 'header__navbar--link' : 'header__navbar--link close'}>
                 <ul>
-                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/"}>HOME</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/rooms"}>ROOMS</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={handleToggle}  to={"/reservation"}>RESERVATION</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/about"}>ABOUT US</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/blog"}>BLOG</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/contact"}>CONTACT</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={handleToggle} to={"/login-layout"}><span>LOGIN</span></NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/"}>HOME</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/rooms"}>ROOMS</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)}  to={"/reservation"}>RESERVATION</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/about"}>ABOUT US</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/blog"}>BLOG</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/contact"}>CONTACT</NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} className="cart" to={"/cart-booking"}><i className="fa-solid fa-suitcase-rolling"></i><span className='cart-number'>1</span></NavLink></li>
+                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/login-layout"}><span>LOGIN</span></NavLink></li>
                 </ul>
             </div>
         </div>

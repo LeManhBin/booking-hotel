@@ -1,13 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Card.scss'
 const Card = ({card}) => {
+    const navigate = useNavigate()
+
+    const handleSeeDetail = (id) => {
+        navigate(`/rooms/${id}`)
+    }
 
   return (
-    <div className='card-container'>
+    <div className='card-container' onClick={() => handleSeeDetail(card.id)}>
         <div className='card__image'>
             <img src={card.img} alt="" />
             <div className='card__image--overlay'>
-                <button className='overlay-btn'>MORE INFO</button>
+                <button className='overlay-btn' onClick={()=> handleSeeDetail(card.id)}>MORE INFO</button>
             </div>
         </div>
         <div className='card__desc'>

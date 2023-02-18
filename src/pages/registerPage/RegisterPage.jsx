@@ -23,6 +23,7 @@ const RegisterPage = () => {
                     <span>Let's experience new and wonderful things together</span>
                 </div>
                 <form >
+                    <input type="text" placeholder='Name'/>          
                     <input type="email" placeholder='Email'/>
                     <input type="password" placeholder='Password'/>
                     <span onClick={handleLoginPage}>I already have an account</span>
