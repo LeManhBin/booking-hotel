@@ -18,6 +18,8 @@ import EmployeePage from './pages/employeePage/EmployeePage';
 import RoomAdminPage from './pages/roomAdminPage/RoomAdminPage';
 import UsersAdminPage from './pages/usersAdminPage/UsersAdminPage';
 import BookingAdminPage from './pages/BookingAdminPage/BookingAdminPage';
+import ProfilePage from './pages/profilePage/ProfilePage';
+import AccountPage from './pages/accountPage/AccountPage';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
             <Route path='blog' element={<BlogPage/>}/>
             <Route path='contact' element={<ContactPage/>}/>
             <Route path='cart-booking' element={<CartPage/>}/>
+            <Route path='account' element={<AccountPage/>}/>
+            <Route path='account/profile' element={<ProfilePage/>}/>
           </Route>
           <Route path='/login-layout' element={<LoginLayout/>}>
             <Route index element={<LoginPage/>}/>

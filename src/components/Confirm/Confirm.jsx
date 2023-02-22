@@ -1,6 +1,11 @@
 import React from 'react'
 import './Confirm.scss'
-const Confirm = ({setIsBooking}) => {
+const Confirm = ({setIsBooking, setOpenModal}) => {
+
+    const handleShowModal = (e) => {
+        e.preventDefault()
+        setOpenModal(true)
+    }
   return (
     <div className='confirm-container'>
         <h3>Please confirm the information</h3>
@@ -27,7 +32,7 @@ const Confirm = ({setIsBooking}) => {
                     <label>Date Of Birth</label>
                     <input type="date" placeholder='enter your date of birth'/>
                 </div>
-                <button>Confirm</button>
+                <button onClick={handleShowModal}>Confirm</button>
             </form>
         </div>
     </div>

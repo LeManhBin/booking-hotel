@@ -1,16 +1,72 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './LoginPage.scss'
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { loginFormSchema } from '../../constants/formLoginSchema';
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { actFetchAllUsers, actFetchLogin, actReLogin } from '../../redux/features/usersSlice/usersSlice';
+
+const initialFormValue = {
+  email: '',
+  password: ''
+}
 const LoginPage = () => {
   const navigate = useNavigate()
 
+  const dispatch = useDispatch()
+  const {isLoading} = useSelector((state) => state.users) 
+  const {isLogged} = useSelector((state) => state.users) 
+  const {accessToken} = useSelector((state) => state.users) 
+  const {user} = useSelector((state) => state.users)
+  const {error} = useSelector((state) => state.users)
+  const {users} = useSelector((state) => state.users)
+
+  console.log(users, 'users');
+  console.log(user, 'user');
   const handlePageRegister = () => {
     navigate("/login-layout/register")
   }
 
-  const handleLogin = () => {
-    navigate("/")
+  //Validate
+  const methods = useForm({
+    defaultValues: initialFormValue,
+    resolver: yupResolver(loginFormSchema)
+  })
+  const {control, handleSubmit, formState: {errors}} = methods
+
+
+  useEffect(() => {
+    if(isLogged === true && user.isAdmin === true) {
+      toast.success('Đăng nhập admin')
+      navigate('/admin')
+    }else if(isLogged === true && user.isAdmin === false) {
+      navigate('/')
+      toast.success('Đăng Nhập thành công')
+    }
+    // if(error) {
+    //   toast.error('Tài Khoản Mật khẩu không đúng')
+    // }
+  },[isLogged, navigate])
+ 
+
+  const onLogin = (values) => {
+    const payload = {
+      email: values.email,
+      password: values.password,
+    }
+    dispatch(actFetchLogin(payload));
   }
+  
+  useEffect(() => {
+    if(accessToken) {
+      dispatch(actReLogin(accessToken))
+    }
+    dispatch(actFetchAllUsers())
+  },[])
+
+
 
   return (
     <div className='login-page'>
@@ -20,12 +76,26 @@ const LoginPage = () => {
                     <h3>Login account</h3>
                     <span>Let's experience new and wonderful things together</span>
                 </div>
-                <form >
-                    <input type="email" placeholder='Email'/>
-                    <input type="password" placeholder='Password'/>
+                <form onSubmit={handleSubmit(onLogin)}>
+                    {!!errors.email && <span style={{color: 'red', textAlign:'left'}}>{errors.email.message}</span>}
+                    <Controller
+                      name='email'
+                      control={control}
+                      render={({field: {value, onChange}}) => (
+                        <input value={value} onChange={onChange} type="email" placeholder='Email'/>
+                      )}
+                    />
+                    {!!errors.password && <span style={{color: 'red', textAlign:'left'}}>{errors.password.message}</span>}
+                    <Controller
+                      name='password'
+                      control={control}
+                      render={({field: {value, onChange}}) => (
+                        <input value={value} onChange={onChange} type="password" placeholder='Password'/>
+                      )}
+                    />
                     <span onClick={handlePageRegister}>I don't have an account?</span>
                     <div className='login__btn'>
-                        <button className='login__btn--signin' onClick={handleLogin}>Sign in</button>
+                        <button className='login__btn--signin' type='submit' disabled={isLoading}>Sign in</button>
                         <button className='login__btn--google'>
                           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/768px-Google_%22G%22_Logo.svg.png" alt="" />
                           <span>Sign in with Google</span>

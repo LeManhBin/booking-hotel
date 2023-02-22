@@ -1,0 +1,37 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    .widgets {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .chart {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 400px;
+        
+
+        &__pie {
+            width: 30%;
+            height: 100%;
+            padding: 10px 10px;
+            background-color: #eee;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        &__column {
+            width: 70%;
+            height: 100%;
+            padding: 10px 10px;
+            background-color: #eee;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    }
+}

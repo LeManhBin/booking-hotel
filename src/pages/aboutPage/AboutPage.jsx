@@ -1,8 +1,10 @@
 import React from 'react'
 import BannerDefine from '../../components/BannerDefine/BannerDefine'
+import useScrollToTop from '../../hooks/useScrollToTop'
 import './AboutPage.scss'
 
 const AboutPage = () => {
+    useScrollToTop()
   return (
     <div className='about'>
         <div className='about-banner'>

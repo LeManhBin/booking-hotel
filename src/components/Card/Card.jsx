@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Card.scss'
-const Card = ({card}) => {
+const Card = ({room}) => {
     const navigate = useNavigate()
 
     const handleSeeDetail = (id) => {
@@ -9,19 +9,19 @@ const Card = ({card}) => {
     }
 
   return (
-    <div className='card-container' onClick={() => handleSeeDetail(card.id)}>
+    <div className='card-container' onClick={() => handleSeeDetail(room.id)}>
         <div className='card__image'>
-            <img src={card.img} alt="" />
+            <img src={room.imageMain} alt="" />
             <div className='card__image--overlay'>
-                <button className='overlay-btn' onClick={()=> handleSeeDetail(card.id)}>MORE INFO</button>
+                <button className='overlay-btn' onClick={()=> handleSeeDetail(room.id)}>MORE INFO</button>
             </div>
         </div>
         <div className='card__desc'>
-            <h4>{card.name}</h4>
-            <p className='card__desc--kind'>{card.kind}</p>
+            <h4>{room.roomName}</h4>
+            <p className='card__desc--kind'>{room.typeRoom}</p>
 
             <div className='card__desc--detail'>
-                <p>{card.detail}</p>
+                <p>{room.description}</p>
             </div>
         </div>
         <div className='card__service'>
@@ -31,10 +31,10 @@ const Card = ({card}) => {
             <i className="fa-solid fa-plane"></i>
         </div>
         <div className='card__price'>
-            <p><span>Price: </span><b>${card.price}</b>/night</p>
+            <p><span>Price: </span><b>${room.price}</b>/night</p>
         </div>
     </div>
   )
 }
 
-export default Card
+export default React.memo(Card)

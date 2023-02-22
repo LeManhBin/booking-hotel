@@ -5,10 +5,11 @@
     button {
         padding: 5px 12px;
         background-color: #fff;
-        border: .5px solid #5a5a5a;
+        border: none;
         cursor: pointer;
         transition: .4s;
         font-weight: bold;
+        border-radius: 4px;
     }
 
     button:hover {

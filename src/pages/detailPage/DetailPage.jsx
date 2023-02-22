@@ -1,15 +1,78 @@
-import React, { useState } from 'react'
+import Modal from '../../components/Modal/Modal'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Confirm from '../../components/Confirm/Confirm'
+import useScrollToTop from '../../hooks/useScrollToTop'
+import { actFetchRoomById } from '../../redux/features/roomsSlice/roomsSlice'
+
 import './DetailPage.scss'
 
-const DetailPage = () => {
-    const [isBooking, setIsBooking] = useState(false)
+const initialValueForm = {
+    checkIn: '',
+    checkOut: '',
+    daysIn: 0,
+    breakFastChecked: false,
+    parkingChecked: false,
+    pillowChecked: false,
+    service: [],
+    totalBill: 0,
+}
 
-    const handleShowConfirm = () => {
-        setIsBooking(true)
+const DetailPage = () => {
+    useScrollToTop()
+    const [isBooking, setIsBooking] = useState(false)
+    const [openModal, setOpenModel] = useState(false)
+
+    const [formState, setFormState] = useState(initialValueForm)
+    const [breakFastChecked, setBreakFastChecked] = useState(false)
+    const [parkingChecked, setParkingChecked] = useState(false)
+    const [pillowChecked, setPillowChecked] = useState(false)
+    
+    const [date, setDate] = useState(0)
+    const [checkInDate, setCheckInDate] = useState(new Date())
+    const [checkOutDate, setCheckOutDate] = useState(new Date())
+
+    const parseIn = Date.parse(checkInDate)
+    const parseOut = Date.parse(checkOutDate)
+
+    const handleTinhNgay = () => {
+        const timeDiff = parseIn - parseOut;
+        const dayDiff = Math.ceil(Math.abs(timeDiff / (1000 * 3600 * 24)));
+        console.log(dayDiff, 'dayDiff');
     }
-   const param  = useParams()
+
+    console.log('break',breakFastChecked , 'parking', parkingChecked, 'pillow', pillowChecked);
+    
+    const dispatch = useDispatch()
+    const param  = useParams()
+    
+    const {room} = useSelector((state) => state.rooms)
+
+    // const room = useSelector((state) => state.rooms.allRooms.find(room => room.id === Number(param.idRoom)))
+    const handleShowConfirm = (e) => {
+        e.preventDefault()
+        window.scrollTo(0,0)
+        // setIsBooking(true)
+        handleTinhNgay()
+
+    }
+   
+
+    // const handleOnChangeFormData = (e) => {
+    //     const {name, value} = e.target
+    //     setFormState({
+    //         ...formState,
+    //         [name]: value
+    //     })
+    // }
+    
+
+   useEffect(() => {
+        dispatch(actFetchRoomById(Number(param.idRoom)))
+   },[])
+
+
 
   return (
     <div className='detail-page'>
@@ -17,12 +80,18 @@ const DetailPage = () => {
             <div className='detail__left'>
                 <div className="detail__left--img">
                     <div className='detail__left--img-main'>
-                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
+                        <img src={room.imageMain} alt="" />
                     </div>
                     <div className='detail__left--img-child'>
-                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
-                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                        {
+                            room.imageSecondary?.map((image, index) => {
+                                return(
+                                    <div key={index}>
+                                        <img src={image} alt="" />
+                                    </div>
+                                )
+                           })   
+                        }
                     </div>
                 </div>
 
@@ -41,13 +110,13 @@ const DetailPage = () => {
                         </span>
                     </div>
                     <div className="detail__left--desc-title">
-                        <h2 className='heading'>Phòng super Vip pro Max</h2>
-                        <span>Royal</span>
+                        <h2 className='heading'>{room.roomName}</h2>
+                        <span>{room.typeRoom}</span>
                     </div>
                     <div className='detail__left--full'>
                         <span>Description</span>
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis tempora dolore odit dignissimos doloribus aliquid nesciunt asperiores cupiditate assumenda laboriosam? Et cumque libero odit dolorum voluptatum numquam exercitationem illo consectetur?
+                            {room.description}
                         </p>
                     </div>
                     <div className='detail__left--features'>
@@ -79,18 +148,18 @@ const DetailPage = () => {
             </div>
 
 
-            <div className='detail__right'>
+            <form className='detail__right'>
 
-                <span className='detail__right--price'><b>$100</b>/night</span>
+                <span className='detail__right--price'><b>${room.price}</b>/night</span>
                 
                 <div className='detail__right--checking'>
                     <div className='detail__right--checking-input'>
                         <label>Check in</label>
-                        <input type="date" />
+                        <input type="date" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)}/>
                     </div>
                     <div className='detail__right--checking-input'>
                         <label>Check out</label>
-                        <input type="date" />
+                        <input type="date" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)}/>
                     </div>
                 </div>
                 <div className='detail__right--checkbox'>
@@ -100,21 +169,21 @@ const DetailPage = () => {
                     </div>
                     <div className='detail__right--checkbox-input'>
                         <div className='checkbox'>
-                            <input type="checkbox" checked/>
+                            <input type="checkbox" checked={breakFastChecked} onChange={(e) => setBreakFastChecked(e.target.checked)}/>
                             <label htmlFor="">Breakfast a day per person</label>
                         </div>
                         <label htmlFor=''>$10</label>
                     </div>
                     <div className='detail__right--checkbox-input'>
                         <div className='checkbox'>
-                            <input type="checkbox"/>
+                            <input type="checkbox" checked={parkingChecked} onChange={(e) => setParkingChecked(e.target.checked)}/>
                             <label htmlFor="">Parking a day</label>
                         </div>
                         <label>$6</label>
                     </div>
                     <div className='detail__right--checkbox-input'>
                         <div className='checkbox'>
-                            <input type="checkbox"/>
+                            <input type="checkbox" checked={pillowChecked} onChange={(e) => setPillowChecked(e.target.checked)}/>
                             <label htmlFor="">Extra pillow</label>
                         </div>
                         <label>free</label>
@@ -142,15 +211,18 @@ const DetailPage = () => {
                         <span>$115</span>
                     </div>
                 </div>
-                <button className='book-btn' onClick={() => handleShowConfirm()}>Book Now</button>
+                <button className='book-btn' onClick={(e) => handleShowConfirm(e)}>Book Now</button>
                 <span className='remind'>You will not get changed yet</span>
-            </div>
+            </form>
             <div className='confirm'>
                 {
-                    isBooking && (<Confirm setIsBooking={setIsBooking}/>)
+                    isBooking && (<Confirm setIsBooking={setIsBooking} setOpenModel={setOpenModel}/>)
                 }
-            </div>
+            </div> 
         </div>
+        {
+            openModal && (<Modal setOpenModel={setOpenModel}/>)
+        }
     </div>
   )
 }

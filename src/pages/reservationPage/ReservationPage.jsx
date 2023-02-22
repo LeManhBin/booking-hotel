@@ -1,8 +1,10 @@
 import React from 'react'
 import BannerDefine from '../../components/BannerDefine/BannerDefine'
 import CheckAvailability from '../../components/CheckAvailability/CheckAvailability'
+import useScrollToTop from '../../hooks/useScrollToTop'
 import './ReservationPage.scss'
 const ReservationPage = () => {
+  useScrollToTop()
   return (
     <div className='reservation'>
         <div className='reservation-banner'>

@@ -149,6 +149,7 @@
                 display: flex;
                 gap: 20px;
                 list-style: none;
+                align-items: center;
 
                 li {
 
@@ -165,6 +166,45 @@
                             padding: 5px 20px;
                             color: #fff;
                             border-radius: 5px;
+                        }
+
+                        .header-avatar {
+                            background-color: aqua;
+                            height: 40px;
+                            width: 40px;
+                            padding: 0px;
+                            display: inline-block;
+                            border-radius: 50%;
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+
+                            .header-logout {
+                                position: absolute;
+                                bottom: -40px;
+                                white-space: nowrap;
+                                left: -55%;
+                                display: none;
+                                
+                            }
+
+                            .header-logout::before {
+                                content: "";
+                                height: 15px;
+                                width: 15px;
+                                background-color: #B99B6B;
+                                position: absolute;
+                                top: -5px;
+                                left: 40%;
+                                rotate: 45deg;
+                            }
+                        }
+                        .header-avatar:hover .header-logout {
+                            display: block;
                         }
                         
                     }

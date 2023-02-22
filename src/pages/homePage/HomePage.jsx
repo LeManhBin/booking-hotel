@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BannerMain from '../../components/BannerMain/BannerMain'
 import Card from '../../components/Card/Card'
 import CardService from '../../components/CardService/CardService'
@@ -9,9 +9,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { cardData } from '../../constants/cardData'
+import useScrollToTop from '../../hooks/useScrollToTop'
+import { useDispatch, useSelector } from 'react-redux'
+import { actFetchAllRoom } from '../../redux/features/roomsSlice/roomsSlice'
 
 const HomePage = () => {
-
+  useScrollToTop()
   const settings = {
     dots: true,
     infinite: false,
@@ -55,7 +58,12 @@ const HomePage = () => {
       }
     ]
   };
-
+  const {allRooms, isLoading} = useSelector((state) => state.rooms)
+  const activeCards = allRooms.filter((room) => room.status === 1);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(actFetchAllRoom())
+  },[])
   return (
     <div className='homepage'>
       <BannerMain color={"#5a5a5a"} colorH4={"#fff"}/>
@@ -67,10 +75,10 @@ const HomePage = () => {
         <div className='card'>
             <Slider {...settings}>
               {
-                cardData.slice(0,8).map(card => {
+                activeCards.slice(0,8).map(room => {
                   return(
-                    <div key={card.id}>
-                      <Card card={card}/>
+                    <div key={room.id}>
+                      <Card room={room}/>
                     </div>
                   )
                 })

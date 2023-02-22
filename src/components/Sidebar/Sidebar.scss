@@ -1,13 +1,13 @@
-$logo-color: #FF7B54;
+$logo-color: #5BC0F8;
 $hr-color: #B2B2B2;
 .sidebar {
     flex: 1;
     border-right: 2px solid $hr-color;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     .text-style {
         text-decoration: none;
@@ -29,7 +29,7 @@ $hr-color: #B2B2B2;
 
     .center {
         padding: 0 20px;
-        height: 100%;
+        height: 100vh;
 
         ul {
             list-style: none;
@@ -54,7 +54,7 @@ $hr-color: #B2B2B2;
                 border-radius: 5px;
 
                 &:hover {
-                    background-color: #FFD495;
+                    background-color: #E9F8F9;
                 }
 
                 i {

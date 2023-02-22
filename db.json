@@ -1,0 +1,186 @@
+{
+  "users": [
+    {
+      "email": "llemanhbin@gmail.com",
+      "password": "$2a$10$oMW0r0cSsv4TqZ6M4luVc.cAbI59r7hmdsmUt/clLq7xmo.DRSZSe",
+      "userName": "Lê Mạnh Bin",
+      "isAdmin": false,
+      "image": "https://cdn.dribbble.com/users/13584903/avatars/normal/1ba3a799f1b298f971d7f1df0bb20a5d.jpg?1666421563",
+      "address": "Đà Nẵng",
+      "phoneNumber": "0365160470",
+      "id": 1
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$cV0zHI5QNMfJel9IBYK0rOr03DNeW6z404SLzY25kbB7ao.AyJ4ma",
+      "userName": "Lê Mạnh Bin",
+      "isAdmin": true,
+      "image": "https://cdn.dribbble.com/users/13584903/avatars/normal/1ba3a799f1b298f971d7f1df0bb20a5d.jpg?1666421563",
+      "address": "Đắk Lắk",
+      "phoneNumber": "0365160470",
+      "id": 2
+    },
+    {
+      "email": "pacmam2k1@gmail.com",
+      "password": "$2a$10$t7SfFPIj6GTBE5EPbEnYsuMPkQ2maBlJg6Opip5xjPzNwGL5yTICq",
+      "userName": "test",
+      "id": 3
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "$2a$10$kzXDtUOXdIb57nUNgQsVxum1PAfPzYETz.fIjDKM1md4AqdPsWRKm",
+      "userName": "test2",
+      "isAdmin": false,
+      "image": "",
+      "address": "",
+      "phoneNumber": "",
+      "id": 4
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "roomName": "Room 1",
+      "typeRoom": "Standard",
+      "price": 100,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 2,
+      "size": 2,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 2,
+      "roomName": "Room 2",
+      "typeRoom": "Standard",
+      "price": 100,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 2,
+      "size": 1,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 3,
+      "roomName": "Room 3",
+      "typeRoom": "Superior",
+      "price": 200,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 3,
+      "size": 2,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 5,
+      "roomName": "Room 5",
+      "typeRoom": "Deluxe",
+      "price": 300,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 1,
+      "size": 4,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 6,
+      "roomName": "Room 6",
+      "typeRoom": "Suite",
+      "price": 400,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 2,
+      "size": 2,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 7,
+      "roomName": "Room 7",
+      "typeRoom": "Connecting",
+      "price": 500,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 1,
+      "size": 2,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 8,
+      "roomName": "Room 8",
+      "typeRoom": "Standard",
+      "price": 100,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 1,
+      "size": 2,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "id": 9,
+      "roomName": "Room 9s",
+      "typeRoom": "Standard",
+      "price": 100,
+      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageSecondary": [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ],
+      "status": 1,
+      "size": 2,
+      "description": "đây là 1 đoạn mô tả về căn phòng này"
+    },
+    {
+      "roomName": "test",
+      "typeRoom": "deluxe",
+      "imageMain": "sada",
+      "imageSecondary": [
+        "ádsa",
+        "sada",
+        "sad"
+      ],
+      "status": 1,
+      "size": "12",
+      "price": "11110",
+      "description": "sadas",
+      "id": 10
+    }
+  ],
+  "employee": [
+    {
+      "employeeName": "Lê Mạnh Bin 12",
+      "position": "receptionist",
+      "employeeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCGvGuinlbd7GSgV6Yiwv9yQsrFnjk0lle0g&usqp=CAU",
+      "dateOfBirth": "01/01/2002",
+      "id": 3
+    }
+  ]
+}

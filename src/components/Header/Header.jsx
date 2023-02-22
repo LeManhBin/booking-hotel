@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import './Header.scss'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 const Header = () => {
+  const navigate = useNavigate()
   const [toggle, setToggle] = useState(false)
+  const {isLogged, user} = useSelector((state) => state.users)
+  // const {user} = useSelector((state) => state.user)
+  console.log('user bên user', user);
   const handleToggle = () => {
     setToggle(!toggle)
   }
@@ -12,6 +17,7 @@ const Header = () => {
         color: isActive ? '#B99B6B' : '#000'
       }
   }
+
   return (
     <header className='header'>
         <div className='header__logo'>
@@ -46,7 +52,12 @@ const Header = () => {
                   <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/blog"}>BLOG</NavLink></li>
                   <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/contact"}>CONTACT</NavLink></li>
                   <li><NavLink style={styleActive} onClick={() => setToggle(false)} className="cart" to={"/cart-booking"}><i className="fa-solid fa-suitcase-rolling"></i><span className='cart-number'>1</span></NavLink></li>
-                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/login-layout"}><span>LOGIN</span></NavLink></li>
+                  {
+                    isLogged ? (<li><NavLink to={"/account"}><span className='header-avatar'><img src={user.image} alt="" /></span></NavLink></li>) 
+
+                    : (<li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/login-layout"}><span>LOGIN</span></NavLink></li>)
+                  }
+                  
                 </ul>
             </div>
         </div>

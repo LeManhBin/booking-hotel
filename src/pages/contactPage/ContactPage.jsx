@@ -1,7 +1,9 @@
 import React from 'react'
 import BannerDefine from '../../components/BannerDefine/BannerDefine'
+import useScrollToTop from '../../hooks/useScrollToTop'
 import './ContactPage.scss'
 export const ContactPage = () => {
+    useScrollToTop()
   return (
     <div className='contact'>
         <div className='contact-banner'>
