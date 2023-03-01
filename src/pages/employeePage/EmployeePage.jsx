@@ -4,19 +4,15 @@ import { actCreateEmployee, actDeleteEmployee, actFetchAllEmployee } from '../..
 import Pagination from '../../components/Pagination/Pagination'
 import { toast } from 'react-toastify'
 import UpdatePopup from './UpdatePopup'
+import { useNavigate } from 'react-router-dom'
 
-const initialEmployeeState = {
-  employeeName: "",
-  position: "receptionist",
-  employeeImage: "",
-  dateOfBirth: "",
-}
+
 const EmployeePage = () => {
   const [isUpdate, setIsUpdate] = useState(false)
 
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const {allEmployee,isLoading} = useSelector((state) => state.employee)
-  const [formState, setFormState] = useState(initialEmployeeState)
   const [idTemp, setIdTemp] = useState()
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,25 +24,15 @@ const EmployeePage = () => {
 
   const totalPage = allEmployee.length
 
-  const handleOnChangeFormData = (e) => {
-    const {name, value} = e.target
-    setFormState({
-      ...formState,
-      [name]: value
-    })
-  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(actCreateEmployee(formState))
-    dispatch(actFetchAllEmployee())
-    setFormState(initialEmployeeState)
-    toast.success('Add data successfully!')
-  }
 
   useEffect(() => {
     dispatch(actFetchAllEmployee())
   },[])
+
+  const handleAddNewPage = () => {
+    navigate('/admin/add-new-employee')
+  }
 
   const handleDelete = (id) => {
     dispatch(actDeleteEmployee(id))
@@ -60,41 +46,14 @@ const EmployeePage = () => {
     setIdTemp(employee.id)
   }
 
+
   return (
     <div className='manage-container'>
         <div className="top">
             <h2>Quản lý nhân viên</h2>
+            <button onClick={handleAddNewPage}>Add New</button>
         </div>
         <div className='main'>
-            <div className='main__form'>
-                <form onSubmit={(e) => handleSubmit(e)}>
-                  <div className="form-input">
-                      <label>Employee Name</label>
-                      <input required type="text" name='employeeName' value={formState.employeeName} onChange={handleOnChangeFormData} placeholder='enter employee name'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Position</label>
-                      <select name='position' value={formState.position} onChange={handleOnChangeFormData}>
-                        <option value="receptionist">Receptionist</option>
-                        <option value="staff">Staff</option>
-                        <option value="guard">Guard</option>
-                        <option value="technical ">Technical</option>
-                        <option value="manager">manager</option>
-                      </select>
-                  </div>
-                  <div className="form-input">
-                      <label>Employee Image</label>
-                      <input required type="text" name='employeeImage' value={formState.employeeImage} onChange={handleOnChangeFormData} placeholder='enter employee image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Date Of Birth</label>
-                      <input required name='dateOfBirth' value={formState.dateOfBirth} onChange={handleOnChangeFormData} type="text"placeholder='enter date of birth'/>
-                  </div>
-                  <div className='form-btn'>
-                    <button required type='submit'>Submit</button>
-                  </div>
-                </form>
-            </div>
             <div className='main__table'>
               <div className='table__container' >
                 <table id="customers">

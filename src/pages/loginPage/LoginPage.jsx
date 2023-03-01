@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './LoginPage.scss'
 import { useForm, Controller } from 'react-hook-form';
@@ -8,22 +8,22 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { actFetchAllUsers, actFetchLogin, actReLogin } from '../../redux/features/usersSlice/usersSlice';
 
+
 const initialFormValue = {
   email: '',
   password: ''
 }
 const LoginPage = () => {
   const navigate = useNavigate()
-
+  const [isShowPass, setIsShowPass] = useState(false)
   const dispatch = useDispatch()
   const {isLoading} = useSelector((state) => state.users) 
   const {isLogged} = useSelector((state) => state.users) 
-  const {accessToken} = useSelector((state) => state.users) 
+ 
   const {user} = useSelector((state) => state.users)
   const {error} = useSelector((state) => state.users)
-  const {users} = useSelector((state) => state.users)
 
-  console.log(users, 'users');
+
   console.log(user, 'user');
   const handlePageRegister = () => {
     navigate("/login-layout/register")
@@ -45,9 +45,6 @@ const LoginPage = () => {
       navigate('/')
       toast.success('Đăng Nhập thành công')
     }
-    // if(error) {
-    //   toast.error('Tài Khoản Mật khẩu không đúng')
-    // }
   },[isLogged, navigate])
  
 
@@ -56,15 +53,10 @@ const LoginPage = () => {
       email: values.email,
       password: values.password,
     }
-    dispatch(actFetchLogin(payload));
+    dispatch(actFetchLogin(payload))
   }
   
-  useEffect(() => {
-    if(accessToken) {
-      dispatch(actReLogin(accessToken))
-    }
-    dispatch(actFetchAllUsers())
-  },[])
+
 
 
 
@@ -90,7 +82,14 @@ const LoginPage = () => {
                       name='password'
                       control={control}
                       render={({field: {value, onChange}}) => (
-                        <input value={value} onChange={onChange} type="password" placeholder='Password'/>
+                        <div className='pass'>
+                          <input value={value} onChange={onChange} type={isShowPass ? `text` : 'password'} placeholder='Password'/>
+                          <span onClick={() => setIsShowPass(!isShowPass)}>
+                            {
+                              isShowPass ? <i className="fa-solid fa-eye-slash"></i> : <i className="fa-solid fa-eye"></i>
+                            }
+                          </span>
+                        </div>
                       )}
                     />
                     <span onClick={handlePageRegister}>I don't have an account?</span>

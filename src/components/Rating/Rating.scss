@@ -1,0 +1,47 @@
+.rating-container {
+    border: 1px solid #eee;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 20px;
+    overflow-y: auto;
+    border-radius: 10px;
+
+    .top {
+        padding: 8px 0px;
+        border-bottom: 1px solid #333;
+    }
+
+    .bot {
+        .rating-customer {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border-bottom: 1px solid #eee;
+            padding: 4px 0px;
+    
+            img {
+                background-color: antiquewhite;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+            }
+    
+            .rating-detail {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-size: 12px;
+    
+                .rating-name {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.rating-container::-webkit-scrollbar {
+    display: none;
+}

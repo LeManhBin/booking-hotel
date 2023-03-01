@@ -169,7 +169,7 @@
                         }
 
                         .header-avatar {
-                            background-color: aqua;
+                            background-color: #eee;
                             height: 40px;
                             width: 40px;
                             padding: 0px;
@@ -237,7 +237,19 @@
                     }
 
  
-                }   
+                } 
+                
+                .li-cart {
+                    position: relative;
+                    cursor: pointer;
+
+                    .favorite {
+                        position: absolute;
+                        left: 0;
+                        top: 40px;
+                        cursor: default;
+                    }
+                }
             }
         }
     }

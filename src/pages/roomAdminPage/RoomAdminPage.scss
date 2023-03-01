@@ -8,71 +8,24 @@
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         padding: 5px 10px;
         border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #03C988;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     }
 
     .main {
         display: flex;
         gap: 50px;
 
-        &__form {
-            flex: 3;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            padding: 20px;
-            border-radius: 10px;
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-
-                .form-input {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-
-                    label {
-                        font-size: 12px;
-                        font-weight: bold;
-                    }
-                    input {
-                        padding: 5px 10px;
-                        outline: none;
-                        border: 1px solid #eee;
-                        border-radius: 5px;
-                    }
-
-                    select {
-                        padding: 5px 10px;
-                        outline: none;
-                        border: 1px solid #eee;
-                        border-radius: 5px;
-                    }
-
-                    textarea {
-                        padding: 5px 10px;
-                        outline: none;
-                        border: 1px solid #eee;
-                        border-radius: 5px;
-                    }
-                }
-
-                button {
-                    padding: 5px 10px;
-                    font-weight: bold;
-                    color: #fff;
-                    background-color: #03C988;
-                    border: none;
-                    border-radius: 6px;
-                    box-shadow: 0px 6px #3D5656;
-                    cursor: pointer;
-                    transition: .5s;
-                }
-
-                button:active {
-                    box-shadow: none;
-                    transform: translateY(6px);
-                }
-            }
-        }
 
         &__table {
             flex: 7;
@@ -157,6 +110,21 @@
         position: absolute;
         left: 40%;
         width: 500px;
+        height: 600px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background-color: #eee;
+        transform: translate(-50%, 0);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        overflow-y: auto;
+    }
+
+    .view {
+        position: absolute;
+        left: 40%;
+        width: 1200px;
         height: 600px;
         border-radius: 10px;
         display: flex;

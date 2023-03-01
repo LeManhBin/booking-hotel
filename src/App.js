@@ -20,8 +20,27 @@ import UsersAdminPage from './pages/usersAdminPage/UsersAdminPage';
 import BookingAdminPage from './pages/BookingAdminPage/BookingAdminPage';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import AccountPage from './pages/accountPage/AccountPage';
-
+import AddNewRoom from './pages/roomAdminPage/AddNewRoom';
+import AddNewEmployee from './pages/employeePage/AddNewEmployee';
+import AddNewUser from './pages/usersAdminPage/AddNewUser';
+import { useEffect } from 'react';
+import { actReLogin } from './redux/features/usersSlice/usersSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { KEY_ACCESS_TOKEN } from './constants/config';
+import ViewUser from './pages/usersAdminPage/ViewUser';
+import SearchPage from './pages/searchPage/SearchPage';
+import ViewBooking from './pages/BookingAdminPage/ViewBooking';
+import "react-datepicker/dist/react-datepicker.css"
 function App() {
+  const dispatch = useDispatch()
+  const accessToken = localStorage.getItem(KEY_ACCESS_TOKEN) || null
+
+  useEffect(() => {
+    if(accessToken) {
+      dispatch(actReLogin(accessToken))
+    }
+
+  },[])
   return (
     <div className="App">
       <BrowserRouter>
@@ -30,6 +49,7 @@ function App() {
             <Route index element={<HomePage/>}/>
             <Route path='rooms' element={<RoomsPage/>}/>
             <Route path='rooms/:idRoom'element={<DetailPage/>}/>
+            <Route path='room/search/:size' element={<SearchPage/>}/>
             <Route path='reservation' element={<ReservationPage/>}/>
             <Route path='about' element={<AboutPage/>}/>
             <Route path='blog' element={<BlogPage/>}/>
@@ -45,9 +65,14 @@ function App() {
           <Route path='/admin' element={<AdminLayout/>}>
               <Route index element={<DashboardPage/>}/>
               <Route path='rooms' element={<RoomAdminPage/>}/>
+              <Route path='add-new-room' element={<AddNewRoom/>} />
               <Route path='users' element={<UsersAdminPage/>}/>
+              <Route path='users/:idUser' element={<ViewUser/>}/>
+              <Route path='add-new-user' element={<AddNewUser/>} />
               <Route path='employee' element={<EmployeePage/>}/>
-              <Route path='Booking' element={<BookingAdminPage/>}/>
+              <Route path='add-new-employee' element={<AddNewEmployee/>} />
+              <Route path='booking' element={<BookingAdminPage/>}/>
+              <Route path='booking/:idBooking' element={<ViewBooking/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

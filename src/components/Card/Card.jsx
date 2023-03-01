@@ -19,6 +19,7 @@ const Card = ({room}) => {
         <div className='card__desc'>
             <h4>{room.roomName}</h4>
             <p className='card__desc--kind'>{room.typeRoom}</p>
+            <p className='card__desc--kind'>Size: {room.size}</p>
 
             <div className='card__desc--detail'>
                 <p>{room.description}</p>

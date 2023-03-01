@@ -4,7 +4,7 @@ const Confirm = ({setIsBooking, setOpenModal}) => {
 
     const handleShowModal = (e) => {
         e.preventDefault()
-        setOpenModal(true)
+        // setOpenModal(true)
     }
   return (
     <div className='confirm-container'>
@@ -27,10 +27,6 @@ const Confirm = ({setIsBooking, setOpenModal}) => {
                 <div className='form-input'>
                     <label>Address</label>
                     <input type="text" placeholder='enter your address'/>
-                </div>
-                <div className='form-input'>
-                    <label>Date Of Birth</label>
-                    <input type="date" placeholder='enter your date of birth'/>
                 </div>
                 <button onClick={handleShowModal}>Confirm</button>
             </form>

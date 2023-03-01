@@ -1,0 +1,43 @@
+.favorite-container {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    gap: 10px;
+    overflow-y: scroll;
+
+    .favorite-item {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 10px;
+        border-bottom: 1px  solid #5a5a5a;
+
+        img {
+            width: 80px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .item-desc {
+            font-weight: bold;
+
+            p:nth-child(2) {
+                
+                span {
+                    color: #1F8A70;
+                    font-size: 12px;
+                }
+            }
+        }
+        span:hover {
+            color: #EB455F;
+        }
+    }
+}
+

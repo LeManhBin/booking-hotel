@@ -1,23 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { actUpdateUser } from '../../redux/features/usersSlice/usersSlice'
+import {  actUpdateUser } from '../../redux/features/usersSlice/usersSlice'
 import './ProfilePage.scss'
 
 
 const ProfilePage = () => {
   const {user} = useSelector((state) => state.users)
+
+  
   const dispatch= useDispatch()
   const initialValueForm = {
     userName: user.userName,
     image: user.image,
     address: user.address,
     phoneNumber: user.phoneNumber,
-    id: user.id
+    isAdmin: false,
+    id: user.id,
+    email: user.email,
+    password: user.password,
   }
 
+  
   const [formState, setFormState] = useState(initialValueForm)
-  console.log(user, "user bên profile");
+
+  useEffect(()=>{
+    setFormState(initialValueForm)
+  }, [user])
 
   const handleOnChangeFormData = (e) => {
     const {name, value} = e.target
@@ -25,13 +34,11 @@ const ProfilePage = () => {
       ...formState,
       [name]: value
     })
-    console.log(value, name);
   }
   const handleUpdate = (e) => {
     e.preventDefault();
-    dispatch(actUpdateUser(formState.id, formState))
-    console.log(formState.id);
-    toast.success('Update thành công')
+    dispatch(actUpdateUser(user.id, formState))
+    toast.success('Update Thành công')
 }
 
   return (
@@ -59,8 +66,11 @@ const ProfilePage = () => {
                 <label>Address</label>
                 <input type="text" name='address' placeholder='Enter your address' value={formState.address} onChange={handleOnChangeFormData}/>
             </div>
+            <div className='form-input'>
+                <label>Your Password</label>
+                <input required type="password" name='password' placeholder='Enter your password' value={null} onChange={handleOnChangeFormData}/>
+            </div>
             <button onClick={(e) => handleUpdate(e)}>Save Profile</button>
-         
         </div>
       </form>
     </div>

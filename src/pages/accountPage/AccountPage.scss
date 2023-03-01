@@ -9,11 +9,14 @@
     &__img {
         width: 110px;
         height: 110px;
+        background-color: #eee;
+        border-radius: 50%;
         
         img {
             width: 100%;
             border-radius: 50%;
             object-fit: cover;
+            background-color: #eee;
         }
     }
 
@@ -29,7 +32,7 @@
         &--action {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 20px;
 
             button {
                 padding: 5px 10px;
@@ -53,12 +56,8 @@
                     font-weight: bold;
                     border-radius: 4px;
                     cursor: pointer;
-                    display: none;
                 }
                 
-            }
-            .account-act:hover .logout-btn {
-                display: block;
             }
             
         }

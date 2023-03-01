@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import BannerDefine from '../../components/BannerDefine/BannerDefine'
 import useScrollToTop from '../../hooks/useScrollToTop'
 import './ContactPage.scss'
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
+
+
 export const ContactPage = () => {
     useScrollToTop()
+    const form = useRef()
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        emailjs.sendForm('service_bw5xsqs', 'template_3d55kdo', form.current, 'dhxYMMKZxbMpMsOma')
+        .then((result) => {
+            toast.success(result.text)
+        }, (error) => {
+            toast.error(error.text)
+        });
+        e.target.reset()
+    }
+
   return (
     <div className='contact'>
         <div className='contact-banner'>
@@ -43,14 +61,14 @@ export const ContactPage = () => {
                           <span>Do you have anything in your mind to tell us? Please don't hesitate to get in touch to us via our contact form.</span>
                     </div>
                     <div className='contact__right--desc--form'>
-                          <form>
+                          <form onSubmit={handleSubmit} ref={form}>
                               <div className='input-form'>
-                                  <input type="text" placeholder='Full Name'/>
-                                  <input type="text" placeholder='Your Email'/>
+                                  <input required type="text" placeholder='Full Name' name='from_name'/>
+                                  <input required  type="email" placeholder='Your Email' name='user_email'/>
                               </div>
-                              <input type="text" placeholder='Subject'/>
-                              <textarea name="" id="" cols="30" rows="10" placeholder='Your Massage'></textarea>
-                              <button>Send Message</button>
+                              <input required type="text" placeholder='Subject' name='subject'/>
+                              <textarea required name="message" id="" cols="30" rows="10" placeholder='Your Massage'></textarea>
+                              <button type='submit'>Send Message</button>
                           </form>
                     </div>
                 </div>

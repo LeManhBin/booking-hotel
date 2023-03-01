@@ -7,6 +7,8 @@ import useScrollToTop from '../../hooks/useScrollToTop'
 import { actFetchRoomById } from '../../redux/features/roomsSlice/roomsSlice'
 
 import './DetailPage.scss'
+import Rating from '../../components/Rating/Rating'
+import Popup from '../../components/Popup/Popup'
 
 const initialValueForm = {
     checkIn: '',
@@ -16,10 +18,12 @@ const initialValueForm = {
     parkingChecked: false,
     pillowChecked: false,
     service: [],
-    totalBill: 0,
+    totalBill: 0,  
 }
 
 const DetailPage = () => {
+    const {isLogged} = useSelector((state) => state.users)
+    const [isShowPopUp, setIsShowPopUp] = useState(false)
     useScrollToTop()
     const [isBooking, setIsBooking] = useState(false)
     const [openModal, setOpenModel] = useState(false)
@@ -32,41 +36,88 @@ const DetailPage = () => {
     const [date, setDate] = useState(0)
     const [checkInDate, setCheckInDate] = useState(new Date())
     const [checkOutDate, setCheckOutDate] = useState(new Date())
+    const [moneyDay, setMoneyDay]  = useState(0)
+    const [breakFastMoney, setBreakFastMoney] = useState(0)
+    const [pakingMoney, setPakingMoney] = useState(0)
 
+    const [totalBill, setTotalBill] = useState(0)
     const parseIn = Date.parse(checkInDate)
     const parseOut = Date.parse(checkOutDate)
 
     const handleTinhNgay = () => {
         const timeDiff = parseIn - parseOut;
-        const dayDiff = Math.ceil(Math.abs(timeDiff / (1000 * 3600 * 24)));
-        console.log(dayDiff, 'dayDiff');
-    }
+        const dayDiff = Math.ceil(Math.abs(timeDiff / (1000 * 3600 * 24)))
+        const sizePerson = room.size
+        const dayMoney = dayDiff * room.price
+        const breakFastTotal = (dayDiff * 10) * sizePerson
+        const pakingTotal = dayDiff * 6
 
-    console.log('break',breakFastChecked , 'parking', parkingChecked, 'pillow', pillowChecked);
+        let bill
+        if(breakFastChecked === true && parkingChecked === true) {
+            bill = dayMoney + breakFastTotal + pakingTotal
+        }else if(breakFastChecked === true && parkingChecked === false) {
+            bill = dayMoney + breakFastTotal
+        }else if(breakFastChecked === false && parkingChecked === true) {
+            bill = dayMoney + pakingTotal
+        }else if(breakFastChecked === false && parkingChecked === false){
+            bill = dayMoney + 0
+        }
+        setDate(dayDiff)
+        setMoneyDay(dayMoney)
+        setBreakFastMoney(breakFastTotal)
+        setPakingMoney(pakingTotal)
+        setTotalBill(bill)
+        console.log(dayDiff);
+    }
+    
+    useEffect(() => {
+        handleTinhNgay()
+    },[checkOutDate, breakFastChecked, parkingChecked, pillowChecked])
+
     
     const dispatch = useDispatch()
     const param  = useParams()
     
     const {room} = useSelector((state) => state.rooms)
 
-    // const room = useSelector((state) => state.rooms.allRooms.find(room => room.id === Number(param.idRoom)))
     const handleShowConfirm = (e) => {
         e.preventDefault()
         window.scrollTo(0,0)
-        // setIsBooking(true)
+        
         handleTinhNgay()
+        if(isLogged === false) {
+            setIsShowPopUp(true)
+        }else {
+            setIsBooking(true)
+        }
 
     }
    
-
-    // const handleOnChangeFormData = (e) => {
-    //     const {name, value} = e.target
-    //     setFormState({
-    //         ...formState,
-    //         [name]: value
-    //     })
-    // }
-    
+/*
+    const handleOnChangeFormData = (e) => {
+        const {name, value} = e.target
+        const serviced = []
+        if(breakFastChecked == true){
+            serviced.push('a')
+        } else if (parkingChecked == true) {
+            serviced.push('b')
+        } else if (pillowChecked == true) {
+            serviced.push('c')
+        }
+        setFormState({
+            ...formState,
+            checkIn: checkInDate,
+            checkOut: checkInDate,
+            daysIn: date,
+            breakFastChecked: breakFastChecked,
+            parkingChecked: parkingChecked,
+            pillowChecked: pillowChecked,
+            service: serviced,
+            totalBill: totalBill,  
+        })
+        console.log(formState, 'r');
+    }
+*/
 
    useEffect(() => {
         dispatch(actFetchRoomById(Number(param.idRoom)))
@@ -194,24 +245,46 @@ const DetailPage = () => {
                     <span className='heading'>Price</span>
                     <div className='detail__right--price-box-desc'>
                         <div className='detail__right--price-box-desc-detail'>
-                            <span>1 night</span>
-                            <span>$100</span>
+                            <span>{date} night</span>
+                            <span>${moneyDay||0}</span>
                         </div>  
-                        <div className='detail__right--price-box-desc-detail'>
-                            <span>Breakfast a day per person</span>
-                            <span>$10</span>
-                        </div>  
-                        <div className='detail__right--price-box-desc-detail'>
-                            <span>Service fee</span>
-                            <span>$5</span>
-                        </div>  
+                        {
+                            breakFastChecked && 
+                            (
+                                <div className='detail__right--price-box-desc-detail'>
+                                    <span>Breakfast a day per person</span>
+                                    <span>${breakFastMoney}</span>
+                                </div>
+                            )
+                        }
+                        {
+                            parkingChecked && 
+                            (
+                                <div className='detail__right--price-box-desc-detail'>
+                                    <span>Parking</span>
+                                    <span>${pakingMoney}</span>
+                                </div>  
+                            )
+                        }
+                        {
+                            pillowChecked &&
+                            (
+                                <div className='detail__right--price-box-desc-detail'>
+                                    <span>Extra pillow</span>
+                                    <span>$0</span>
+                                </div>  
+                            )
+                        }
                     </div>
                     <div className='detail__right--price-box-total'>
                         <span>Total Payment</span>
-                        <span>$115</span>
+                        <span>${totalBill || 0}</span>
                     </div>
                 </div>
-                <button className='book-btn' onClick={(e) => handleShowConfirm(e)}>Book Now</button>
+                <div className='button-booking'>
+                    <button className='book-btn' onClick={(e) => handleShowConfirm(e)}>Book Now</button>
+                    {/* <button className='cart-btn'>Thêm Vào Danh Sách</button> */}
+                </div>
                 <span className='remind'>You will not get changed yet</span>
             </form>
             <div className='confirm'>
@@ -219,9 +292,17 @@ const DetailPage = () => {
                     isBooking && (<Confirm setIsBooking={setIsBooking} setOpenModel={setOpenModel}/>)
                 }
             </div> 
+            
         </div>
         {
             openModal && (<Modal setOpenModel={setOpenModel}/>)
+        }
+        <div className='rating'>
+            <h4>Reviews</h4>
+            <Rating param={param}/>
+        </div>
+        {
+            isShowPopUp && (<Popup setIsShowPopUp={setIsShowPopUp} title={"Vui lòng đăng nhập để thực hiện chức năng"}/>)
         }
     </div>
   )

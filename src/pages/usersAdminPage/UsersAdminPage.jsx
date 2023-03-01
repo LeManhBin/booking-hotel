@@ -1,61 +1,46 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { actFetchAllUsers } from '../../redux/features/usersSlice/usersSlice';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { actDeleteUser, actFetchAllUsers, actFetchUserByID } from '../../redux/features/usersSlice/usersSlice';
+import ViewUser from './ViewUser';
 
 const UsersAdminPage = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {users} = useSelector((state) => state.users)
-
+  const {user} = useSelector((state) => state.users)
+  console.log(user,'from admin user');
   useEffect(() => {
     dispatch(actFetchAllUsers())
   },[])
+
+  const handleAddNewPage = () => {
+    navigate('/admin/add-new-user')
+  } 
+  const handleDelete = (id) => {
+    dispatch(actDeleteUser(id))
+    toast.success('Delete Success')
+  }
+
+  const handleViewUser = (id) => {
+      navigate(`/admin/users/${id}`)
+  }
   return (
     <div className='manage-container'>
         <div className="top">
             <h2>Quản lý người dùng</h2>
+            <button onClick={handleAddNewPage}>Add New</button>
         </div>
         <div className='main'>
-            {/* <div className='main__form'>
-                <form>
-                  <div className="form-input">
-                      <label>Employee Name</label>
-                      <input type="text"  placeholder='enter employee name'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Position</label>
-                      <select >
-                        <option value="receptionist">Receptionist</option>
-                        <option value="staff">Staff</option>
-                        <option value="guard">Guard</option>
-                        <option value="technical ">Technical</option>
-                        <option value="manager">manager</option>
-                      </select>
-                  </div>
-                  <div className="form-input">
-                      <label>Employee Image</label>
-                      <input type="text"  placeholder='enter employee image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Date Of Birth</label>
-                      <input type="text"placeholder='enter date of birth'/>
-                  </div>
-                  <div className='form-btn'>
-                    <button>Submit</button>
-                  </div>
-                </form>
-            </div> */}
             <div className='main__table'>
               <div className='table__container' >
                 <table id="customers">
                   <thead>
                     <tr>
                       <th>STT</th>
-                      <th>ID</th>
                       <th>Name</th>
-                      <th>Image</th>
                       <th>Email</th>
-                      <th>Phone Number</th>
-                      <th>Address</th>
                       <th>Position</th>
                       <th>Action</th>
                     </tr>
@@ -71,18 +56,13 @@ const UsersAdminPage = () => {
                           }
                           return(
                             <tr key={user.id}>
-                              <td>{index + 1}</td>
-                              <td>{user.id}</td>
+                              <td>{index + 1}</td>  
                               <td>{user.userName}</td>
-                              <td className='img'>
-                                <img src={user.image} alt="" />
-                              </td>
                               <td>{user.email}</td>
-                              <td>{user.phoneNumber}</td>
-                              <td>{user.address}</td>
                               <td>{position}</td>
                               <td>
-                                  <button className='delete-btn'>Delete</button>
+                                  <button className='edit-btn' onClick={() => handleViewUser(user.id)}>View</button>
+                                  <button className='delete-btn' onClick={() => handleDelete(user.id)}>Delete</button>
                               </td>
                             </tr>
                           )

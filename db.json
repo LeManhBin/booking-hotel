@@ -1,40 +1,53 @@
 {
   "users": [
     {
+      "userName": "Lê Mạnh Bin",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD////8/Pz5+fn19fWgoKCvr6/w8PDs7OxQUFAaGhoEBATd3d3Nzc3n5+dnZ2fZ2dlVVVXFxcUlJSUODg6JiYl+fn5bW1siIiKmpqZJSUnQ0NCsrKyZmZkVFRU6Ojpvb28xMTG9vb13d3eRkZEzMzNCQkKamppsbGyLi4uBgYE+Pj79h2aqAAAMNUlEQVR4nNWd6WKqOhSFGQQFERGoWK1V0aqnff/3u+CIkIQMK8Jdv1vlE7Kzp2wMU7fscJW7znzqbRI/HY+N8Tj1k403nTtuPgkH2r/f0PfRg3DiHrLNIjXoSheb7OBqBdVDaA1Xn/PljoH2qmS5/1wNLS3XooMwcqYJN9xTi+lppQESTTjMtxJwT03zIfiKoITBl6eEd9XyM0BeFI4wdDMfwFfqO/sKYdcFIrTj/QKEd9ViG9uYS4MQDpwNFO+q3QmyJAGE0V4D3lXbqHtCazLVxlcqU35Y1QiteKaVr5SnyKhEOMm085WaxR0RRvrv313LVQeEoT77QtJZ2guQJBycsNtfu74PknuHHOFEx/7Xph+55ShDOHjvA/rUWeY2ShC6HfGV+nwD4UjvDt+mTNglFyXM+QN3PUpyrYT2R8d8peZiSR0hwlHXN/CqhdCTKkKYd432kKuF0Dp0zVXRB783zk046NaG1pVxb428hKOfrplqSngXIyfhpGsggjidOD7CfNw1DklfOMLPrlkoOqEI+wpoGGsM4bprDob+IQj74KjRNVcn7DcgB2IbYZ8f0as+1Aj7a2SeajE3bML/A2DbpsEk7E8wwRZz62cRTnrpyZDEcuAYhKOur1tADDecTjjoWzTBUjISJ7T6FQ+2aUYNiamEfYroeUTdFmmE/xcz+hTNoFIINViZZLZ38rhU7sxnMi1FLaJYGzKhDU4bzg6TuikYTdbg+uqCnEclE0Ld7cwNyc1c1iiHQp",
+      "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
+      "phoneNumber": "0394194501",
+      "id": 1,
       "email": "llemanhbin@gmail.com",
-      "password": "$2a$10$oMW0r0cSsv4TqZ6M4luVc.cAbI59r7hmdsmUt/clLq7xmo.DRSZSe",
-      "userName": "Lê Mạnh Bin",
-      "isAdmin": false,
-      "image": "https://cdn.dribbble.com/users/13584903/avatars/normal/1ba3a799f1b298f971d7f1df0bb20a5d.jpg?1666421563",
-      "address": "Đà Nẵng",
-      "phoneNumber": "0365160470",
-      "id": 1
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$cV0zHI5QNMfJel9IBYK0rOr03DNeW6z404SLzY25kbB7ao.AyJ4ma",
-      "userName": "Lê Mạnh Bin",
-      "isAdmin": true,
-      "image": "https://cdn.dribbble.com/users/13584903/avatars/normal/1ba3a799f1b298f971d7f1df0bb20a5d.jpg?1666421563",
-      "address": "Đắk Lắk",
-      "phoneNumber": "0365160470",
-      "id": 2
+      "password": "$2a$10$RlT0bF7oi2RsZlE566JfyemUy/juPm7f7jqMi70mziK3LJqYpgVk."
     },
     {
       "email": "pacmam2k1@gmail.com",
-      "password": "$2a$10$t7SfFPIj6GTBE5EPbEnYsuMPkQ2maBlJg6Opip5xjPzNwGL5yTICq",
-      "userName": "test",
+      "password": "$2a$10$o8mqDtkZmCEJ8Br1qB.wueQj5NNGRYZciSWlA4ibQtOFCOBEQzpw.",
+      "userName": "ádsad",
+      "isAdmin": false,
+      "image": "",
+      "address": "",
+      "phoneNumber": "",
+      "id": 2
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$y9OAdh79gbPn2VRSIUL4ju9BSATY7mwNJFbUFj8MlxuwezVvFIBXK",
+      "userName": "qưewq",
+      "isAdmin": false,
+      "image": "",
+      "address": "",
+      "phoneNumber": "",
       "id": 3
     },
     {
-      "email": "test2@gmail.com",
-      "password": "$2a$10$kzXDtUOXdIb57nUNgQsVxum1PAfPzYETz.fIjDKM1md4AqdPsWRKm",
-      "userName": "test2",
+      "email": "qqqq@gmaiil.com",
+      "password": "$2a$10$XrMwvTtrePs4y1.GOYFo8uLhb0s9giQlTB7SSTp9PeFB5TsybPQ9W",
+      "userName": "ưqe",
       "isAdmin": false,
       "image": "",
       "address": "",
       "phoneNumber": "",
       "id": 4
+    },
+    {
+      "userName": "reak1111updateasdas1111",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD////8/Pz5+fn19fWgoKCvr6/w8PDs7OxQUFAaGhoEBATd3d3Nzc3n5+dnZ2fZ2dlVVVXFxcUlJSUODg6JiYl+fn5bW1siIiKmpqZJSUnQ0NCsrKyZmZkVFRU6Ojpvb28xMTG9vb13d3eRkZEzMzNCQkKamppsbGyLi4uBgYE+Pj79h2aqAAAMNUlEQVR4nNWd6WKqOhSFGQQFERGoWK1V0aqnff/3u+CIkIQMK8Jdv1vlE7Kzp2wMU7fscJW7znzqbRI/HY+N8Tj1k403nTtuPgkH2r/f0PfRg3DiHrLNIjXoSheb7OBqBdVDaA1Xn/PljoH2qmS5/1wNLS3XooMwcqYJN9xTi+lppQESTTjMtxJwT03zIfiKoITBl6eEd9XyM0BeFI4wdDMfwFfqO/sKYdcFIrTj/QKEd9ViG9uYS4MQDpwNFO+q3QmyJAGE0V4D3lXbqHtCazLVxlcqU35Y1QiteKaVr5SnyKhEOMm085WaxR0RRvrv313LVQeEoT77QtJZ2guQJBycsNtfu74PknuHHOFEx/7Xph+55ShDOHjvA/rUWeY2ShC6HfGV+nwD4UjvDt+mTNglFyXM+QN3PUpyrYT2R8d8peZiSR0hwlHXN/CqhdCTKkKYd432kKuF0Dp0zVXRB783zk046NaG1pVxb428hKOfrplqSngXIyfhpGsggjidOD7CfNw1DklfOMLPrlkoOqEI+wpoGGsM4bprDob+IQj74KjRNVcn7DcgB2IbYZ8f0as+1Aj7a2SeajE3bML/A2DbpsEk7E8wwRZz62cRTnrpyZDEcuAYhKOur1tADDecTjjoWzTBUjISJ7T6FQ+2aUYNiamEfYroeUTdFmmE/xcz+hTNoFIINViZZLZ38rhU7sxnMi1FLaJYGzKhDU4bzg6TuikYTdbg+uqCnEclE0Ld7cwNyc1c1iiHQp",
+      "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
+      "phoneNumber": "0365160470sad1111",
+      "isAdmin": false,
+      "id": 5,
+      "email": "reak@gmail.com",
+      "password": "$2a$10$8DLTVG42oZY/jqip0emwxuQoL2GNRMtpMEP1Q.0bAwgT6zaOXmHZu"
     }
   ],
   "rooms": [
@@ -49,7 +62,7 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 2,
+      "status": 3,
       "size": 2,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -64,7 +77,7 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 2,
+      "status": 3,
       "size": 1,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -85,33 +98,19 @@
     },
     {
       "id": 5,
-      "roomName": "Room 5",
-      "typeRoom": "Deluxe",
-      "price": 300,
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "roomName": "Room 5ddsadasdsa",
+      "typeRoom": "deluxe",
+      "price": "2999",
+      "imageMain": "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
       "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
       ],
       "status": 1,
-      "size": 4,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 6,
-      "roomName": "Room 6",
-      "typeRoom": "Suite",
-      "price": 400,
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 2,
-      "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
+      "size": "40",
+      "description": "đây là 1 đoạn mô tả về căn phòng này update",
+      "": "Room 5a"
     },
     {
       "id": 7,
@@ -127,51 +126,6 @@
       "status": 1,
       "size": 2,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 8,
-      "roomName": "Room 8",
-      "typeRoom": "Standard",
-      "price": 100,
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 9,
-      "roomName": "Room 9s",
-      "typeRoom": "Standard",
-      "price": 100,
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "roomName": "test",
-      "typeRoom": "deluxe",
-      "imageMain": "sada",
-      "imageSecondary": [
-        "ádsa",
-        "sada",
-        "sad"
-      ],
-      "status": 1,
-      "size": "12",
-      "price": "11110",
-      "description": "sadas",
-      "id": 10
     }
   ],
   "employee": [
@@ -181,6 +135,145 @@
       "employeeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCGvGuinlbd7GSgV6Yiwv9yQsrFnjk0lle0g&usqp=CAU",
       "dateOfBirth": "01/01/2002",
       "id": 3
+    }
+  ],
+  "bookings": [
+    {
+      "roomId": 3,
+      "customerId": 5,
+      "checkIn": "2023-02-28",
+      "checkOut": "2023-03-03",
+      "daysIn": 3,
+      "totalPayment": 7999,
+      "service": [
+        "Breakfast",
+        "Parking",
+        "Extra pillow"
+      ],
+      "createAt": "2023-02-28",
+      "id": 1
+    },
+    {
+      "roomId": 3,
+      "customerId": 5,
+      "checkIn": "2023-02-28",
+      "checkOut": "2023-03-03",
+      "daysIn": 3,
+      "totalPayment": 7999,
+      "service": [
+        "Breakfast",
+        "Parking",
+        "Extra pillow"
+      ],
+      "createAt": "2023-02-28",
+      "id": 2
+    },
+    {
+      "roomId": 3,
+      "customerId": 5,
+      "checkIn": "2023-02-28",
+      "checkOut": "2023-03-03",
+      "daysIn": 3,
+      "totalPayment": 7999,
+      "service": [
+        "Breakfast",
+        "Extra pillow"
+      ],
+      "createAt": "2023-02-28",
+      "id": 3
+    }
+  ],
+  "evaluate": [
+    {
+      "idUser": 3,
+      "idRoom": 7,
+      "content": "Sugoi tuyệt vời...",
+      "id": 1
+    },
+    {
+      "idUser": 3,
+      "idRoom": 5,
+      "content": "Sugoi tuyệt vời2...",
+      "id": 2
+    },
+    {
+      "idUser": 3,
+      "idRoom": 5,
+      "content": "Sugoi tuyệt vời3...",
+      "id": 3
+    },
+    {
+      "idUser": 3,
+      "idRoom": 7,
+      "content": "Sugoi tuyệt vời4...",
+      "id": 4
+    },
+    {
+      "idUser": 4,
+      "idRoom": 7,
+      "content": "Sugoi tuyệt vời5...",
+      "id": 5
+    },
+    {
+      "idUser": 5,
+      "idRoom": 5,
+      "content": "tuyệt vời ông mặt trời",
+      "id": 6
+    },
+    {
+      "idRoom": 5,
+      "content": "",
+      "id": 7
+    },
+    {
+      "idRoom": 5,
+      "content": "",
+      "id": 8
+    },
+    {
+      "idUser": 5,
+      "idRoom": 7,
+      "content": "haha đây là test cmt",
+      "id": 9
+    },
+    {
+      "idRoom": 7,
+      "content": "r",
+      "id": 10
+    },
+    {
+      "idRoom": 7,
+      "content": "lừa r",
+      "id": 11
+    },
+    {
+      "idRoom": 7,
+      "content": "lừa r",
+      "id": 12
+    },
+    {
+      "idUser": 5,
+      "idRoom": 5,
+      "content": "o",
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "idRoom": 5,
+      "content": "o lal",
+      "id": 15
+    },
+    {
+      "idRoom": 5,
+      "content": "a",
+      "id": 16
+    },
+    {
+      "idRoom": 7,
+      "content": "đ",
+      "id": 17
     }
   ]
 }

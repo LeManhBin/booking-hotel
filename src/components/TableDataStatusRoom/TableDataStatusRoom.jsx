@@ -1,22 +1,37 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { actFetchRoomById, actFetchAllRoom, actUpdateRoom } from '../../redux/features/roomsSlice/roomsSlice'
 import Pagination from '../Pagination/Pagination'
 import RoomStatus from '../RoomStatus/RoomStatus'
 import './TableDataStatusRoom.scss'
 const TableDataStatusRoom = ({allRooms}) => {
-   
-
+    const dispatch = useDispatch()
     const [currentPage, setCurrentPage] = useState(1);
     const [limit, setLimit] = useState(4)
-
     const lastPageIndex = currentPage * limit;
     const firstPageIndex = lastPageIndex - limit;
     const currentItems = allRooms.filter(item => item.status == 2).slice(firstPageIndex, lastPageIndex);
-
     const totalPage = allRooms.filter(item => item.status == 2).length
 
+
+
+
+    const handleConfirm = (room) => {
+        const newRoom = {
+            ...room,
+            status: 3
+        }
+        dispatch(actUpdateRoom(room.id, newRoom))
+    }
+    
+    
+
     useEffect(() => {
-      
+        dispatch(actFetchAllRoom())
     },[])
+
+
+
   return (
     <div className='table__container' >
         <table id="customers">
@@ -57,7 +72,7 @@ const TableDataStatusRoom = ({allRooms}) => {
                             <td>${room.price}</td>
                             <td>{status}</td>
                             <td>
-                                <button className='edit-btn'>Xác Nhận</button>
+                                <button className='edit-btn' onClick={() => handleConfirm(room)} >Xác Nhận</button>
                             </td>
                         </tr>
                     )

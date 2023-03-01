@@ -1,41 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { actDeleteBooking, actFetchAllBookings } from '../../redux/features/bookingsSlice/bookingsSlice'
 
 const BookingAdminPage = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const {allBookings} = useSelector((state) => state.bookings)
+  console.log('booking', allBookings);
+
+  useEffect(() => {
+    dispatch(actFetchAllBookings())
+  },[])
+
+  const handleDelete = (booking) => {
+    dispatch(actDeleteBooking(booking.id))
+  }
+
+  const handleViewBookingDetail = (booking) => {
+    navigate(`/admin/booking/${booking.id}`)
+  }
   return (
     <div className='manage-container'>
       <div className="top">
           <h2>Quản lý booking</h2>
       </div>
       <div className='main'>
-            {/* <div className='main__form'>
-                <form>
-                  <div className="form-input">
-                      <label>Employee Name</label>
-                      <input type="text"  placeholder='enter employee name'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Position</label>
-                      <select >
-                        <option value="receptionist">Receptionist</option>
-                        <option value="staff">Staff</option>
-                        <option value="guard">Guard</option>
-                        <option value="technical ">Technical</option>
-                        <option value="manager">manager</option>
-                      </select>
-                  </div>
-                  <div className="form-input">
-                      <label>Employee Image</label>
-                      <input type="text"  placeholder='enter employee image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Date Of Birth</label>
-                      <input type="text"placeholder='enter date of birth'/>
-                  </div>
-                  <div className='form-btn'>
-                    <button>Submit</button>
-                  </div>
-                </form>
-            </div> */}
             <div className='main__table'>
               <div className='table__container' >
                 <table id="customers">
@@ -51,18 +41,24 @@ const BookingAdminPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>
-                          <button className='edit-btn'>View</button>
-                          <button className='delete-btn'>Delete</button>
-                      </td>
-                    </tr>
+                    {
+                      allBookings.map((booking, index) => {
+                        return(
+                          <tr key={booking.id}>
+                            <td>{index + 1}</td>
+                            <td>{booking.id}</td>
+                            <td>{booking.customerId}</td>
+                            <td>{booking.checkIn}</td>
+                            <td>{booking.checkOut}</td>
+                            <td>{booking.totalPayment}</td>
+                            <td>
+                                <button className='edit-btn' onClick={() => handleViewBookingDetail(booking)}>View</button>
+                                <button className='delete-btn' onClick={() => handleDelete(booking)}>Delete</button>
+                            </td>
+                          </tr>
+                        )
+                      })
+                    }
                   </tbody>
                 </table>
               </div>

@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import './Header.scss'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Favorites from '../Favorites/Favorites'
 const Header = () => {
   const navigate = useNavigate()
   const [toggle, setToggle] = useState(false)
+  const [isShowFavorite, setIsShowFavorite] = useState(false)
   const {isLogged, user} = useSelector((state) => state.users)
   // const {user} = useSelector((state) => state.user)
   console.log('user bên user', user);
   const handleToggle = () => {
     setToggle(!toggle)
   }
+  const handleShowFavorite = () => {
+    setIsShowFavorite(!isShowFavorite)
+  }
+  
 
   const styleActive = ({isActive}) => {
       return {
@@ -22,10 +28,10 @@ const Header = () => {
     <header className='header'>
         <div className='header__logo'>
             <h2>Logo</h2>
-            <div className='header__navbar--cart'>
+            {/* <div className='header__navbar--cart'>
               <NavLink style={styleActive} onClick={handleToggle} to={"/cart-booking"}><i className="fa-solid fa-suitcase-rolling"></i></NavLink>
               <span className='number-cart'>1</span>
-            </div>
+            </div> */}
         </div>
         <div className='header__navbar'>
             <div className='header__contact'>
@@ -51,9 +57,20 @@ const Header = () => {
                   <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/about"}>ABOUT US</NavLink></li>
                   <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/blog"}>BLOG</NavLink></li>
                   <li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/contact"}>CONTACT</NavLink></li>
-                  <li><NavLink style={styleActive} onClick={() => setToggle(false)} className="cart" to={"/cart-booking"}><i className="fa-solid fa-suitcase-rolling"></i><span className='cart-number'>1</span></NavLink></li>
+                  {/* <li><NavLink style={styleActive} onClick={() => setToggle(false)} className="cart" to={"/cart-booking"}><i className="fa-solid fa-suitcase-rolling"></i><span className='cart-number'>1</span></NavLink></li> */}
+                  {/* <li className='li-cart'>
+                    <p onClick={handleShowFavorite} className="cart" >
+                      <i className="fa-solid fa-suitcase-rolling"></i>
+                      <span className='cart-number'>1</span>
+                    </p>
+                    <div className='favorite'>
+                        {
+                          isShowFavorite && (<Favorites/>)
+                        }
+                  </div>
+                  </li> */}
                   {
-                    isLogged ? (<li><NavLink to={"/account"}><span className='header-avatar'><img src={user.image} alt="" /></span></NavLink></li>) 
+                    isLogged ? (<li><NavLink to={"/account"}><span className='header-avatar'><img src={user?.image} alt="" /></span></NavLink></li>) 
 
                     : (<li><NavLink style={styleActive} onClick={() => setToggle(false)} to={"/login-layout"}><span>LOGIN</span></NavLink></li>)
                   }

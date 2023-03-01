@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Pagination from '../../components/Pagination/Pagination'
 import RoomStatus from '../../components/RoomStatus/RoomStatus'
@@ -7,20 +8,10 @@ import { actCreateRoom, actDeleteRoom, actFetchAllRoom } from '../../redux/featu
 import './RoomAdminPage.scss'
 import UpdatePopup from './UpdatePopup'
 
-const initialFormState = {
-    roomName: "",
-    typeRoom: "standard",
-    imageMain: "",
-    imageSecondary: [],
-    status: 1,
-    size: 1,
-    price: 0,
-    description: "",
 
-}
 const RoomAdminPage = () => {
   const dispatch = useDispatch()
-  const [formState, setFormState] = useState(initialFormState)
+  const navigate = useNavigate()
   const {allRooms} = useSelector((state) => state.rooms)
   const [isUpdate, setIsUpdate] = useState(false)
   const [idTemp, setIdTemp] = useState()
@@ -39,34 +30,8 @@ const RoomAdminPage = () => {
     dispatch(actFetchAllRoom())
   },[])
 
-  useEffect(()=>{
-    console.log(allRooms,'asdasdasd');
-  }, [allRooms])
-
-  const handleImageDescription = (e,index) => {
-    const {value} = e.target;
-    const imgs = [...formState.imageSecondary]
-    imgs[index] = value
-
-    setFormState(prevFormState => ({
-      ...prevFormState,
-      imageSecondary: [...imgs]
-    }))
-  }
-
-  const handleChangeInputForm = (e) => {
-    const {name, value} = e.target;
-    
-    setFormState({
-      ...formState,
-      [name]: value
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(actCreateRoom(formState))
-    toast.success('Thêm thành công')
+  const handleAddNewPage = () => {
+    navigate('/admin/add-new-room')
   }
 
   const handleDelete = (room) => {
@@ -79,77 +44,16 @@ const RoomAdminPage = () => {
   }
 
   const handleShowUpdate = (room) => {
-    console.log(room);
     setIsUpdate(true)
     setIdTemp(room.id)
-
   }
   return (
     <div className='manage-container'>
         <div className="top">
             <h2>Quản lý phòng</h2>
+            <button onClick={handleAddNewPage}>Add New</button>
         </div>
         <div className='main'>
-            <div className='main__form'>
-                <form onSubmit={(e) => handleSubmit(e)}>
-                  <div className="form-input">
-                      <label>Room Name</label>
-                      <input type="text" name='roomName' value={formState.roomName} onChange={handleChangeInputForm} placeholder='enter room name'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Type</label>
-                      <select name='typeRoom' value={formState.typeRoom} onChange={handleChangeInputForm} >
-                        <option value="standard">Standard</option>
-                        <option value="superior">Superior</option>
-                        <option value="deluxe">Deluxe</option>
-                        <option value="suite">Suite</option>
-                        <option value="connecting">Connecting</option>
-                      </select>
-                  </div>
-                  <div className="form-input">
-                      <label>Image 1</label>
-                      <input type="text" name='imageMain' value={formState.imageMain} onChange={handleChangeInputForm} placeholder='enter room image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Image 2</label>
-                      <input type="text" name='imageSecondary' 
-                        value={formState.imageSecondary[0]} 
-                        onChange={(e) => handleImageDescription(e, 0)} placeholder='enter room image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Image 3</label>
-                      <input type="text" name='imageSecondary' 
-                        value={formState.imageSecondary[1]} 
-                        onChange={(e) => handleImageDescription(e, 1)} placeholder='enter room image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Image 4</label>
-                      <input type="text" name='imageSecondary' 
-                        value={formState.imageSecondary[2]} 
-                        onChange={(e)=> handleImageDescription(e,2)} placeholder='enter room image'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Size</label>
-                      <input type="number" name='size' min={1} 
-                        value={formState.size} 
-                        onChange={handleChangeInputForm} placeholder='enter room size'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Price</label>
-                      <input type="number" name='price' min={0} 
-                        value={formState.price} 
-                        onChange={handleChangeInputForm} placeholder='enter room price'/>
-                  </div>
-                  <div className="form-input">
-                      <label>Description</label>
-                      <textarea name='description' 
-                        value={formState.description} onChange={handleChangeInputForm} placeholder='enter room description' cols="30" rows="10"></textarea>
-                  </div>
-                  <div className='form-btn'>
-                    <button type='submit'>Submit</button>
-                  </div>
-                </form>
-            </div>
             <div className='main__table'>
               <div className='table__container' >
                 <table id="customers">

@@ -33,7 +33,6 @@ const RegisterPage = () => {
 
   const onRegister = (values) => {
         dispatch(actRegister(values))
-        toast.success('Sign up success')
 
   }
   return (

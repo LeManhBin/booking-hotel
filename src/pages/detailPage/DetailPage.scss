@@ -293,17 +293,38 @@
                  }
             }
 
-            .book-btn {
-                background-color: #B99B6B;
-                padding: 5px 10px;
-                border: none;
-                font-size: 18px;
-                font-weight: 500;
-                color: #fff;
-                border-radius: 30px;
-                cursor: pointer;
-                transition: .5s;
+            .button-booking {
+                display: flex;
+                justify-content: space-between;
+                gap: 5px;
+
+                .book-btn {
+                    background-color: #B99B6B;
+                    padding: 5px 10px;
+                    border: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #fff;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    transition: .5s;
+                    flex: 1;
+                }
+
+                .cart-btn {
+                    background-color: #B99B6B;
+                    padding: 5px 10px;
+                    border: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #fff;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    transition: .5s;
+                    flex: 1;
+                }
             }
+            
 
             .book-btn:hover {
                 opacity: .8;
@@ -322,6 +343,9 @@
             transform: translate(-50%, 0);
         }
 
+    }
+    .rating {
+        padding: 0 100px;
     }
 
 }
