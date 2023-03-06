@@ -9,17 +9,10 @@ import { actFetchRoomById } from '../../redux/features/roomsSlice/roomsSlice'
 import './DetailPage.scss'
 import Rating from '../../components/Rating/Rating'
 import Popup from '../../components/Popup/Popup'
+import ReactDatePicker from 'react-datepicker'
+import { actFetchUserByID } from '../../redux/features/usersSlice/usersSlice'
 
-const initialValueForm = {
-    checkIn: '',
-    checkOut: '',
-    daysIn: 0,
-    breakFastChecked: false,
-    parkingChecked: false,
-    pillowChecked: false,
-    service: [],
-    totalBill: 0,  
-}
+
 
 const DetailPage = () => {
     const {isLogged} = useSelector((state) => state.users)
@@ -27,22 +20,40 @@ const DetailPage = () => {
     useScrollToTop()
     const [isBooking, setIsBooking] = useState(false)
     const [openModal, setOpenModel] = useState(false)
+    const {user} = useSelector((state) => state.users)
 
-    const [formState, setFormState] = useState(initialValueForm)
     const [breakFastChecked, setBreakFastChecked] = useState(false)
     const [parkingChecked, setParkingChecked] = useState(false)
     const [pillowChecked, setPillowChecked] = useState(false)
-    
-    const [date, setDate] = useState(0)
-    const [checkInDate, setCheckInDate] = useState(new Date())
-    const [checkOutDate, setCheckOutDate] = useState(new Date())
+    const [serviceRoom, setServiceRoom] = useState([])
+
     const [moneyDay, setMoneyDay]  = useState(0)
     const [breakFastMoney, setBreakFastMoney] = useState(0)
-    const [pakingMoney, setPakingMoney] = useState(0)
+    const [parkingMoney, setParkingMoney] = useState(0)
+    const [date, setDate] = useState(0)
+
+    const [checkInDate, setCheckInDate] = useState(null)
+    const [checkOutDate, setCheckOutDate] = useState(null)
+    
+
+    useEffect(() => {
+        dispatch(actFetchUserByID(user.id))
+    },[])
+    const handleCheckInDate = (date) => {
+        setCheckInDate(date);
+        setCheckOutDate(null);
+      };
+    
+      // define handler change function on check-out date
+      const handleCheckOutDate = (date) => {
+        setCheckOutDate(date);
+      };
+
 
     const [totalBill, setTotalBill] = useState(0)
     const parseIn = Date.parse(checkInDate)
     const parseOut = Date.parse(checkOutDate)
+
 
     const handleTinhNgay = () => {
         const timeDiff = parseIn - parseOut;
@@ -50,25 +61,26 @@ const DetailPage = () => {
         const sizePerson = room.size
         const dayMoney = dayDiff * room.price
         const breakFastTotal = (dayDiff * 10) * sizePerson
-        const pakingTotal = dayDiff * 6
+        const parkingTotal = dayDiff * 6
 
         let bill
         if(breakFastChecked === true && parkingChecked === true) {
-            bill = dayMoney + breakFastTotal + pakingTotal
+            bill = dayMoney + breakFastTotal + parkingTotal
         }else if(breakFastChecked === true && parkingChecked === false) {
             bill = dayMoney + breakFastTotal
         }else if(breakFastChecked === false && parkingChecked === true) {
-            bill = dayMoney + pakingTotal
+            bill = dayMoney + parkingTotal
         }else if(breakFastChecked === false && parkingChecked === false){
             bill = dayMoney + 0
         }
         setDate(dayDiff)
         setMoneyDay(dayMoney)
         setBreakFastMoney(breakFastTotal)
-        setPakingMoney(pakingTotal)
+        setParkingMoney(parkingTotal)
         setTotalBill(bill)
         console.log(dayDiff);
     }
+    
     
     useEffect(() => {
         handleTinhNgay()
@@ -93,31 +105,44 @@ const DetailPage = () => {
 
     }
    
-/*
-    const handleOnChangeFormData = (e) => {
-        const {name, value} = e.target
-        const serviced = []
+
+    const handleChangeService = () => {
         if(breakFastChecked == true){
-            serviced.push('a')
-        } else if (parkingChecked == true) {
-            serviced.push('b')
-        } else if (pillowChecked == true) {
-            serviced.push('c')
-        }
-        setFormState({
-            ...formState,
-            checkIn: checkInDate,
-            checkOut: checkInDate,
-            daysIn: date,
-            breakFastChecked: breakFastChecked,
-            parkingChecked: parkingChecked,
-            pillowChecked: pillowChecked,
-            service: serviced,
-            totalBill: totalBill,  
+            setServiceRoom(prevState => {
+                return [...new Set([...prevState, 'Break Fast'])]
         })
-        console.log(formState, 'r');
+        }
+        if(breakFastChecked == false) {
+            const serv1 = serviceRoom.filter(item => item != 'Break Fast')
+            setServiceRoom(serv1)
+        }
+        if(parkingChecked == true) {
+            setServiceRoom(prevState => {
+             return [...new Set([...prevState, 'Parking'])]
+        })
+
+        }
+        if(parkingChecked == false) {
+            const serv2 = serviceRoom.filter(item => item != 'Parking')
+            setServiceRoom(serv2)
+        }
+        if(pillowChecked == true) {
+            setServiceRoom(prevState => {
+                return [...new Set([...prevState, 'Pillow'])]
+            })
+        }
+        if(pillowChecked == false) {
+            const serv3 = serviceRoom.filter(item => item != 'Pillow')
+            setServiceRoom(serv3)
+        }
     }
-*/
+
+    
+    useEffect(() => {
+        handleChangeService()
+    },[breakFastChecked, parkingChecked, pillowChecked])
+    console.log(serviceRoom, 'service Room');
+
 
    useEffect(() => {
         dispatch(actFetchRoomById(Number(param.idRoom)))
@@ -201,16 +226,26 @@ const DetailPage = () => {
 
             <form className='detail__right'>
 
-                <span className='detail__right--price'><b>${room.price}</b>/night</span>
+                <span className='detail__right--price'><b>${room?.price}</b>/night</span>
                 
                 <div className='detail__right--checking'>
                     <div className='detail__right--checking-input'>
                         <label>Check in</label>
-                        <input type="date" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)}/>
+                        <ReactDatePicker 
+                            selected={checkInDate}
+                            minDate={new Date()}
+                            onChange={handleCheckInDate}
+                            placeholderText={"dd/mm/yyyy"}
+                        />
                     </div>
                     <div className='detail__right--checking-input'>
                         <label>Check out</label>
-                        <input type="date" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)}/>
+                        <ReactDatePicker
+                            selected={checkOutDate}
+                            minDate={checkInDate}
+                            onChange={handleCheckOutDate}
+                            placeholderText={"dd/mm/yyyy"}
+                        />
                     </div>
                 </div>
                 <div className='detail__right--checkbox'>
@@ -245,8 +280,8 @@ const DetailPage = () => {
                     <span className='heading'>Price</span>
                     <div className='detail__right--price-box-desc'>
                         <div className='detail__right--price-box-desc-detail'>
-                            <span>{date} night</span>
-                            <span>${moneyDay||0}</span>
+                            <span>{date || 0} night</span>
+                            <span>${moneyDay || 0}</span>
                         </div>  
                         {
                             breakFastChecked && 
@@ -262,7 +297,7 @@ const DetailPage = () => {
                             (
                                 <div className='detail__right--price-box-desc-detail'>
                                     <span>Parking</span>
-                                    <span>${pakingMoney}</span>
+                                    <span>${parkingMoney}</span>
                                 </div>  
                             )
                         }
@@ -289,7 +324,16 @@ const DetailPage = () => {
             </form>
             <div className='confirm'>
                 {
-                    isBooking && (<Confirm setIsBooking={setIsBooking} setOpenModel={setOpenModel}/>)
+                    isBooking && 
+                    (<Confirm setIsBooking={setIsBooking}
+                        setOpenModel={setOpenModel}
+                        checkInDate={checkInDate}
+                        checkOutDate={checkOutDate}
+                        roomId={param}
+                        customerId={user.id}
+                        serviceRoom={serviceRoom}
+                        totalBill={totalBill}
+                    />)
                 }
             </div> 
             

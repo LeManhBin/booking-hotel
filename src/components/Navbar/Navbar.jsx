@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { actLogout } from '../../redux/features/usersSlice/usersSlice'
 import './Navbar.scss'
 
 const Navbar = () => {
+  const [logoutAdmin, setLogoutAdmin] = useState(false)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    dispatch(actLogout())
+    navigate('/login-layout')
+  }
   return (
     <div className='navbar'>
       <div className="wrapper">
@@ -35,7 +45,13 @@ const Navbar = () => {
             <img src="https://kiemtientuweb.com/ckfinder/userfiles/images/anh-rose/rose-2.jpg" 
             alt="" 
             className='avatar'
+            onClick={() => setLogoutAdmin(!logoutAdmin)}
             />
+            {
+              logoutAdmin && (<span className='logout' onClick={handleLogout}>
+              Log Out
+          </span>)
+            }
           </div>
         </div>
       </div>

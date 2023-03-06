@@ -84,6 +84,7 @@
         .availability__form {
             width: 100%;
             flex-wrap: wrap;
+            gap: 10px;
 
             &--input { 
                 
@@ -96,6 +97,7 @@
     
                 .number {
                     width: 90px;
+                    padding: 7px 10px;
                 }
             }
     

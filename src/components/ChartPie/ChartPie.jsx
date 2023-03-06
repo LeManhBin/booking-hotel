@@ -4,12 +4,8 @@ import { useSelector } from 'react-redux';
 
 const ChartPie = () => {
     
-    // const roomTypeStandard = useSelector((status) => status.rooms.allRooms.filter(type => type.typeRoom === 'Standard'))
+
     const allRoomsState = useSelector((status) => status.rooms.allRooms)
-    // const roomTypeSuperior = useSelector((status) => status.rooms.allRooms.filter(type => type.typeRoom === 'Superior'))
-    // const roomTypeDeluxe = useSelector((status) => status.rooms.allRooms.filter(type => type.typeRoom === 'Deluxe'))
-    // const roomTypeSuite = useSelector((status) => status.rooms.allRooms.filter(type => type.typeRoom === 'Suite'))
-    // const roomTypeConnecting = useSelector((status) => status.rooms.allRooms.filter(type => type.typeRoom === 'Connecting'))
    
     const computedRoomType = useMemo(()=>{
       return allRoomsState.reduce((prevObj, room)=>{
@@ -17,7 +13,9 @@ const ChartPie = () => {
           return {
             ...prevObj,
             standard: (prevObj.standard || 0) + 1
+            
           }
+ 
         }
         if(room.typeRoom === 'Superior'){
           return {
@@ -148,7 +146,7 @@ const ChartPie = () => {
     };
   return (
     <div className='pie'>
-        <Pie {...config} />;
+        <Pie {...config} />
     </div>
   )
 }

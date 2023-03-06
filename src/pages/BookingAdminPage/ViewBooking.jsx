@@ -59,9 +59,9 @@ const ViewBooking = () => {
                       <tr>
                         <td>{booking.id}</td>
                         <td>{room.roomName}</td>
-                        <td>{user.userName}</td>
-                        <td>{user.email}</td>
-                        <td>{user.phoneNumber}</td>
+                        <td>{booking.name}</td>
+                        <td>{booking.email}</td>
+                        <td>{booking.phone}</td>
                         <td>{booking.checkIn}</td>
                         <td>{booking.checkOut}</td>
                         <td>
@@ -69,7 +69,7 @@ const ViewBooking = () => {
                                 booking.service
                             }
                         </td>
-                        <td>{booking.totalPayment}</td>
+                        <td>${booking.totalPayment}</td>
                         <td>{booking.createAt}</td>
                       </tr>
                   </tbody>

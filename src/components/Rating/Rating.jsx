@@ -8,7 +8,6 @@ const Rating = ({param}) => {
     const dispatch = useDispatch()
     const {evaluate} = useSelector((state) => state.rooms)
     const {users, isLogged} = useSelector((state) => state.users)
-    console.log(isLogged,'check isLOg');
     const computedEvaluate = (evaluate)=>{
         const  result= []
         for(let cmt of evaluate){

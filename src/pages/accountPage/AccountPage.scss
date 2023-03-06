@@ -34,6 +34,7 @@
             align-items: center;
             gap: 20px;
 
+            
             button {
                 padding: 5px 10px;
                 cursor: pointer;
@@ -46,20 +47,91 @@
             .account-act {
                 position: relative;
 
-                .logout-btn {
-                    position: absolute;
-                    bottom: -30px;
-                    left: -35%;
-                    background-color: #eee;
-                    padding: 5px 10px;
-                    font-size: 12px;
-                    font-weight: bold;
-                    border-radius: 4px;
-                    cursor: pointer;
+                .ul-action {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+    
+                    li {
+                        white-space: nowrap;
+                        width: 65px;
+                    }
+
+                    .logout-btn:nth-child(2) {
+                        position: absolute;
+                        bottom: -60px;
+                        left: 50%;
+                        background-color: #eee;
+                        padding: 5px 10px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        text-align: center;
+                        transform: translate(-50%);
+                    }
+                    .logout-btn {
+                        position: absolute;
+                        bottom: -30px;
+                        left: 50%;
+                        background-color: #eee;
+                        padding: 5px 10px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        text-align: center;
+                        transform: translate(-50%);
+                    }
                 }
+
+                
                 
             }
             
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .account {
+        padding: 0px 30px;
+    
+        &__img {
+            width: 70px;
+            height: 70px;
+            
+            img {
+
+            }
+        }
+    
+        &__detail {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+    
+            h3 {
+                font-size: 18px;
+            }
+    
+            &--action {
+                
+    
+                button {
+                  
+                }
+    
+                .account-act {
+                   
+    
+                    .logout-btn {
+                      
+                    }
+                    
+                }
+                
+            }
         }
     }
 }

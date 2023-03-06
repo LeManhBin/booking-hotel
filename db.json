@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "userName": "Lê Mạnh Bin",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD////8/Pz5+fn19fWgoKCvr6/w8PDs7OxQUFAaGhoEBATd3d3Nzc3n5+dnZ2fZ2dlVVVXFxcUlJSUODg6JiYl+fn5bW1siIiKmpqZJSUnQ0NCsrKyZmZkVFRU6Ojpvb28xMTG9vb13d3eRkZEzMzNCQkKamppsbGyLi4uBgYE+Pj79h2aqAAAMNUlEQVR4nNWd6WKqOhSFGQQFERGoWK1V0aqnff/3u+CIkIQMK8Jdv1vlE7Kzp2wMU7fscJW7znzqbRI/HY+N8Tj1k403nTtuPgkH2r/f0PfRg3DiHrLNIjXoSheb7OBqBdVDaA1Xn/PljoH2qmS5/1wNLS3XooMwcqYJN9xTi+lppQESTTjMtxJwT03zIfiKoITBl6eEd9XyM0BeFI4wdDMfwFfqO/sKYdcFIrTj/QKEd9ViG9uYS4MQDpwNFO+q3QmyJAGE0V4D3lXbqHtCazLVxlcqU35Y1QiteKaVr5SnyKhEOMm085WaxR0RRvrv313LVQeEoT77QtJZ2guQJBycsNtfu74PknuHHOFEx/7Xph+55ShDOHjvA/rUWeY2ShC6HfGV+nwD4UjvDt+mTNglFyXM+QN3PUpyrYT2R8d8peZiSR0hwlHXN/CqhdCTKkKYd432kKuF0Dp0zVXRB783zk046NaG1pVxb428hKOfrplqSngXIyfhpGsggjidOD7CfNw1DklfOMLPrlkoOqEI+wpoGGsM4bprDob+IQj74KjRNVcn7DcgB2IbYZ8f0as+1Aj7a2SeajE3bML/A2DbpsEk7E8wwRZz62cRTnrpyZDEcuAYhKOur1tADDecTjjoWzTBUjISJ7T6FQ+2aUYNiamEfYroeUTdFmmE/xcz+hTNoFIINViZZLZ38rhU7sxnMi1FLaJYGzKhDU4bzg6TuikYTdbg+uqCnEclE0Ld7cwNyc1c1iiHQp",
-      "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
-      "phoneNumber": "0394194501",
-      "id": 1,
-      "email": "llemanhbin@gmail.com",
-      "password": "$2a$10$RlT0bF7oi2RsZlE566JfyemUy/juPm7f7jqMi70mziK3LJqYpgVk."
-    },
-    {
       "email": "pacmam2k1@gmail.com",
       "password": "$2a$10$o8mqDtkZmCEJ8Br1qB.wueQj5NNGRYZciSWlA4ibQtOFCOBEQzpw.",
       "userName": "ádsad",
@@ -48,6 +39,26 @@
       "id": 5,
       "email": "reak@gmail.com",
       "password": "$2a$10$8DLTVG42oZY/jqip0emwxuQoL2GNRMtpMEP1Q.0bAwgT6zaOXmHZu"
+    },
+    {
+      "userName": "Sơn Tùng MTP",
+      "image": "data:image/jpeg;base64,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",
+      "address": "Buôn Hiao 2, Xã Eahiao, Eahleo, Đắk Lắk",
+      "phoneNumber": "0394194501",
+      "isAdmin": false,
+      "id": 6,
+      "email": "user1@gmail.com",
+      "password": "$2a$10$xkOmT0leh6dakO89MEJDtuEjOZYY3PHQ7bLTS5q3Ampf.1AcjD..6"
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$1cHOvhkR9ke4WClq0NZp/ek/pp7LpF/pVRjwe8HZatJ0BeO2UjjPq",
+      "userName": "lemanhbin",
+      "isAdmin": true,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD////8/Pz5+fn19fWgoKCvr6/w8PDs7OxQUFAaGhoEBATd3d3Nzc3n5+dnZ2fZ2dlVVVXFxcUlJSUODg6JiYl+fn5bW1siIiKmpqZJSUnQ0NCsrKyZmZkVFRU6Ojpvb28xMTG9vb13d3eRkZEzMzNCQkKamppsbGyLi4uBgYE+Pj79h2aqAAAMNUlEQVR4nNWd6WKqOhSFGQQFERGoWK1V0aqnff/3u+CIkIQMK8Jdv1vlE7Kzp2wMU7fscJW7znzqbRI/HY+N8Tj1k403nTtuPgkH2r/f0PfRg3DiHrLNIjXoSheb7OBqBdVDaA1Xn/PljoH2qmS5/1wNLS3XooMwcqYJN9xTi+lppQESTTjMtxJwT03zIfiKoITBl6eEd9XyM0BeFI4wdDMfwFfqO/sKYdcFIrTj/QKEd9ViG9uYS4MQDpwNFO+q3QmyJAGE0V4D3lXbqHtCazLVxlcqU35Y1QiteKaVr5SnyKhEOMm085WaxR0RRvrv313LVQeEoT77QtJZ2guQJBycsNtfu74PknuHHOFEx/7Xph+55ShDOHjvA/rUWeY2ShC6HfGV+nwD4UjvDt+mTNglFyXM+QN3PUpyrYT2R8d8peZiSR0hwlHXN/CqhdCTKkKYd432kKuF0Dp0zVXRB783zk046NaG1pVxb428hKOfrplqSngXIyfhpGsggjidOD7CfNw1DklfOMLPrlkoOqEI+wpoGGsM4bprDob+IQj74KjRNVcn7DcgB2IbYZ8f0as+1Aj7a2SeajE3bML/A2DbpsEk7E8wwRZz62cRTnrpyZDEcuAYhKOur1tADDecTjjoWzTBUjISJ7T6FQ+2aUYNiamEfYroeUTdFmmE/xcz+hTNoFIINViZZLZ38rhU7sxnMi1FLaJYGzKhDU4bzg6TuikYTdbg+uqCnEclE0Ld7cwNyc1c1iiHQp",
+      "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
+      "phoneNumber": "0365160470",
+      "id": 7
     }
   ],
   "rooms": [
@@ -56,13 +67,19 @@
       "roomName": "Room 1",
       "typeRoom": "Standard",
       "price": 100,
+      "wasSet": [
+        {
+          "fromDate": "2023-03-01T17:00:00.000Z",
+          "todate": "2023-03-08T17:00:00.000Z"
+        }
+      ],
       "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageSecondary": [
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 3,
+      "status": 1,
       "size": 2,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -71,13 +88,14 @@
       "roomName": "Room 2",
       "typeRoom": "Standard",
       "price": 100,
+      "wasSet": [],
       "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageSecondary": [
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 3,
+      "status": 1,
       "size": 1,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -86,6 +104,7 @@
       "roomName": "Room 3",
       "typeRoom": "Superior",
       "price": 200,
+      "wasSet": [],
       "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageSecondary": [
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -100,7 +119,8 @@
       "id": 5,
       "roomName": "Room 5ddsadasdsa",
       "typeRoom": "deluxe",
-      "price": "2999",
+      "price": "299",
+      "wasSet": [],
       "imageMain": "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
       "imageSecondary": [
         "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -108,7 +128,7 @@
         "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
       ],
       "status": 1,
-      "size": "40",
+      "size": 1,
       "description": "đây là 1 đoạn mô tả về căn phòng này update",
       "": "Room 5a"
     },
@@ -117,6 +137,7 @@
       "roomName": "Room 7",
       "typeRoom": "Connecting",
       "price": 500,
+      "wasSet": [],
       "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageSecondary": [
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -139,141 +160,224 @@
   ],
   "bookings": [
     {
-      "roomId": 3,
+      "checkIn": "2023-03-08T17:00:00.000Z",
+      "checkOut": "2023-03-09T17:00:00.000Z",
       "customerId": 5,
-      "checkIn": "2023-02-28",
-      "checkOut": "2023-03-03",
-      "daysIn": 3,
-      "totalPayment": 7999,
-      "service": [
-        "Breakfast",
-        "Parking",
-        "Extra pillow"
-      ],
-      "createAt": "2023-02-28",
+      "roomId": 1,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [],
+      "totalPayment": 126,
+      "createAt": "2023-03-04T12:29:46.485Z",
       "id": 1
     },
     {
-      "roomId": 3,
+      "checkIn": "2023-03-07T17:00:00.000Z",
+      "checkOut": "2023-03-17T17:00:00.000Z",
       "customerId": 5,
-      "checkIn": "2023-02-28",
-      "checkOut": "2023-03-03",
-      "daysIn": 3,
-      "totalPayment": 7999,
+      "roomId": 5,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
       "service": [
-        "Breakfast",
+        "Break Fast",
         "Parking",
-        "Extra pillow"
+        "Pillow"
       ],
-      "createAt": "2023-02-28",
+      "totalPayment": 3150,
+      "createAt": "2023-03-04T12:39:21.000Z",
       "id": 2
     },
     {
-      "roomId": 3,
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
       "customerId": 5,
-      "checkIn": "2023-02-28",
-      "checkOut": "2023-03-03",
-      "daysIn": 3,
-      "totalPayment": 7999,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
       "service": [
-        "Breakfast",
-        "Extra pillow"
+        "Pillow",
+        "Break Fast",
+        "Parking"
       ],
-      "createAt": "2023-02-28",
-      "id": 3
-    }
-  ],
-  "evaluate": [
-    {
-      "idUser": 3,
-      "idRoom": 7,
-      "content": "Sugoi tuyệt vời...",
-      "id": 1
-    },
-    {
-      "idUser": 3,
-      "idRoom": 5,
-      "content": "Sugoi tuyệt vời2...",
-      "id": 2
-    },
-    {
-      "idUser": 3,
-      "idRoom": 5,
-      "content": "Sugoi tuyệt vời3...",
+      "totalPayment": 3390,
+      "createAt": "2023-03-06T03:55:32.038Z",
       "id": 3
     },
     {
-      "idUser": 3,
-      "idRoom": 7,
-      "content": "Sugoi tuyệt vời4...",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-04-06T03:55:32.038Z",
       "id": 4
     },
     {
-      "idUser": 4,
-      "idRoom": 7,
-      "content": "Sugoi tuyệt vời5...",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-05-06T03:55:32.038Z",
       "id": 5
     },
     {
-      "idUser": 5,
-      "idRoom": 5,
-      "content": "tuyệt vời ông mặt trời",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-06-06T03:55:32.038Z",
       "id": 6
     },
     {
-      "idRoom": 5,
-      "content": "",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-07-06T03:55:32.038Z",
       "id": 7
     },
     {
-      "idRoom": 5,
-      "content": "",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-08-06T03:55:32.038Z",
       "id": 8
     },
     {
-      "idUser": 5,
-      "idRoom": 7,
-      "content": "haha đây là test cmt",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-09-06T03:55:32.038Z",
       "id": 9
     },
     {
-      "idRoom": 7,
-      "content": "r",
+      "checkIn": "2023-03-06T17:00:00.000Z",
+      "checkOut": "2023-03-21T17:00:00.000Z",
+      "customerId": 5,
+      "roomId": 3,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Break Fast",
+        "Parking"
+      ],
+      "totalPayment": 3390,
+      "createAt": "2023-10-06T03:55:32.038Z",
       "id": 10
-    },
-    {
-      "idRoom": 7,
-      "content": "lừa r",
-      "id": 11
-    },
-    {
-      "idRoom": 7,
-      "content": "lừa r",
-      "id": 12
-    },
+    }
+
+    
+  ],
+  "evaluate": [
     {
       "idUser": 5,
       "idRoom": 5,
-      "content": "o",
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "idRoom": 5,
-      "content": "o lal",
-      "id": 15
-    },
-    {
-      "idRoom": 5,
       "content": "a",
-      "id": 16
+      "id": 1
     },
     {
-      "idRoom": 7,
-      "content": "đ",
-      "id": 17
+      "idUser": 5,
+      "idRoom": 1,
+      "content": "aaa",
+      "id": 2
+    },
+    {
+      "idUser": 5,
+      "idRoom": 1,
+      "content": "aaa",
+      "id": 3
+    },
+    {
+      "idUser": 5,
+      "idRoom": 1,
+      "content": "aaa",
+      "id": 4
+    },
+    {
+      "idUser": 5,
+      "idRoom": 1,
+      "content": "aaa",
+      "id": 5
+    },
+    {
+      "content": "aaazz",
+      "id": 6
+    },
+    {
+      "idUser": 5,
+      "idRoom": 1,
+      "content": "a",
+      "id": 7
+    }
+  ],
+  "bookingDetail": [
+    {
+      "id": 1,
+      "idBooking":1
+    },
+    {
+      "id": 2,
+      "idBooking":2
     }
   ]
 }

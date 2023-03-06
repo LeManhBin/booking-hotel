@@ -5,6 +5,8 @@ import { fetchAllDataBookings, fetchBookingById, fetchCreateBooking, fetchDelete
 const initialState = {
     allBookings: [],
     booking: {},
+    allBookingsDetail: [],
+    bookingDetail: {},
     isLoading: false,
     isLoadingCreate: false,
     errors: {},

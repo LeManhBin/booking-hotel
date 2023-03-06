@@ -23,6 +23,10 @@ const AccountPage = () => {
       dispatch(actLogout())
       navigate('/login-layout')
     }
+
+    const handleAdminPage = () => {
+      navigate('/admin')
+    }
     useEffect(() => {
       dispatch(actFetchUserByID(user.id))
     },[])
@@ -38,7 +42,12 @@ const AccountPage = () => {
               <div className='account-act'>
                 <button className='act-account' onClick={() => handleToggle()}><i className="fa-solid fa-ellipsis"></i></button>
                 {
-                  isShow && <span className='logout-btn' onClick={handleLogout}>Logout</span>
+                  isShow && <ul className='ul-action'>
+                    <li className='logout-btn' onClick={handleLogout}>Log Out</li>
+                    {
+                      user.isAdmin && <li className='logout-btn' onClick={handleAdminPage}>Admin</li>
+                    }
+                  </ul>
                 }
               </div>
             </div>

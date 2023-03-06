@@ -38,12 +38,8 @@ const LoginPage = () => {
 
 
   useEffect(() => {
-    if(isLogged === true && user.isAdmin === true) {
-      toast.success('Đăng nhập admin')
-      navigate('/admin')
-    }else if(isLogged === true && user.isAdmin === false) {
+    if(isLogged === true) {
       navigate('/')
-      toast.success('Đăng Nhập thành công')
     }
   },[isLogged, navigate])
  

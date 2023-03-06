@@ -2,15 +2,18 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { actDeleteBooking, actFetchAllBookings } from '../../redux/features/bookingsSlice/bookingsSlice'
+import { actFetchAllUsers } from '../../redux/features/usersSlice/usersSlice'
 
 const BookingAdminPage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const {allBookings} = useSelector((state) => state.bookings)
-  console.log('booking', allBookings);
+  const {users} = useSelector((state) => state.users)
+
 
   useEffect(() => {
     dispatch(actFetchAllBookings())
+    dispatch(actFetchAllUsers())
   },[])
 
   const handleDelete = (booking) => {
@@ -20,6 +23,20 @@ const BookingAdminPage = () => {
   const handleViewBookingDetail = (booking) => {
     navigate(`/admin/booking/${booking.id}`)
   }
+
+  
+  const computedEvaluate = (allBookings)=>{
+    const  result= []
+    for(let cmt of allBookings){
+        const existedUser = users.find(user => user.id === cmt.customerId)
+        if(existedUser) {
+            result.push(existedUser)
+        }
+    }
+      return result 
+  } 
+  const userBooking = computedEvaluate(allBookings)
+  console.log(userBooking,'aaaaaaaaaaaaaaaaaaa');
   return (
     <div className='manage-container'>
       <div className="top">
@@ -47,10 +64,10 @@ const BookingAdminPage = () => {
                           <tr key={booking.id}>
                             <td>{index + 1}</td>
                             <td>{booking.id}</td>
-                            <td>{booking.customerId}</td>
+                            <td>{userBooking[index]?.userName}</td>
                             <td>{booking.checkIn}</td>
                             <td>{booking.checkOut}</td>
-                            <td>{booking.totalPayment}</td>
+                            <td>${booking.totalPayment}</td>
                             <td>
                                 <button className='edit-btn' onClick={() => handleViewBookingDetail(booking)}>View</button>
                                 <button className='delete-btn' onClick={() => handleDelete(booking)}>Delete</button>

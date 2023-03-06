@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import { fetchAllEvaluate, fetchCreateEvaluate, fetchDataEvaluateByIdRoom } from "../../../apis/evaluateApi";
 import { deleteRoomById, fetchAllDataRoom, fetchCreateRoom, fetchDataRoomById, fetchSearchRoomBySize, fetchUpdateRoomById } from "../../../apis/roomsApi";
 
@@ -116,6 +117,7 @@ export const actUpdateRoom = (id, room) => async (dispatch) => {
         dispatch(actUpdateLoadingCreate(true));
         await fetchUpdateRoomById(id, room);
         await dispatch(actFetchAllRoom());
+        toast.success('Update Success')
     } catch (error) {
         console.log(error);
     } finally {

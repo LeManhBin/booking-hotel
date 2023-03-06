@@ -50,6 +50,18 @@
                     cursor: pointer;
                     font-size: 20px;
                 }
+
+                .logout {
+                    background-color: #B2B2B2;
+                    padding: 4px 10px;
+                    border-radius: 4px;
+                    font-weight: bold;
+                    position: absolute;
+                    bottom: -100%;
+                    left: -50%;
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
             }
 
             .avatar {

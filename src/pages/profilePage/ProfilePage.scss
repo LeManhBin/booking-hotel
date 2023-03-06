@@ -88,3 +88,70 @@
             }
         }
 }
+@media (max-width: 440px) {
+    .profile {
+
+    
+        form {
+    
+            .profile__top {
+               
+        
+                &--img {
+                    width: 80px;
+                    height: 80px;
+                   
+                    
+                    img {
+                       
+                    }
+                }
+        
+                .profile__top--action {
+                    
+        
+                    input {
+                       
+                    }
+        
+                    button {
+                        
+                    }
+                }
+            }
+        
+            .profile__bottom {
+                width: 90%;
+                margin-top: 20px;
+        
+        
+                    .form-input {
+                        display: flex;
+                        flex-direction: column;
+        
+                        label {
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+        
+                        input {
+                            padding: 5px 10px;
+                            border: 1px solid #eee;
+                            border-radius: 5px;
+                            outline: none;
+                        }
+                    }
+        
+                    button {
+                        padding: 5px 10px;
+                        border: none;
+                        font-weight: bold;
+                        color: #fff;
+                        background-color: #B99B6B;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+    }
+}

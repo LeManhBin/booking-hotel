@@ -1,0 +1,38 @@
+.detail-booking {
+    margin-bottom: 500px;
+    margin-top: 100px;
+    padding: 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+    .detail-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #eee; 
+        padding: 30px;
+        border-radius: 10px;
+
+        h3 {
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .detail-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .title {
+                font-size: 15px;
+                font-weight: bold;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}

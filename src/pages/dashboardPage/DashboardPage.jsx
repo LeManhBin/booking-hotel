@@ -63,12 +63,12 @@ const DashboardPage = () => {
             <Widget type={"revenue"} totalMoney={totalMoney}/>
         </div>
         <div className='chart'>
-            {/* <div className='chart__pie'>
+            <div className='chart__pie'>
                 <ChartPie/>
             </div>
             <div className='chart__column'>
                 <ChartColumn/>
-            </div> */}
+            </div>
         </div>
         <div className='table'>
             <TableDataStatusRoom allRooms={allRooms}/>

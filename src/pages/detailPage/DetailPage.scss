@@ -196,6 +196,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 10px;
 
                 &-input {
                     display: flex;
@@ -550,15 +551,29 @@
     
                 &--checking {
                     display: flex;
-                    justify-content: space-between;
                     align-items: center;
+                    justify-content: space-between;
     
+                    .detail__right--checking-input {
+                        width: 100%;
 
+                        .react-datepicker-wrapper {
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
                 }
 
    
             }
     
+        }
+        .rating {
+            padding: 0 20px;
+            width: 100%;
+            margin-bottom: 500px;
         }
     }    
 }

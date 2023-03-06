@@ -31,6 +31,7 @@ import ViewUser from './pages/usersAdminPage/ViewUser';
 import SearchPage from './pages/searchPage/SearchPage';
 import ViewBooking from './pages/BookingAdminPage/ViewBooking';
 import "react-datepicker/dist/react-datepicker.css"
+import DetailBookingPage from './pages/DetailBookingPage/DetailBookingPage';
 function App() {
   const dispatch = useDispatch()
   const accessToken = localStorage.getItem(KEY_ACCESS_TOKEN) || null
@@ -49,6 +50,7 @@ function App() {
             <Route index element={<HomePage/>}/>
             <Route path='rooms' element={<RoomsPage/>}/>
             <Route path='rooms/:idRoom'element={<DetailPage/>}/>
+            <Route path='detail-booking' element={<DetailBookingPage/>}/>
             <Route path='room/search/:size' element={<SearchPage/>}/>
             <Route path='reservation' element={<ReservationPage/>}/>
             <Route path='about' element={<AboutPage/>}/>
@@ -65,6 +67,8 @@ function App() {
           <Route path='/admin' element={<AdminLayout/>}>
               <Route index element={<DashboardPage/>}/>
               <Route path='rooms' element={<RoomAdminPage/>}/>
+              <Route path='account' element={<AccountPage/>}/>
+              <Route path='account/profile' element={<ProfilePage/>}/>
               <Route path='add-new-room' element={<AddNewRoom/>} />
               <Route path='users' element={<UsersAdminPage/>}/>
               <Route path='users/:idUser' element={<ViewUser/>}/>

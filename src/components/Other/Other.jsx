@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Other.scss'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { testimonialData } from '../../constants/testimonialData';
+import { useDispatch, useSelector } from 'react-redux';
+import { actFetchAllEvaluate } from '../../redux/features/roomsSlice/roomsSlice';
+import { actFetchAllUsers } from '../../redux/features/usersSlice/usersSlice';
 const Other = () => {
     const settings = {
         dots: true,
@@ -14,6 +16,27 @@ const Other = () => {
         autoplay: true,
         autoplaySpeed: 2000
       };
+
+      const dispatch = useDispatch()
+      const {evaluate} = useSelector((state) => state.rooms)
+      const {users} = useSelector((state) => state.users)
+      const computedEvaluate = (evaluate)=>{
+        const  result= []
+        for(let cmt of evaluate){
+            const existedUser = users.find(user => user.id === cmt.idUser)
+            if(existedUser) {
+                result.push(existedUser)
+            }
+        }
+         return result 
+    }
+    
+    const userCmt = computedEvaluate(evaluate)
+
+      useEffect(() => {
+        dispatch(actFetchAllEvaluate())
+        dispatch(actFetchAllUsers())
+      },[])
   return (
     <div className='other-container'>
         <div className='event-container'>
@@ -49,15 +72,15 @@ const Other = () => {
             <div className='testimonial'>
                 <Slider {...settings}>
                     {
-                        testimonialData.map(data => {
+                        evaluate.slice(0,5).map((data, index) => {
                             return(
-                                <div key={data.id}>
+                                <div key={data.id} className="testimonial-flex">
                                     <div className='testimonial__slide'>
-                                        {data.detail}
+                                        {data.content}
                                     </div>
                                     <div className='testimonial__cus'>
-                                        <img src={data.img} alt="" />
-                                        <span className='name'>{data.name}</span>
+                                        <img src={userCmt[index]?.image} alt="" />
+                                        <span className='name'>{userCmt[index]?.userName}</span>
                                     </div>
                                 </div>
                             )

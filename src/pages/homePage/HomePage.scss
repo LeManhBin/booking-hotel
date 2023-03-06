@@ -12,6 +12,7 @@
             align-items: center;
             gap: 10px;
             margin-top: 100px;
+            white-space: nowrap;
     
             &__primary {
                 font-size: 30px;
@@ -48,6 +49,10 @@
         .card {
             margin-top: 70px;
             overflow: hidden;
+
+            .slick-list {
+                padding: 15px 0px;
+            }
             
         }
     
