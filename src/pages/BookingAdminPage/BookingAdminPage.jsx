@@ -36,11 +36,15 @@ const BookingAdminPage = () => {
       return result 
   } 
   const userBooking = computedEvaluate(allBookings)
-  console.log(userBooking,'aaaaaaaaaaaaaaaaaaa');
+
+  const handleBookingConfirmPage = () => {
+    navigate("/admin/booking-confirm")
+  }
   return (
     <div className='manage-container'>
       <div className="top">
-          <h2>Quản lý booking</h2>
+          <h3>Quản lý booking</h3>
+          <button onClick={handleBookingConfirmPage}>Đã xác nhận</button>
       </div>
       <div className='main'>
             <div className='main__table'>
@@ -53,13 +57,20 @@ const BookingAdminPage = () => {
                       <th>Name User</th>
                       <th>Check In</th>
                       <th>Check Out</th>
+                      <th>Status</th>
                       <th>Amount Paid</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     {
-                      allBookings.map((booking, index) => {
+                      allBookings.filter(data => data.status !== 2).map((booking, index) => {
+                        let status = '';
+                        if(booking.status === 1) {
+                          status = "Chờ xác nhận"
+                        }else {
+                          status = "Đã xác nhận"
+                        }
                         return(
                           <tr key={booking.id}>
                             <td>{index + 1}</td>
@@ -67,6 +78,7 @@ const BookingAdminPage = () => {
                             <td>{userBooking[index]?.userName}</td>
                             <td>{booking.checkIn}</td>
                             <td>{booking.checkOut}</td>
+                            <td>{status}</td>
                             <td>${booking.totalPayment}</td>
                             <td>
                                 <button className='edit-btn' onClick={() => handleViewBookingDetail(booking)}>View</button>

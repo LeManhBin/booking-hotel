@@ -41,7 +41,7 @@ const AddNewUser = () => {
         dispatch(actRegister(formState))
         navigate('/admin/users')
         toast.success('Add data successfully!')
-        console.log(formState);
+     
       }
 
       const handleBack = () => {

@@ -2,24 +2,33 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { Column } from '@ant-design/plots';
 import { useDispatch, useSelector } from 'react-redux';
 import { actFetchAllBookings } from '../../redux/features/bookingsSlice/bookingsSlice';
+import moment from 'moment';
 
 const ChartColumn = () => {
     const dispatch = useDispatch()
     const {allBookings} = useSelector((state) => state.bookings)
     console.log(allBookings ,'allboking');
-    const [filter, setFilter] = useState("");
+  
+    const [dateFrom, setDateFrom] = useState("")
+    const [dateTo, setDateTo] = useState("")
+    const [data, setData] = useState([])
+
 
     
-    console.log(filter, 'filter');
+   
+    // const filterRevenueByDate = () => {
+    //   const result = {}
+    //   allBookings.filter(data => {
+    //     const bookingDate = moment(data.createAt);
+    //     return bookingDate.isBetween(dateFrom, dateTo, null, []);
+    //   }).reduce((total, data) => total + data.totalPayment, 0)
+     
+    // }
+   
+
     useEffect(() => {
       dispatch(actFetchAllBookings())
     },[])
-
-    allBookings.map(data => {
-      const haha = new Date(data.createAt).getMonth()
-
-      console.log(haha, 'haha');
-    })
 
 
     const computedBookingTypeYear = useMemo(() => {
@@ -99,90 +108,151 @@ const ChartColumn = () => {
           }
         }
       }, {})
+    }, [allBookings]) 
+
+    const computedBookingTypeToDay = useMemo(() => {
+      return allBookings.reduce((prevObj, booking) => {
+        const now = new Date().getDate()
+        const date = new Date(booking.createAt).getDate()
+        const nowMonth = new Date().getMonth()
+        const nowYear = new Date().getFullYear()
+        const year = new Date(booking.createAt).getFullYear()
+        const month = new Date(booking.createAt).getMonth()
+        if(date === now && month === nowMonth && year === nowYear) {
+          return {
+            ...prevObj,
+            homNay: (prevObj.homNay || 0) + booking.totalPayment
+          }
+        }
+        return prevObj
+      },{})
     }, [allBookings])
 
-    // const computedBookingTypeToDay = useMemo(() => {
-    //   return allBookings.reduce((prevObj, booking) => {
-    //     const now = new Date().getDate()+1
-    //     console.log(now ,'now');
-    //     const date = new Date(booking.createAt).getDate()
-    //     console.log(date,'date');
-    //     if(date === now) {
-    //       return {
-    //         ...prevObj,
-    //         HomNay: (prevObj.HomNay || 0) + booking.totalPayment
-    //       }
-    //     }
-    //   },{})
-    // }, [allBookings])
-
-    
-    // const computedBookingTypeMonth = useMemo(() => {
-    //   return allBookings.reduce((prevObj, booking) => {
-    //     const nowMonth = new Date().getMonth()+1
-    //     console.log(nowMonth ,'nowM');
-    //     const month = new Date(booking.createAt).getMonth()
-    //     console.log(date,'month');
-    //     if(month === nowMonth) {
-    //       return {
-    //         ...prevObj,
-    //         ThangNay: (prevObj.ThangNay || 0) + booking.totalPayment
-    //       }
-    //     }
-    //   },{})
-    // }, [allBookings])
+    const computedBookingTypeMonth = useMemo(() => {
+      const nowMonth = new Date().getMonth()
+      const nowYear = new Date().getFullYear()
+      const dailySales = {}
+      allBookings.forEach(sale => {
+        const year = new Date(sale.createAt).getFullYear()
+        const month = new Date(sale.createAt).getMonth()
+        const date = sale.createAt
+        
+        if(month === nowMonth && year === nowYear) {
+          if (dailySales[date]) {
+            dailySales[date] += sale.totalPayment;
+          } 
+          else {
+            dailySales[date] = sale.totalPayment;
+          }
+        }
+      });
+      return dailySales
+    }, [allBookings])
 
 
-    const data = [
-        {
-          type: 'January',
-          sales: computedBookingTypeYear.Thang1,
-        },
-        {
-          type: 'February',
-          sales: computedBookingTypeYear.Thang2,
-        },
-        {
-          type: 'March',
-          sales: computedBookingTypeYear.Thang3,
-        },
-        {
-          type: 'April',
-          sales: computedBookingTypeYear.Thang4,
-        },
-        {
-          type: 'May',
-          sales: computedBookingTypeYear.Thang5,
-        },
-        {
-          type: 'June',
-          sales: computedBookingTypeYear.Thang6,
-        },
-        {
-          type: 'July',
-          sales: computedBookingTypeYear.Thang7,
-        },
-        {
-          type: 'August',
-          sales: computedBookingTypeYear.Thang8,
-        },
-        {
-          type: 'September',
-          sales: computedBookingTypeYear.Thang9,
-        },
-        {
-          type: 'October',
-          sales: computedBookingTypeYear.Thang10,
-        },
-        {
-          type: 'November',
-          sales: computedBookingTypeYear.Thang11,
-        },
-        {
-          type: 'December',
-          sales: computedBookingTypeYear.Thang12,
-        },
-      ];
+ 
+      const filterRevenueByDate = () => {
+        const result = {}
+        allBookings.filter(data => {
+          const bookingDate = moment(data.createAt);
+          return bookingDate.isBetween(dateFrom, dateTo, null, []);
+        }).forEach(sale => {
+          const date = sale.createAt
+          if (result[date]) {
+            result[date] += sale.totalPayment;
+          }
+          else {
+            result[date] = sale.totalPayment;
+          }
+        })
+        const _data = []
+        for(let key in result) {
+          _data.push({type: key, sales: result[key]})
+        }   
+       setData(_data)
+      }
+      // const resultFilter = filterRevenueByDate()
+      // console.log(resultFilter, 'ressadas');
+     
+      // const handleSubmitFilter = (e) => {
+      //   e.preventDefault()
+        
+      // }
+     useEffect(() => {
+      filterRevenueByDate()
+     },[dateTo])
+      const handleFilterByDate = (filter) =>{
+        let result = []
+        switch (filter) {
+          case 'homnay':
+            result = [{
+              type: 'hÔM nAY',
+              sales: computedBookingTypeToDay?.homNay
+            }]
+            
+            break;
+          case 'thangnay':
+            for(let key in computedBookingTypeMonth) {
+              result.push({type: key, sales: computedBookingTypeMonth[key]})
+            }   
+            break;
+          case 'namnay':
+            result = [
+              {
+                type: 'January',
+                sales: computedBookingTypeYear?.Thang1,
+              },
+              {
+                type: 'February',
+                sales: computedBookingTypeYear?.Thang2,
+              },
+              {
+                type: 'March',
+                sales: computedBookingTypeYear?.Thang3,
+              },
+              {
+                type: 'April',
+                sales: computedBookingTypeYear?.Thang4,
+              },
+              {
+                type: 'May',
+                sales: computedBookingTypeYear?.Thang5,
+              },
+              {
+                type: 'June',
+                sales: computedBookingTypeYear?.Thang6,
+              },
+              {
+                type: 'July',
+                sales: computedBookingTypeYear?.Thang7,
+              },
+              {
+                type: 'August',
+                sales: computedBookingTypeYear?.Thang8,
+              },
+              {
+                type: 'September',
+                sales: computedBookingTypeYear?.Thang9,
+              },
+              {
+                type: 'October',
+                sales: computedBookingTypeYear?.Thang10,
+              },
+              {
+                type: 'November',
+                sales: computedBookingTypeYear?.Thang11,
+              },
+              {
+                type: 'December',
+                sales: computedBookingTypeYear?.Thang12,
+              },
+            ];
+            break;
+          default:
+            break;
+        }
+        setData(result)
+      }
 
       const config = {
         data,
@@ -212,13 +282,25 @@ const ChartColumn = () => {
       };
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
-      <div className='filter-statistical'>
-          <select name="" id="" onChange={(e) => setFilter(e.target.value)} style={{outline: 'none', padding: '5px 10px', border: '1px solid #eee', borderRadius: '5px'}}>
+      <div className='filter-statistical' style={{display: 'flex', alignItems: 'flex-end', gap: '20px'}}>
+          <form style={{display: 'flex', alignItems: 'flex-end', gap: '10px'}}>
+            <div className='input-form' style={{display:'flex', flexDirection: 'column'}}>
+              <label htmlFor="" style={{fontSize: '12px'}}>From</label>
+              <input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} style={{outline: 'none', padding: '5px 10px', border: 'none', borderRadius: '5px'}}/>
+            </div>
+            <div className='input-form' style={{display:'flex', flexDirection: 'column'}}>
+            <label htmlFor="" style={{fontSize: '12px'}}>To</label>
+              <input type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)}  style={{outline: 'none', padding: '5px 10px', border: 'none', borderRadius: '5px'}}/>
+            </div>
+            {/* <button  style={{border: 'none', padding: '5px 10px', cursor: 'pointer', backgroundColor: '#fff', borderRadius: '5px'}}>Filter</button> */}
+          </form>
+          <select name="" id="" onChange={(e) => handleFilterByDate(e.target.value)} style={{outline: 'none', padding: '5px 10px', border: '1px solid #eee', borderRadius: '5px'}}>
             <option value="homnay">Hôm Nay</option>
             <option value="thangnay">Tháng Này</option>
             <option value="namnay">Năm Nay</option>
           </select>
       </div>
+
       <Column {...config} />
     </div>
   )

@@ -24,7 +24,7 @@ const LoginPage = () => {
   const {error} = useSelector((state) => state.users)
 
 
-  console.log(user, 'user');
+
   const handlePageRegister = () => {
     navigate("/login-layout/register")
   }

@@ -41,7 +41,7 @@ const EmployeePage = () => {
   }
 
   const handleShowUpdate = (employee) => {
-    console.log(employee);
+
     setIsUpdate(true)
     setIdTemp(employee.id)
   }

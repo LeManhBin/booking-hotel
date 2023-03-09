@@ -25,7 +25,6 @@ export const actFetchAllRoom = createAsyncThunk('rooms/actFetchAllRoom', async (
 
 export const actFetchRoomById = createAsyncThunk(`rooms/actFetchRoomById`, async (id) => {
     const room = await fetchDataRoomById(id)
-    console.log(room,'room in redux');
     return room
 })
 
@@ -88,7 +87,6 @@ export const roomsSlice = createSlice({
 });
 
 export const actCreateRoom = (room) => async (dispatch) => {
-    console.log(room, "room");
     try {
         dispatch(actUpdateLoadingCreate(true));
         await fetchCreateRoom(room);

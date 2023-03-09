@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { actCreateBooking } from '../../redux/features/bookingsSlice/bookingsSlice'
 import { actFetchRoomById, actUpdateRoom } from '../../redux/features/roomsSlice/roomsSlice'
 import './Confirm.scss'
@@ -14,24 +15,32 @@ const initialValueForm = {
     phone: '',
     service: [],
     totalPayment: 0,  
-    createAt: new Date()
+    status: 1,
+    createAt: ''
 }
 const Confirm = ({setIsBooking, checkInDate, checkOutDate, roomId, customerId, serviceRoom, totalBill}) => {
+    const navigate = useNavigate()
+    const moment = require('moment');
     const [formState, setFormState] = useState(initialValueForm)
     const dispatch = useDispatch()
     const idCuaPhong = Number(roomId.idRoom)
     const {room} = useSelector((state) => state.rooms)
+    const dateStr = new Date();
+    const formattedCreateAt = moment(dateStr).format("YYYY-MM-DD");
+    const formattedCheckIn = moment(checkInDate).format("YYYY-MM-DD");
+    const formattedCheckOut = moment(checkOutDate).format("YYYY-MM-DD");
     const handleChange = (e) => {
         const {name, value} = e.target
         setFormState({
             ...formState,
             [name]: value,
-            checkIn: checkInDate,
-            checkOut: checkOutDate,
+            checkIn: formattedCheckIn,
+            checkOut: formattedCheckOut,
             customerId: customerId,
             roomId: idCuaPhong,
             service: serviceRoom,
             totalPayment: totalBill,
+            createAt: formattedCreateAt
         })
     }
     useEffect(() => {
@@ -47,6 +56,7 @@ const Confirm = ({setIsBooking, checkInDate, checkOutDate, roomId, customerId, s
             status: 2,
         }
         dispatch(actUpdateRoom(idCuaPhong, newRoom))
+        navigate('/')
     }
   return (
     <div className='confirm-container'>

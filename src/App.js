@@ -32,6 +32,7 @@ import SearchPage from './pages/searchPage/SearchPage';
 import ViewBooking from './pages/BookingAdminPage/ViewBooking';
 import "react-datepicker/dist/react-datepicker.css"
 import DetailBookingPage from './pages/DetailBookingPage/DetailBookingPage';
+import BookingConfirm from './pages/BookingAdminPage/BookingConfirm';
 function App() {
   const dispatch = useDispatch()
   const accessToken = localStorage.getItem(KEY_ACCESS_TOKEN) || null
@@ -77,6 +78,7 @@ function App() {
               <Route path='add-new-employee' element={<AddNewEmployee/>} />
               <Route path='booking' element={<BookingAdminPage/>}/>
               <Route path='booking/:idBooking' element={<ViewBooking/>}/>
+              <Route path='booking-confirm' element={<BookingConfirm/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

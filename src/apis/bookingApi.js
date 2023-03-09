@@ -16,6 +16,11 @@ export const fetchBookingById = async (id) => {
     return res.data;
 }
 
+export const fetchUpdateBookingById = async (id, payload) => {
+    const res = await axios.put(`${BE_URL}bookings/${id}`, payload)
+    return res.data;
+}
+
 export const fetchCreateBooking = async (booking) => {
     const res = await axios.post(`${BE_URL}bookings`, booking)
     return res.data;

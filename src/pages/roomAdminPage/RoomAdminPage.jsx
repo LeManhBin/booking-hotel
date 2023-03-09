@@ -24,7 +24,7 @@ const RoomAdminPage = () => {
   const currentItems = allRooms.slice(firstPageIndex, lastPageIndex);
 
   const totalPage = allRooms.length
-  console.log(allRooms);
+
   
   useEffect(() => {
     dispatch(actFetchAllRoom())

@@ -6,7 +6,7 @@ import { actFetchAllEmployee, actUpdateEmployee } from '../../redux/features/emp
 import './Popup.scss'
 const UpdatePopup = ({setIsUpdate, idTemp}) => {
     const employee = useSelector((state) => state.employee.allEmployee.find(employee => employee.id === idTemp))
-    console.log('id', idTemp);
+
     const dispatch = useDispatch();
 
     const [inputs, setInputs] = useState(employee)

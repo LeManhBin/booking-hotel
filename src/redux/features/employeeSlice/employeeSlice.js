@@ -43,7 +43,7 @@ export const employeeSlice = createSlice({
         builder.addCase(actFetchAllEmployee.fulfilled, (state, action) => {
             state.isLoading = false;
             state.allEmployee = action.payload || [];
-            console.log(action.payload, 'action');
+     
         });
 
         builder.addCase(actFetchEmployeeById.fulfilled,  (state, action) => {

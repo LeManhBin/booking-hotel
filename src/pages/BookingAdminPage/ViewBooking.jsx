@@ -12,8 +12,6 @@ const ViewBooking = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const param = useParams()
-    console.log(room, 'aaaa');
-    console.log(Number(param.idBooking), 'PARAM');
     useEffect(() => {
 
         dispatch(actFetchBookingById(Number(param.idBooking)))

@@ -78,7 +78,7 @@ const DetailPage = () => {
         setBreakFastMoney(breakFastTotal)
         setParkingMoney(parkingTotal)
         setTotalBill(bill)
-        console.log(dayDiff);
+
     }
     
     
@@ -141,7 +141,7 @@ const DetailPage = () => {
     useEffect(() => {
         handleChangeService()
     },[breakFastChecked, parkingChecked, pillowChecked])
-    console.log(serviceRoom, 'service Room');
+
 
 
    useEffect(() => {

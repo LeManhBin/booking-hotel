@@ -1,12 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import { fetchAllDataBookings, fetchBookingById, fetchCreateBooking, fetchDeleteBooking } from "../../../apis/bookingApi";
+import { fetchAllDataBookings, fetchBookingById, fetchCreateBooking, fetchDeleteBooking, fetchUpdateBookingById } from "../../../apis/bookingApi";
 
 const initialState = {
     allBookings: [],
     booking: {},
-    allBookingsDetail: [],
-    bookingDetail: {},
     isLoading: false,
     isLoadingCreate: false,
     errors: {},
@@ -76,6 +74,19 @@ export const actDeleteBooking = (id) => async (dispatch) => {
         dispatch(actUpdateLoadingCreate(false))
     }
 }
+export const actUpdateBooking = (id, booking) => async (dispatch) => {
+    try {
+        dispatch(actUpdateLoadingCreate(true));
+        await fetchUpdateBookingById(id, booking);
+        await dispatch(actFetchAllBookings());
+        toast.success('Update Success')
+    } catch (error) {
+        console.log(error);
+    } finally {
+        dispatch(actUpdateLoadingCreate(false))
+    }
+}
+
 
 export const {actUpdateLoadingCreate} = bookingsSlice.actions
 export default bookingsSlice.reducer

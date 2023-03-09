@@ -8,8 +8,6 @@ const ViewUser = () => {
     const navigate = useNavigate()
     const param = useParams()
     const {user} = useSelector((state) => state.users)
-    console.log(user,'selector');
-    console.log(param);
     useEffect(() => {
       dispatch(actFetchUserByID(Number(param.idUser))) 
     },[])

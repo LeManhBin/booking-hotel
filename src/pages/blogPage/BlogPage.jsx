@@ -9,6 +9,7 @@ const BlogPage = () => {
         <div className='blog-banner'>
             <BannerDefine title={"Blog"}/>
         </div>
+        
     </div>
   )
 }

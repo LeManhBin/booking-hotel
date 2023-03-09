@@ -59,7 +59,7 @@ const HomePage = () => {
     ]
   };
   const {allRooms, isLoading} = useSelector((state) => state.rooms)
-  const activeCards = allRooms.filter((room) => room.status === 1);
+  const activeCards = allRooms.filter((room) => room.status !== 3);
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(actFetchAllRoom())

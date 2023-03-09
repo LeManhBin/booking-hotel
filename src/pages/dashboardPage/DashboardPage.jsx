@@ -27,8 +27,9 @@ const DashboardPage = () => {
 
   const handleTotalMoney = () => {
     let total = 0
-    for(let i = 0; i < allBookings.length; i++) {
-      total += allBookings[i].totalPayment
+    const data = allBookings.filter(data => data.status !== 1)
+    for(let i = 0; i < data.length; i++) {
+      total += data[i].totalPayment
     }
     setTotalMoney(total)
   }
@@ -71,7 +72,7 @@ const DashboardPage = () => {
             </div>
         </div>
         <div className='table'>
-            <TableDataStatusRoom allRooms={allRooms}/>
+            <TableDataStatusRoom allRooms={allRooms} allBookings={allBookings}/>
         </div>
     </div>
   )

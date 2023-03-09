@@ -9,7 +9,7 @@ const ChartPie = () => {
    
     const computedRoomType = useMemo(()=>{
       return allRoomsState.reduce((prevObj, room)=>{
-        if(room.typeRoom === 'Standard'){
+        if(room.typeRoom === 'standard'){
           return {
             ...prevObj,
             standard: (prevObj.standard || 0) + 1
@@ -17,25 +17,25 @@ const ChartPie = () => {
           }
  
         }
-        if(room.typeRoom === 'Superior'){
+        if(room.typeRoom === 'superior'){
           return {
             ...prevObj,
             superior: (prevObj.superior || 0) + 1
           }
         }
-        if(room.typeRoom === 'Deluxe'){
+        if(room.typeRoom === 'deluxe'){
           return {
             ...prevObj,
             deluxe: (prevObj.deluxe || 0) + 1
           }
         }
-        if(room.typeRoom === 'Suite'){
+        if(room.typeRoom === 'suite'){
           return {
             ...prevObj,
             suite: (prevObj.suite || 0) + 1
           }
         }
-        if(room.typeRoom === 'Connecting'){
+        if(room.typeRoom === 'connecting'){
           return {
             ...prevObj,
             connecting: (prevObj.connecting || 0) + 1
@@ -60,7 +60,6 @@ const ChartPie = () => {
         return `<div style="${textStyleStr};font-size:${scale}em;line-height:${scale < 1 ? 1 : 'inherit'};">${text}</div>`;
     }
 
-    console.log(computedRoomType);
 
     const data = [
         {

@@ -88,7 +88,7 @@ export const usersSlice = createSlice({
 
         builder.addCase(actFetchLogin.fulfilled, (state, action) => {
             const {user, accessToken } = action.payload;
-            console.log(user, 'user');
+      
             if(accessToken) {
                 state.user = user
                 state.accessToken = accessToken;
@@ -97,7 +97,6 @@ export const usersSlice = createSlice({
                 localStorage.setItem(KEY_ACCESS_TOKEN, accessToken)
             }
             state.isLoading = false
-            console.log('login',  action.payload);
             toast.success('Loggin thành công')
         })
         //register

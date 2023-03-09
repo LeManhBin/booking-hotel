@@ -9,7 +9,7 @@ const Header = () => {
   const [isShowFavorite, setIsShowFavorite] = useState(false)
   const {isLogged, user} = useSelector((state) => state.users)
   // const {user} = useSelector((state) => state.user)
-  console.log('user bên user', user);
+
   const handleToggle = () => {
     setToggle(!toggle)
   }

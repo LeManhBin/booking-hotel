@@ -12,7 +12,6 @@ const AccountPage = () => {
       setIsShow(!isShow)
     }
  
-    console.log(user,'user bên account');
     const handleChangeProfilePage = () => {
         navigate(`/account/profile`)
     }

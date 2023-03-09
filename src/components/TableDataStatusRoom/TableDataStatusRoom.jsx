@@ -1,37 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
+import { fetchDataRoomById } from '../../apis/roomsApi'
+import { actUpdateBooking } from '../../redux/features/bookingsSlice/bookingsSlice'
 import { actFetchRoomById, actFetchAllRoom, actUpdateRoom } from '../../redux/features/roomsSlice/roomsSlice'
 import Pagination from '../Pagination/Pagination'
 import RoomStatus from '../RoomStatus/RoomStatus'
 import './TableDataStatusRoom.scss'
-const TableDataStatusRoom = ({allRooms}) => {
+const TableDataStatusRoom = ({ allBookings}) => {
     const dispatch = useDispatch()
     const [currentPage, setCurrentPage] = useState(1);
     const [limit, setLimit] = useState(4)
     const lastPageIndex = currentPage * limit;
     const firstPageIndex = lastPageIndex - limit;
-    const currentItems = allRooms.filter(item => item.status == 2).slice(firstPageIndex, lastPageIndex);
-    const totalPage = allRooms.filter(item => item.status == 2).length
+    const currentItems = allBookings.filter(item => item.status === 1).slice(firstPageIndex, lastPageIndex);
+    const totalPage = allBookings.filter(item => item.status == 2).length
+    const {room} = useSelector((state) => state.rooms)
 
-
-
-
-    const handleConfirm = (room) => {
+    console.log(room, 'pppppppppppppppp');
+    const handleConfirm = (data) => {
+        fetchUpdateRoomStatus(data.roomId)
         const newRoom = {
             ...room,
             status: 3
         }
-        dispatch(actUpdateRoom(room.id, newRoom))
+        const newBooking = {
+            ...data,
+            status: 2
+        }
+        dispatch(actUpdateBooking(data.id, newBooking))
+        dispatch(actUpdateRoom(data.roomId, newRoom))
+    }
+
+    const fetchUpdateRoomStatus =  (id) => {
+         dispatch(actFetchRoomById(id))
     }
     
-    
-
-    useEffect(() => {
-        dispatch(actFetchAllRoom())
-    },[])
-
-
 
   return (
     <div className='table__container' >
@@ -41,39 +45,33 @@ const TableDataStatusRoom = ({allRooms}) => {
                 <th>STT</th>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Image</th>
-                <th>Type</th>
-                <th>Size</th>
-                <th>Price</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Room</th>
+                <th>Payment</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             {
-                currentItems.map((room, index) => {
+                currentItems.map((data, index) => {
                 let status
-                if(room.status === 1) {
-                   status = <RoomStatus text={"Còn Trống"} className={'isEmpty'}/>
-                }else if(room.status === 2) {
-                    status = <RoomStatus text={"Chờ Xác Nhận"} className={'booked'}/>
-                }else if(room.status === 3) {
-                    status = <RoomStatus text={"Đang Được Dùng"} className={'isUse'}/>
+                if(data.status === 1) {
+                   status = <RoomStatus text={"Chờ xác nhận"} className={'booked'}/>
                 }
                     return (
-                        <tr key={room.id}>
+                        <tr key={data.id}>
                             <td>{index + 1}</td>
-                            <td>{room.id}</td>
-                            <td>{room.roomName}</td>
-                            <td className='img'>
-                                <img src={room.imageMain} alt="" />
-                            </td>
-                            <td>{room.typeRoom}</td>
-                            <td>{room.size}</td>
-                            <td>${room.price}</td>
+                            <td>{data.id}</td>
+                            <td>{data.name}</td>
+                            <td>{data.email}</td>
+                            <td>{data.phone}</td>
+                            <td>{data.roomId}</td>
+                            <td>${data.totalPayment}</td>
                             <td>{status}</td>
                             <td>
-                                <button className='edit-btn' onClick={() => handleConfirm(room)} >Xác Nhận</button>
+                                <button className='edit-btn' onClick={() => handleConfirm(data)} >Xác Nhận</button>
                             </td>
                         </tr>
                     )

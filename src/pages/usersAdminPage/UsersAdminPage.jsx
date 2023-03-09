@@ -10,7 +10,7 @@ const UsersAdminPage = () => {
   const navigate = useNavigate()
   const {users} = useSelector((state) => state.users)
   const {user} = useSelector((state) => state.users)
-  console.log(user,'from admin user');
+
   useEffect(() => {
     dispatch(actFetchAllUsers())
   },[])

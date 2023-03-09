@@ -7,7 +7,6 @@ import './Comment.scss'
 const Comment = ({param}) => {
 
   const {user} = useSelector((state) => state.users)
-  console.log(user.id, 'user');
   const idRoom = Number(param.idRoom)
 
   const dispatch = useDispatch()
@@ -27,7 +26,6 @@ const Comment = ({param}) => {
   
   const handleComment = (e) => {
     e.preventDefault()
-    console.log(formCmt,'assssssss');
     dispatch(actCreateEvaluate(formCmt))
   }
 

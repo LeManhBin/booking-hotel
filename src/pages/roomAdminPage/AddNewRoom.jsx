@@ -33,6 +33,7 @@ const AddNewRoom = () => {
       const handleChangeInputForm = (e) => {
         const {name, value} = e.target;
         
+    
         setFormState({
           ...formState,
           [name]: value
