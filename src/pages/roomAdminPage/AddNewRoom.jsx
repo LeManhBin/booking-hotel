@@ -33,7 +33,6 @@ const AddNewRoom = () => {
       const handleChangeInputForm = (e) => {
         const {name, value} = e.target;
         
-    
         setFormState({
           ...formState,
           [name]: value
@@ -42,9 +41,13 @@ const AddNewRoom = () => {
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(actCreateRoom(formState))
-        navigate('/admin/rooms')
-        toast.success('Thêm thành công')
+        if(!formState.roomName || !formState.imageMain || !formState.imageSecondary || !formState.price || !formState.description) {
+            toast.warning('Please enter all fields')
+        }else {
+            dispatch(actCreateRoom(formState))
+            navigate('/admin/rooms')
+            toast.success('Thêm thành công')
+        }
       }
 
       const handleBack = () => {

@@ -37,10 +37,14 @@ const AddNewUser = () => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        setFormState(initialFormValue)
-        dispatch(actRegister(formState))
-        navigate('/admin/users')
-        toast.success('Add data successfully!')
+        if(!formState.userName || !formState.email || !formState.password || !formState.image || !formState.address || !formState.phoneNumber) {
+          toast.warning('Please enter all fields')
+        }else {
+          setFormState(initialFormValue)
+          dispatch(actRegister(formState))
+          navigate('/admin/users')
+          toast.success('Add data successfully!')
+        }
      
       }
 

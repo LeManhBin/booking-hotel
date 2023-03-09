@@ -7,7 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { actFetchAllEvaluate } from '../../redux/features/roomsSlice/roomsSlice';
 import { actFetchAllUsers } from '../../redux/features/usersSlice/usersSlice';
+import { actFetchAllBlog } from '../../redux/features/blogSlice/blogSlice';
 const Other = () => {
+    const {allBlog} = useSelector((state) => state.blogs)
+
+    useEffect(() => {
+        dispatch(actFetchAllBlog())
+    },[])
     const settings = {
         dots: true,
         infinite: true,
@@ -41,30 +47,24 @@ const Other = () => {
     <div className='other-container'>
         <div className='event-container'>
             <h3 className='title'>Upcoming Events</h3>
-            <div className='event'>
-                <div className='event__calendar'>
-                    <span>27</span>
-                    <span>0ct</span>
-                </div>
-                <div className='event__desc'>
-                    <h4 className='event__desc--title'>Host a Family Party</h4>
-                    <div className='event__desc--detail'>
-                        When you host a party or family reunion, the special celebrations let you strengthen bonds with those you hold...
-                    </div>
-                </div>
-            </div>
-            <div className='event'>
-                <div className='event__calendar'>
-                    <span>10</span>
-                    <span>Jan</span>
-                </div>
-                <div className='event__desc'>
-                    <h4 className='event__desc--title'>Other</h4>
-                    <div className='event__desc--detail'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste commodi reiciendis fugit qui quia ut, non omnis dignissimos minima...
-                    </div>
-                </div>
-            </div>
+            {
+                allBlog.slice(0,2).map(data => {
+                    return(
+                        <div className='event' key={data.id}>
+                            <div className='event__calendar'>
+                                <span>27</span>
+                                <span>0ct</span>
+                            </div>
+                            <div className='event__desc'>
+                                <h4 className='event__desc--title'>{data.title}</h4>
+                                <div className='event__desc--detail'>
+                                   {data.content}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })
+            }
             <p className='event-link'><Link to={"/blog"}>Read All Event</Link></p>
         </div>
         <div className='testimonial-container'>

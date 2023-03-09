@@ -29,9 +29,14 @@ const UpdatePopup = ({setIsUpdate,idTemp}) => {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        dispatch(actUpdateRoom(inputs.id, inputs))
-        toast.success('Update thành công')
-        setIsUpdate(false)
+        if(!inputs.roomName || !inputs.imageMain || !inputs.imageSecondary || !inputs.price || !inputs.description){
+            toast.warning('Please enter all fields')
+        }else {
+            dispatch(actUpdateRoom(inputs.id, inputs))
+            toast.success('Update thành công')
+            setIsUpdate(false)
+        }
+        
     }
   return (
     <div className='update'>

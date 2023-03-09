@@ -38,6 +38,12 @@ const Sidebar = () => {
                         <span>Employee</span>
                     </li>
                 </Link>
+                <Link to='/admin/blog' className='text-style'>
+                    <li>
+                        <i className="fa-brands fa-blogger"></i>
+                        <span>Blog</span>
+                    </li>
+                </Link>
                 <Link to='/admin/booking' className='text-style'>
                     <li>
                         <i className="fa-solid fa-bookmark"></i>

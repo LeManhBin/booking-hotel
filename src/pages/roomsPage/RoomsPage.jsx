@@ -20,7 +20,6 @@ const RoomsPage = () => {
   const firstPageIndex = lastPageIndex - limit;
 
   const activeCards = allRooms.filter((room) => room.status !== 3);
-
   const currentItems = activeCards.slice(firstPageIndex, lastPageIndex);
 
   const totalPage = allRooms.length

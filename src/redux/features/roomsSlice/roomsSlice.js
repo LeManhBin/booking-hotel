@@ -91,7 +91,7 @@ export const actCreateRoom = (room) => async (dispatch) => {
         dispatch(actUpdateLoadingCreate(true));
         await fetchCreateRoom(room);
         dispatch(actFetchAllRoom())
-
+        toast.success('Add new room success')
         
     } catch (error) {
         console.log(error);
@@ -104,6 +104,7 @@ export const actDeleteRoom = (id) => async (dispatch) => {
     try {
         await deleteRoomById(id)
         dispatch(actFetchAllRoom())
+        toast.success('Delete Success')
     } catch (error) {
         console.log(error);
     } finally {

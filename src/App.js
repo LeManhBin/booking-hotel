@@ -33,6 +33,9 @@ import ViewBooking from './pages/BookingAdminPage/ViewBooking';
 import "react-datepicker/dist/react-datepicker.css"
 import DetailBookingPage from './pages/DetailBookingPage/DetailBookingPage';
 import BookingConfirm from './pages/BookingAdminPage/BookingConfirm';
+import BlogDetailPage from './pages/blogDetail/BlogDetailPage';
+import BlogAdminPage from './pages/BlogAdminPage/BlogAdminPage';
+import AddBlog from './pages/BlogAdminPage/AddBlog';
 function App() {
   const dispatch = useDispatch()
   const accessToken = localStorage.getItem(KEY_ACCESS_TOKEN) || null
@@ -56,6 +59,7 @@ function App() {
             <Route path='reservation' element={<ReservationPage/>}/>
             <Route path='about' element={<AboutPage/>}/>
             <Route path='blog' element={<BlogPage/>}/>
+            <Route path='blog/:id' element={<BlogDetailPage/>}/>
             <Route path='contact' element={<ContactPage/>}/>
             <Route path='cart-booking' element={<CartPage/>}/>
             <Route path='account' element={<AccountPage/>}/>
@@ -76,6 +80,8 @@ function App() {
               <Route path='add-new-user' element={<AddNewUser/>} />
               <Route path='employee' element={<EmployeePage/>}/>
               <Route path='add-new-employee' element={<AddNewEmployee/>} />
+              <Route path='blog' element={<BlogAdminPage/>}/>
+              <Route path='add-new-blog' element={<AddBlog/>}/>
               <Route path='booking' element={<BookingAdminPage/>}/>
               <Route path='booking/:idBooking' element={<ViewBooking/>}/>
               <Route path='booking-confirm' element={<BookingConfirm/>}/>
