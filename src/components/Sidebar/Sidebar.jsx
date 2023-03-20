@@ -50,6 +50,12 @@ const Sidebar = () => {
                         <span>Booking</span>
                     </li>
                 </Link>      
+                <Link to='/admin/config' className='text-style'>
+                    <li>
+                        <i className="fa-solid fa-bookmark"></i>
+                        <span>Config</span>
+                    </li>
+                </Link>   
             </ul>
         </div>
     </div>

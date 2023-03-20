@@ -34,30 +34,30 @@ const AddBlog = () => {
 
   return (
     <div className='addnew-container'>
-    <div className='top'>
-        <h3>Add new employee</h3>
-        <button onClick={handleBack}>Back</button>
+        <div className='top'>
+            <h3>Add new Blog</h3>
+            <button onClick={handleBack}>Back</button>
+        </div>
+        <div className='main__form'>
+            <form onSubmit={handleSubmit}>
+                <div className="form-input">
+                    <label>Title</label>
+                    <input type="text" required placeholder='title' name='title' value={blogState.title} onChange={handleOnChange}/>
+                </div>
+                <div className="form-input">
+                    <label>Image</label>
+                    <input type="text" required name='image' value={blogState.image} onChange={handleOnChange}/>
+                </div>
+                <div className="form-input">
+                    <label>Content</label>
+                    <textarea cols="30" rows="10" name='content' value={blogState.content} onChange={handleOnChange}></textarea>
+                </div>
+                <div className='form-btn'>
+                <button type='submit'>Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div className='main__form'>
-        <form onSubmit={handleSubmit}>
-            <div className="form-input">
-                <label>Title</label>
-                <input type="text" required placeholder='title' name='title' value={blogState.title} onChange={handleOnChange}/>
-            </div>
-            <div className="form-input">
-                <label>Image</label>
-                <input type="text" required name='image' value={blogState.image} onChange={handleOnChange}/>
-            </div>
-            <div className="form-input">
-                <label>Content</label>
-                <textarea cols="30" rows="10" name='content' value={blogState.content} onChange={handleOnChange}></textarea>
-            </div>
-            <div className='form-btn'>
-            <button type='submit'>Submit</button>
-            </div>
-        </form>
-    </div>
-</div>
   )
 }
 

@@ -11,6 +11,7 @@ const BlogPage = () => {
   const {allBlog} = useSelector((state) => state.blogs)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const [dataBlog, setDataBlog] = useState([])
   const [searchTerm, setSearchTerm] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +19,8 @@ const BlogPage = () => {
 
   const lastPageIndex = currentPage * limit;
   const firstPageIndex = lastPageIndex - limit;
-  let currentItems = allBlog.slice(firstPageIndex, lastPageIndex);
+
+  // let currentItems = allBlog.slice(firstPageIndex, lastPageIndex);
 
   const totalPage = allBlog.length
 
@@ -26,20 +28,19 @@ const BlogPage = () => {
     dispatch(actFetchAllBlog())
   },[])
 
+ 
+
   const handleShowBlogDetail = (id) => {
     navigate(`/blog/${id}`)
   }
 
 
   const handleFilterBlog = () => {
-    return currentItems = allBlog.filter((blog) => {
+    return allBlog.filter((blog) => {
       return blog.title.toLowerCase().includes(searchTerm.toLowerCase());
-    });
+    }).slice(firstPageIndex, lastPageIndex);
   }
 
-  const options = { day: '2-digit', month: 'short' };
-  const today = new Date().toLocaleString('en-US', options);
-  console.log(today);
 
   const handleSearch = () => {
     handleFilterBlog()
@@ -58,12 +59,12 @@ const BlogPage = () => {
               </div>
               <div className='search__blog--input'> 
                   <input type="text" placeholder='Input...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
-                  <button onClick={handleSearch}>Search</button>
+                  {/* <button onClick={handleSearch}>Search</button> */}
               </div>
           </div>
           <div className='blog-content'>
               {
-                currentItems.map((data) => {
+               handleFilterBlog().map((data) => {
                   return(
                     <div className="content-container" key={data.id}>
                       <img src={data.image} alt="" />
@@ -78,7 +79,7 @@ const BlogPage = () => {
                       </div>
                   </div>
                   )
-                })
+                }) 
               }
           </div>
           <div className='room-pagination'>

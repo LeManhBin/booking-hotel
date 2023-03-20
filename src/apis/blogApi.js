@@ -20,3 +20,8 @@ export const fetchDeleteBlog = async (id) => {
     const res = await axios.delete(`${BE_URL}blogs/${id}`);
     return res.data
 }
+
+export const fetchUpdateBlog = async (id, payload) => {
+    const res = await axios.put(`${BE_URL}blogs/${id}`,payload);
+    return res.data
+}

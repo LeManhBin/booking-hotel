@@ -4,6 +4,7 @@ import roomsReducer from "../features/roomsSlice/roomsSlice";
 import employeeReducer from "../features/employeeSlice/employeeSlice";
 import bookingsReducer from "../features/bookingsSlice/bookingsSlice";
 import blogReducer from "../features/blogSlice/blogSlice";
+import bannerReducer from "../features/bannerSlice/bannerSlice"
 export const store = configureStore({
     reducer: {
         users: usersReducer,
@@ -11,6 +12,7 @@ export const store = configureStore({
         employee: employeeReducer,
         bookings: bookingsReducer,
         blogs: blogReducer,
+        banner: bannerReducer,
     },
 });
 

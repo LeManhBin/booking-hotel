@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import { fetchAllDataBlog, fetchCreateBlog, fetchDataBlogById, fetchDeleteBlog } from "../../../apis/blogApi";
+import { fetchAllDataBlog, fetchCreateBlog, fetchDataBlogById, fetchDeleteBlog, fetchUpdateBlog } from "../../../apis/blogApi";
 
 const initialState = {
     allBlog: [],
@@ -54,7 +54,7 @@ export const actCreateBlog = (blog) => async (dispatch) =>{
     }
 }
 
-export const actDeletBlog = (id) => async (dispatch) => {
+export const actDeleteBlog = (id) => async (dispatch) => {
     try {
         await fetchDeleteBlog(id)
         dispatch(actFetchAllBlog())
@@ -66,5 +66,16 @@ export const actDeletBlog = (id) => async (dispatch) => {
     }
 }
 
+export const actUpdateBlog = (id, payload) => async (dispatch) => {
+    try {
+        await fetchUpdateBlog(id, payload)
+        dispatch(actFetchAllBlog())
+        toast.success('Update Success')
+    } catch (error) {
+        
+    }finally {
+        dispatch(actUpdateLoadingCreate(false))
+    }
+}
 export const {actUpdateLoadingCreate} = blogSlice.actions
 export default blogSlice.reducer

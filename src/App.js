@@ -36,6 +36,8 @@ import BookingConfirm from './pages/BookingAdminPage/BookingConfirm';
 import BlogDetailPage from './pages/blogDetail/BlogDetailPage';
 import BlogAdminPage from './pages/BlogAdminPage/BlogAdminPage';
 import AddBlog from './pages/BlogAdminPage/AddBlog';
+import UpdateBlog from './pages/BlogAdminPage/UpdateBlog';
+import ConfigPage from './pages/ConfigPage/ConfigPage';
 function App() {
   const dispatch = useDispatch()
   const accessToken = localStorage.getItem(KEY_ACCESS_TOKEN) || null
@@ -81,10 +83,12 @@ function App() {
               <Route path='employee' element={<EmployeePage/>}/>
               <Route path='add-new-employee' element={<AddNewEmployee/>} />
               <Route path='blog' element={<BlogAdminPage/>}/>
+              <Route path='blog-update/:idBlog' element={<UpdateBlog/>} />
               <Route path='add-new-blog' element={<AddBlog/>}/>
               <Route path='booking' element={<BookingAdminPage/>}/>
               <Route path='booking/:idBooking' element={<ViewBooking/>}/>
               <Route path='booking-confirm' element={<BookingConfirm/>}/>
+              <Route path='config' element={<ConfigPage/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

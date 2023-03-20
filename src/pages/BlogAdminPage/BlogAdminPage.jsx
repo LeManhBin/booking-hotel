@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Pagination from '../../components/Pagination/Pagination'
-import { actDeletBlog, actFetchAllBlog } from '../../redux/features/blogSlice/blogSlice'
+import { actDeleteBlog, actFetchAllBlog } from '../../redux/features/blogSlice/blogSlice'
 import './BlogAdminPage.scss'
 const BlogAdminPage = () => {
     const navigate = useNavigate()
@@ -26,7 +26,11 @@ const BlogAdminPage = () => {
     }
 
     const handleDeleteBlog = (id) => {
-        dispatch(actDeletBlog(id))
+        dispatch(actDeleteBlog(id))
+    }
+
+    const handleViewUpdate = (id) => {
+        navigate(`/admin/blog-update/${id}`)
     }
   return (
     <div className='blog-admin-page'>
@@ -43,7 +47,7 @@ const BlogAdminPage = () => {
                         <h3>{blog.title}</h3>
                         <p>{blog.content}</p>
                         <div className='action'>
-                            <button>View</button>
+                            <button onClick={() => handleViewUpdate(blog.id)}>Edit</button>
                             <button onClick={() => handleDeleteBlog(blog.id)}>Delete</button>
                         </div>
                     </div>
