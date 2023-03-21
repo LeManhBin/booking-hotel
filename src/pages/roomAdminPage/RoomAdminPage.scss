@@ -22,6 +22,25 @@
         }
     }
 
+    .search-container {
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+
+        input {
+            padding: 5px 10px;
+            outline: none;
+            border: 1px solid #eee;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        .search-btn {
+            padding: 6px 10px;
+            border-radius: 0px 5px 5px 0px;
+            border: none;
+        }
+
+    }
     .main {
         display: flex;
         gap: 50px;

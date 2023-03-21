@@ -8,7 +8,7 @@ const ChartColumn = () => {
     const dispatch = useDispatch()
     const {allBookings} = useSelector((state) => state.bookings)
     console.log(allBookings ,'allboking');
-  
+    const [toTalMoney, setToTalMoney] = useState(0)
     const [dateFrom, setDateFrom] = useState("")
     const [dateTo, setDateTo] = useState("")
     const [data, setData] = useState([])
@@ -34,77 +34,78 @@ const ChartColumn = () => {
     const computedBookingTypeYear = useMemo(() => {
       return allBookings.reduce((prevObj, booking)=>{
         const Month = new Date(booking.createAt).getMonth()
-
-        if(Month + 1 === 1) {
+        const nowYear = new Date().getFullYear()
+        const Year = new Date(booking.createAt).getFullYear()
+        if(Month + 1 === 1 && nowYear == Year) {
           return {
             ...prevObj,
-            Thang1: (prevObj.Thang1 || 0) + booking.totalPayment
+            Thang1: (prevObj?.Thang1 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 2) {
+        if(Month + 1 === 2 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang2: (prevObj.Thang2 || 0) + booking.totalPayment
+            Thang2: (prevObj?.Thang2 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 3) {
+        if(Month + 1 === 3 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang3: (prevObj.Thang3 || 0) + booking.totalPayment
+            Thang3: (prevObj?.Thang3 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 4) {
+        if(Month + 1 === 4 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang4: (prevObj.Thang4 || 0) + booking.totalPayment
+            Thang4: (prevObj?.Thang4 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 5) {
+        if(Month + 1 === 5 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang5: (prevObj.Thang5 || 0) + booking.totalPayment
+            Thang5: (prevObj?.Thang5 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 6) {
+        if(Month + 1 === 6 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang6: (prevObj.Thang6 || 0) + booking.totalPayment
+            Thang6: (prevObj?.Thang6 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 7) {
+        if(Month + 1 === 7 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang7: (prevObj.Thang7 || 0) + booking.totalPayment
+            Thang7: (prevObj?.Thang7 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 8) {
+        if(Month + 1 === 8 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang8: (prevObj.Thang8 || 0) + booking.totalPayment
+            Thang8: (prevObj?.Thang8 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 9) {
+        if(Month + 1 === 9 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang9: (prevObj.Thang9 || 0) + booking.totalPayment
+            Thang9: (prevObj?.Thang9 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 10) {
+        if(Month + 1 === 10 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang10: (prevObj.Thang10 || 0) + booking.totalPayment
+            Thang10: (prevObj?.Thang10 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 11) {
+        if(Month + 1 === 11 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang11: (prevObj.Thang11 || 0) + booking.totalPayment
+            Thang11: (prevObj?.Thang11 || 0) + booking.totalPayment
           }
         }
-        if(Month + 1 === 12) {
+        if(Month + 1 === 12 && nowYear === Year) {
           return {
             ...prevObj,
-            Thang12: (prevObj.Thang12 || 0) + booking.totalPayment
+            Thang12: (prevObj?.Thang12 || 0) + booking.totalPayment
           }
         }
       }, {})
@@ -121,7 +122,7 @@ const ChartColumn = () => {
         if(date === now && month === nowMonth && year === nowYear) {
           return {
             ...prevObj,
-            homNay: (prevObj.homNay || 0) + booking.totalPayment
+            homNay: (prevObj?.homNay || 0) + booking.totalPayment
           }
         }
         return prevObj

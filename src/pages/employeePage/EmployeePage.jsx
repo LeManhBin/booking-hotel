@@ -5,11 +5,13 @@ import Pagination from '../../components/Pagination/Pagination'
 import { toast } from 'react-toastify'
 import UpdatePopup from './UpdatePopup'
 import { useNavigate } from 'react-router-dom'
+import PopUpDelete from '../../components/PopUpDelete/PopUpDelete'
 
 
 const EmployeePage = () => {
   const [isUpdate, setIsUpdate] = useState(false)
-
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isShowPopUp, setIsShowPopUp] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const {allEmployee,isLoading} = useSelector((state) => state.employee)
@@ -24,6 +26,12 @@ const EmployeePage = () => {
 
   const totalPage = allEmployee.length
 
+
+  const handleFilterBlog = () => {
+    return allEmployee.filter((employee) => {
+      return employee.employeeName.toLowerCase().includes(searchTerm.toLowerCase());
+    }).slice(firstPageIndex, lastPageIndex);
+  }
 
 
   useEffect(() => {
@@ -40,6 +48,11 @@ const EmployeePage = () => {
     toast.success('Delete data successfully!')
   }
 
+  const  handleShowPopUpDelete = (id) => {
+    setIsShowPopUp(true)
+    setIdTemp(id)
+  }
+
   const handleShowUpdate = (employee) => {
 
     setIsUpdate(true)
@@ -49,9 +62,16 @@ const EmployeePage = () => {
 
   return (
     <div className='manage-container'>
+        {
+            isShowPopUp && (<PopUpDelete setIsShowPopUp={setIsShowPopUp} handleDelete={handleDelete} idTemp={idTemp} title={"Bạn có chắc với thao tác này ?"}/>)
+        }
         <div className="top">
             <h2>Quản lý nhân viên</h2>
             <button onClick={handleAddNewPage}>Add New</button>
+        </div>
+        <div className='search-container'>
+            <input type="text" placeholder='Enter title...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+            <button className='search-btn'><i className="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div className='main'>
             <div className='main__table'>
@@ -70,7 +90,7 @@ const EmployeePage = () => {
                   </thead>
                   <tbody>
                     {
-                      currentItems.map((employee, index) => {
+                      handleFilterBlog()?.map((employee, index) => {
                         return(
                           <tr key={employee.id}>
                             <td>{index + 1}</td>
@@ -83,7 +103,7 @@ const EmployeePage = () => {
                             <td>{employee.dateOfBirth}</td>
                             <td>
                                 <button className='edit-btn' onClick={() => handleShowUpdate(employee)}>Edit</button>
-                                <button className='delete-btn' onClick={() => handleDelete(employee.id)}>Delete</button>
+                                <button className='delete-btn' onClick={() => handleShowPopUpDelete(employee.id)}>Delete</button>
                             </td>
                           </tr>
                         )

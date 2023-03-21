@@ -11,6 +11,7 @@ import Rating from '../../components/Rating/Rating'
 import Popup from '../../components/Popup/Popup'
 import ReactDatePicker from 'react-datepicker'
 import { actFetchUserByID } from '../../redux/features/usersSlice/usersSlice'
+import { toast } from 'react-toastify'
 
 
 
@@ -95,10 +96,13 @@ const DetailPage = () => {
     const handleShowConfirm = (e) => {
         e.preventDefault()
         window.scrollTo(0,0)
-        
         handleTinhNgay()
+
         if(isLogged === false) {
             setIsShowPopUp(true)
+        }else if(!checkOutDate) {
+            toast.warning("Vui lòng chọn ngày check in")
+            setIsBooking(false)
         }else {
             setIsBooking(true)
         }

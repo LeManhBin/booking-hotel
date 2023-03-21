@@ -98,6 +98,12 @@
                     }
                 }
             }
+
+            .content-container:nth-child(even) {
+                display: flex;
+                flex-direction: row-reverse;
+                text-align: right;
+            }
         }
     }
 }

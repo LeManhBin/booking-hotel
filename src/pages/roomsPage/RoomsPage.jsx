@@ -22,7 +22,7 @@ const RoomsPage = () => {
   const activeCards = allRooms.filter((room) => room.status !== 3);
   const currentItems = activeCards.slice(firstPageIndex, lastPageIndex);
 
-  const totalPage = allRooms.length
+  const totalPage = activeCards.length
 
   
   useEffect(() => {

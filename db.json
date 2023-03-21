@@ -1,36 +1,6 @@
 {
   "users": [
     {
-      "email": "pacmam2k1@gmail.com",
-      "password": "$2a$10$o8mqDtkZmCEJ8Br1qB.wueQj5NNGRYZciSWlA4ibQtOFCOBEQzpw.",
-      "userName": "ádsad",
-      "isAdmin": false,
-      "image": "",
-      "address": "",
-      "phoneNumber": "",
-      "id": 2
-    },
-    {
-      "email": "q@gmail.com",
-      "password": "$2a$10$y9OAdh79gbPn2VRSIUL4ju9BSATY7mwNJFbUFj8MlxuwezVvFIBXK",
-      "userName": "qưewq",
-      "isAdmin": false,
-      "image": "",
-      "address": "",
-      "phoneNumber": "",
-      "id": 3
-    },
-    {
-      "email": "qqqq@gmaiil.com",
-      "password": "$2a$10$XrMwvTtrePs4y1.GOYFo8uLhb0s9giQlTB7SSTp9PeFB5TsybPQ9W",
-      "userName": "ưqe",
-      "isAdmin": false,
-      "image": "",
-      "address": "",
-      "phoneNumber": "",
-      "id": 4
-    },
-    {
       "userName": "reak1111updateasdas1111",
       "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD////8/Pz5+fn19fWgoKCvr6/w8PDs7OxQUFAaGhoEBATd3d3Nzc3n5+dnZ2fZ2dlVVVXFxcUlJSUODg6JiYl+fn5bW1siIiKmpqZJSUnQ0NCsrKyZmZkVFRU6Ojpvb28xMTG9vb13d3eRkZEzMzNCQkKamppsbGyLi4uBgYE+Pj79h2aqAAAMNUlEQVR4nNWd6WKqOhSFGQQFERGoWK1V0aqnff/3u+CIkIQMK8Jdv1vlE7Kzp2wMU7fscJW7znzqbRI/HY+N8Tj1k403nTtuPgkH2r/f0PfRg3DiHrLNIjXoSheb7OBqBdVDaA1Xn/PljoH2qmS5/1wNLS3XooMwcqYJN9xTi+lppQESTTjMtxJwT03zIfiKoITBl6eEd9XyM0BeFI4wdDMfwFfqO/sKYdcFIrTj/QKEd9ViG9uYS4MQDpwNFO+q3QmyJAGE0V4D3lXbqHtCazLVxlcqU35Y1QiteKaVr5SnyKhEOMm085WaxR0RRvrv313LVQeEoT77QtJZ2guQJBycsNtfu74PknuHHOFEx/7Xph+55ShDOHjvA/rUWeY2ShC6HfGV+nwD4UjvDt+mTNglFyXM+QN3PUpyrYT2R8d8peZiSR0hwlHXN/CqhdCTKkKYd432kKuF0Dp0zVXRB783zk046NaG1pVxb428hKOfrplqSngXIyfhpGsggjidOD7CfNw1DklfOMLPrlkoOqEI+wpoGGsM4bprDob+IQj74KjRNVcn7DcgB2IbYZ8f0as+1Aj7a2SeajE3bML/A2DbpsEk7E8wwRZz62cRTnrpyZDEcuAYhKOur1tADDecTjjoWzTBUjISJ7T6FQ+2aUYNiamEfYroeUTdFmmE/xcz+hTNoFIINViZZLZ38rhU7sxnMi1FLaJYGzKhDU4bzg6TuikYTdbg+uqCnEclE0Ld7cwNyc1c1iiHQp",
       "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
@@ -69,16 +39,6 @@
       "id": 8,
       "email": "a@gmail.com",
       "password": "$2a$10$2Y7f8.OlgqbQqiW/Axbrb.qWLnU35nxULywkcKFqwLuD87tbuM5gG"
-    },
-    {
-      "email": "pa@gmail.com",
-      "password": "$2a$10$FOoqlDyuVKEqEdTxHcKIgut/aeO6ZEr96tqDIYjoMGWHfiQNkH2fu",
-      "userName": "lemanhbinad",
-      "isAdmin": true,
-      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDw8PDw8PDQ8PDxAPDw8PDw8NDw0PFREWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NFQ8PFysfFh0rKy0tNy0rLS0tLSstKy0rLSsrNy0tLTUrKysrLTAtKy0rKystNysrLS0tLSstLSs4K//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAABAgADBAYHBQj/xABDEAACAQIDBAcEBQoFBQAAAAAAAQIDEQQSIQUGMVETMkFhcYGRIlKhsQczcsHRI0JTYmNzkqKy8BQVJDRDRIKTwuH/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIEAwX/xAAgEQEBAAICAgIDAAAAAAAAAAAAAQIRAyEEEjFBFFFx/9oADAMBAAIRAxEAPwDzLAsNYNjLRbEcRrEArsCxY0SwFViWLLAsBW0Sw9gWCksCxZYlgiuwLFjQtgEsCxZYFgEsBoexGgKrAaLbCtAVtAaLGgWAqaBYsaFaASwrRY0BoCtoVosaFaAWxBrAA9yxLD2JYgSxLD2JYCuxLDtEaArsSw9iWKKrEsWNAsAlgWLLAsBXYDRZYoniqSlkdSCnxyuSUrWvwAaxLCwxFOTtGcG+SkmyywCWJYexLAVtCtFjQGgK2hbFjQLAV2A0O0BoCtoVotaFaAqaFaLGhWgEINYgHu2JYZIhAtiWGJYBbAsPYlgEyksPYlgK3EFi2wtgK7GBtTacMOtVmm1dRTtpzb7EZW0MVGhSnVlqoRbsuMn2LzZpeHp1cRWWZdJWqyStrZN9iXYkirJtkYneWtP2aUVFvtjHM/K/4Hj7Qp4lzlUqwqRcnmbyOK/+Hc91t0aGFpxfRxlWavKo0m78lyPWxmAjJZZRUk9LNJo8Lz99R0zxtzuvnOjJS0klJWvd9ZHq7M2/PDyVKs3VpO2WernBf+y7u",
-      "address": "đà nẵng",
-      "phoneNumber": "0394194501",
-      "id": 9
     }
   ],
   "rooms": [
@@ -100,22 +60,6 @@
     },
     {
       "id": 3,
-      "roomName": "Room 3",
-      "typeRoom": "superior",
-      "price": 200,
-      "wasSet": [],
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 5,
       "roomName": "Room 5ddsadasdsa",
       "typeRoom": "deluxe",
       "price": "299",
@@ -126,62 +70,15 @@
         "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1511268594014-0e9d3ea5c33e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zmxhc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 2,
+      "status": 3,
       "size": 1,
       "description": "đây là 1 đoạn mô tả về căn phòng này update"
-    },
-    {
-      "id": 7,
-      "roomName": "Room 7 updae",
-      "typeRoom": "connecting",
-      "price": 500,
-      "wasSet": [],
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "roomName": "room sos",
-      "typeRoom": "standard",
-      "imageMain": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 3,
-      "price": "1000",
-      "description": "xzcxzcxzc",
-      "id": 8
     },
     {
       "id": 9,
       "roomName": "Room 9",
       "typeRoom": "superior",
       "price": 200,
-      "wasSet": [],
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 10,
-      "roomName": "Room 10",
-      "typeRoom": "superior",
-      "price": 500,
       "wasSet": [],
       "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageSecondary": [
@@ -207,22 +104,6 @@
       ],
       "status": 1,
       "size": 2,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 12,
-      "roomName": "Room 12",
-      "typeRoom": "connecting",
-      "price": 1200,
-      "wasSet": [],
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 6,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
     {
@@ -400,22 +281,6 @@
       "status": 1,
       "size": 1,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
-    },
-    {
-      "id": 24,
-      "roomName": "Room 24",
-      "typeRoom": "superior",
-      "price": 200,
-      "wasSet": [],
-      "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageSecondary": [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      ],
-      "status": 1,
-      "size": 1,
-      "description": "đây là 1 đoạn mô tả về căn phòng này"
     }
   ],
   "employee": [
@@ -425,40 +290,180 @@
       "employeeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCGvGuinlbd7GSgV6Yiwv9yQsrFnjk0lle0g&usqp=CAU",
       "dateOfBirth": "01/01/2002",
       "id": 3
+    },
+    {
+      "employeeName": "Lê Mạnh Bin 1",
+      "position": "guard",
+      "employeeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwy3vsD_sB6fsIAx-hGUEHHD_aOGg8sti7w&usqp=CAU",
+      "dateOfBirth": "19/05/2001",
+      "id": 4
     }
   ],
   "bookings": [
     {
-      "checkIn": "2023-03-10",
-      "checkOut": "2023-03-13",
-      "customerId": 8,
-      "roomId": 7,
-      "name": "Lê Mạnh Bin",
-      "email": "pacmam2k1@gmail.com",
-      "phone": "0394194501",
+      "checkIn": "2023-03-23",
+      "checkOut": "2023-03-25",
+      "customerId": 6,
+      "roomId": 18,
+      "name": "Nguyễn Thị Hồng",
+      "email": "hongnt@example.com",
+      "phone": "0987654321",
+      "service": [
+        "Breakfast"
+      ],
+      "totalPayment": 876,
+      "status": 2,
+      "createAt": "2023-03-22",
+      "id": 1
+    },
+    {
+      "checkIn": "2022-11-14",
+      "checkOut": "2022-11-17",
+      "customerId": 6,
+      "roomId": 10,
+      "name": "Phạm Thị Bích",
+      "email": "bichpt@example.com",
+      "phone": "0123456789",
       "service": [
         "Pillow",
-        "Break Fast",
-        "Parking"
+        "Parking",
+        "Breakfast"
       ],
+      "totalPayment": 627,
       "status": 2,
-      "totalPayment": 1578,
-      "createAt": "2023-03-09",
+      "createAt": "2022-11-13",
+      "id": 2
+    },
+    {
+      "checkIn": "2022-08-29",
+      "checkOut": "2022-09-01",
+      "customerId": 6,
+      "roomId": 12,
+      "name": "Võ Thị Mai",
+      "email": "maivt@example.com",
+      "phone": "0987654321",
+      "service": [
+        "Parking",
+        "Pillow"
+      ],
+      "totalPayment": 370,
+      "status": 2,
+      "createAt": "2022-08-28",
+      "id": 3
+    },
+    {
+      "checkIn": "2023-01-12",
+      "checkOut": "2023-01-15",
+      "customerId": 6,
+      "roomId": 3,
+      "name": "Trần Minh Thu",
+      "email": "thutm@example.com",
+      "phone": "0123456789",
+      "service": [
+        "Breakfast",
+        "Parking",
+        "Pillow"
+      ],
+      "totalPayment": 745,
+      "status": 2,
+      "createAt": "2023-01-11",
+      "id": 4
+    },
+    {
+      "checkIn": "2022-10-04",
+      "checkOut": "2022-10-06",
+      "customerId": 6,
+      "roomId": 20,
+      "name": "Nguyễn Thị Thu",
+      "email": "thunt@example.com",
+      "phone": "0987654321",
+      "service": [],
+      "totalPayment": 186,
+      "status": 1,
+      "createAt": "2022-10-03",
+      "id": 5
+    },
+    {
+      "checkIn": "2022-02-12",
+      "checkOut": "2022-02-14",
+      "customerId": 6,
+      "roomId": 15,
+      "name": "Trần Văn Tài",
+      "email": "taitv@example.com",
+      "phone": "0987654321",
+      "service": [
+        "Breakfast"
+      ],
+      "totalPayment": 306,
+      "status": 1,
+      "createAt": "2022-02-11",
+      "id": 6
+    },
+    {
+      "checkIn": "2022-07-27",
+      "checkOut": "2022-07-29",
+      "customerId": 6,
+      "roomId": 11,
+      "name": "Nguyễn Văn Đức",
+      "email": "ducnv@example.com",
+      "phone": "0123456789",
+      "service": [],
+      "totalPayment": 238,
+      "status": 1,
+      "createAt": "2022-07-27",
       "id": 7
     },
     {
-      "checkIn": "2023-03-09",
-      "checkOut": "2023-03-10",
-      "customerId": 8,
-      "roomId": 8,
-      "name": "Lê Mạnh Bin",
-      "email": "pacmam2k1@gmail.com",
-      "phone": "0394194501",
-      "service": [],
-      "totalPayment": 1000,
+      "checkIn": "2022-03-17",
+      "checkOut": "2022-03-19",
+      "customerId": 6,
+      "roomId": 19,
+      "name": "Trần Thị Thanh",
+      "email": "thanhtt@example.com",
+      "phone": "0987654321",
+      "service": [
+        "Breakfast",
+        "Parking"
+      ],
+      "totalPayment": 422,
       "status": 2,
-      "createAt": "2023-03-09",
+      "createAt": "2022-03-17",
+      "id": 8
+    },
+    {
+      "checkIn": "2022-05-28",
+      "checkOut": "2022-05-31",
+      "customerId": 6,
+      "roomId": 13,
+      "name": "Lê Thị Ngọc",
+      "email": "ngoclt@example.com",
+      "phone": "0123456789",
+      "service": [
+        "Pillow",
+        "Breakfast",
+        "Parking"
+      ],
+      "totalPayment": 702,
+      "status": 2,
+      "createAt": "2022-05-28",
       "id": 9
+    },
+    {
+      "checkIn": "2023-02-08",
+      "checkOut": "2023-02-11",
+      "customerId": 6,
+      "roomId": 17,
+      "name": "Trần Thị Hà",
+      "email": "hatr@example.com",
+      "phone": "0987654321",
+      "service": [
+        "Parking",
+        "Pillow"
+      ],
+      "totalPayment": 402,
+      "status": 2,
+      "createAt": "2023-02-08",
+      "id": 10
     }
   ],
   "evaluate": [
@@ -521,12 +526,6 @@
       "image": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       "title": "Đây là đoạn title",
       "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt voluptatem quis doloremque numquam nam reprehenderit beatae ipsa minus! Quidem id quod vero modi sit veritatis soluta molestias, unde possimus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt voluptatem quis doloremque numquam nam reprehenderit beatae ipsa minus! Quidem id quod vero modi sit veritatis soluta molestias,"
-    },
-    {
-      "title": "Update",
-      "image": "https://bookkol.com/wp-content/uploads/2022/12/son-tung-mtp-1024x1024.jpg",
-      "content": "đoạn này update nè",
-      "id": 2
     },
     {
       "id": 3,

@@ -42,10 +42,6 @@ const BlogPage = () => {
   }
 
 
-  const handleSearch = () => {
-    handleFilterBlog()
-  }
-
   return (
     <div className='blog'>
         <div className='blog-banner'>
