@@ -37,7 +37,7 @@ const BlogPage = () => {
 
   const handleFilterBlog = () => {
     return allBlog.filter((blog) => {
-      return blog.title.toLowerCase().includes(searchTerm.toLowerCase());
+      return blog?.title?.toLowerCase().includes(searchTerm.toLowerCase());
     }).slice(firstPageIndex, lastPageIndex);
   }
 

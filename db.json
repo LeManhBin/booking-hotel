@@ -93,7 +93,7 @@
     {
       "id": 11,
       "roomName": "Room 11",
-      "typeRoom": "standard",
+      "typeRoom": "superior",
       "price": 200,
       "wasSet": [],
       "imageMain": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -102,8 +102,8 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
-      "size": 2,
+      "status": 3,
+      "size": 4,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
     {
@@ -140,7 +140,7 @@
     },
     {
       "id": 15,
-      "roomName": "Room 15",
+      "roomName": "Room 20",
       "typeRoom": "superior",
       "price": 200,
       "wasSet": [],
@@ -150,8 +150,8 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
-      "size": 2,
+      "status": 3,
+      "size": 3,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
     {
@@ -230,8 +230,8 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
-      "size": 3,
+      "status": 2,
+      "size": 4,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
     {
@@ -379,7 +379,7 @@
       "phone": "0987654321",
       "service": [],
       "totalPayment": 186,
-      "status": 1,
+      "status": 2,
       "createAt": "2022-10-03",
       "id": 5
     },
@@ -395,7 +395,7 @@
         "Breakfast"
       ],
       "totalPayment": 306,
-      "status": 1,
+      "status": 2,
       "createAt": "2022-02-11",
       "id": 6
     },
@@ -409,7 +409,7 @@
       "phone": "0123456789",
       "service": [],
       "totalPayment": 238,
-      "status": 1,
+      "status": 2,
       "createAt": "2022-07-27",
       "id": 7
     },
@@ -464,6 +464,20 @@
       "status": 2,
       "createAt": "2023-02-08",
       "id": 10
+    },
+    {
+      "checkIn": "2023-03-25",
+      "checkOut": "2023-03-27",
+      "customerId": 7,
+      "roomId": 11,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [],
+      "totalPayment": 400,
+      "status": 2,
+      "createAt": "2023-03-24",
+      "id": 11
     }
   ],
   "evaluate": [

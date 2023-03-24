@@ -7,7 +7,6 @@ import moment from 'moment';
 const ChartColumn = () => {
     const dispatch = useDispatch()
     const {allBookings} = useSelector((state) => state.bookings)
-    console.log(allBookings ,'allboking');
     const [toTalMoney, setToTalMoney] = useState(0)
     const [dateFrom, setDateFrom] = useState("")
     const [dateTo, setDateTo] = useState("")

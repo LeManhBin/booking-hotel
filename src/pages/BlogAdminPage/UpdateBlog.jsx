@@ -11,9 +11,14 @@ const UpdateBlog = () => {
 
     const [formData, setFormData] = useState(blog)
 
+ 
     useEffect(() => {
-        dispatch(actFetchBlogById(Number(param.idBlog)))
+        dispatch(actFetchBlogById(Number(param?.idBlog)))
     },[param])
+
+    useEffect(() => {
+        setFormData(blog)
+    },[blog])
 
     const handleOnChange = (e) => {
         const {name, value} = e.target
@@ -41,15 +46,15 @@ const UpdateBlog = () => {
             <form onSubmit={handleUpdate}>
                 <div className="form-input">
                     <label>Title</label>
-                    <input type="text" required placeholder='title' name='title' value={formData.title} onChange={handleOnChange}/>
+                    <input type="text" required placeholder='title' name='title' value={formData?.title} onChange={handleOnChange}/>
                 </div>
                 <div className="form-input">
                     <label>Image</label>
-                    <input type="text" required name='image' value={formData.image}  onChange={handleOnChange}/>
+                    <input type="text" required name='image' value={formData?.image}  onChange={handleOnChange}/>
                 </div>
                 <div className="form-input">
                     <label>Content</label>
-                    <textarea cols="30" rows="10" name='content' value={formData.content}  onChange={handleOnChange}></textarea>
+                    <textarea cols="30" rows="10" name='content' value={formData?.content}  onChange={handleOnChange}></textarea>
                 </div>
                 <div className='form-btn'>
                 <button type='submit'>Update</button>

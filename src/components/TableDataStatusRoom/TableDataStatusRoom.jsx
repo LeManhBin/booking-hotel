@@ -17,24 +17,37 @@ const TableDataStatusRoom = ({ allBookings}) => {
     const totalPage = allBookings.filter(item => item.status == 2).length
     const {room} = useSelector((state) => state.rooms)
 
-    console.log(room, 'pppppppppppppppp');
+    // const { room } = useSelector((state) => {
+    //     return state.rooms && state.rooms.room ? state.rooms : { room: {} };
+    //   });
+
     const handleConfirm = (data) => {
-        fetchUpdateRoomStatus(data.roomId)
+        fetchUpdateRoomStatus(data?.roomId)
         const newRoom = {
             ...room,
-            status: 3
+            // status: 3
         }
         const newBooking = {
             ...data,
             status: 2
         }
         dispatch(actUpdateBooking(data.id, newBooking))
-        dispatch(actUpdateRoom(data.roomId, newRoom))
     }
 
     const fetchUpdateRoomStatus =  (id) => {
          dispatch(actFetchRoomById(id))
     }
+
+    useEffect(() => {
+        if (room.id) {
+          const newRoom = {
+            ...room,
+            status: 3
+          };
+          dispatch(actUpdateRoom(room?.id, newRoom))
+        console.log(room.id, newRoom, '---------');
+        }
+      }, [room]);
     
 
   return (

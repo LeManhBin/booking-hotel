@@ -34,7 +34,6 @@ const DashboardPage = () => {
     setTotalMoney(total)
   }
 
-  
 
   const handleSetQuantity = () => {
     setRoomQuantity(allRooms.length)

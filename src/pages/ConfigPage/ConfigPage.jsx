@@ -11,8 +11,6 @@ const ConfigPage = () => {
         dispatch(actFetchAllBanner())
     },[])
 
-    console.log(banner  ,'banner');
-    console.log(formState,'form');
 
     const handleSubmit =  (e) => {
         e.preventDefault()
