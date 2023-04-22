@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { actFetchBlogById, actUpdateBlog } from '../../redux/features/blogSlice/blogSlice'
 import './UpdateBlog.scss'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 const UpdateBlog = () => {
     const param = useParams()
     const navigate = useNavigate()
@@ -10,7 +12,7 @@ const UpdateBlog = () => {
     const {blog} = useSelector((state) => state.blogs)
 
     const [formData, setFormData] = useState(blog)
-
+    const [contentUpdate, setContentUpdate] = useState(blog.content)
  
     useEffect(() => {
         dispatch(actFetchBlogById(Number(param?.idBlog)))
@@ -18,6 +20,7 @@ const UpdateBlog = () => {
 
     useEffect(() => {
         setFormData(blog)
+        setContentUpdate(blog.content)
     },[blog])
 
     const handleOnChange = (e) => {
@@ -29,7 +32,7 @@ const UpdateBlog = () => {
     }
 
     const handleUpdate = () => {
-        dispatch(actUpdateBlog(blog.id, formData))
+        dispatch(actUpdateBlog(blog.id, {...formData, content: contentUpdate}))
         navigate('/admin/blog')
     }
 
@@ -54,7 +57,8 @@ const UpdateBlog = () => {
                 </div>
                 <div className="form-input">
                     <label>Content</label>
-                    <textarea cols="30" rows="10" name='content' value={formData?.content}  onChange={handleOnChange}></textarea>
+                    {/* <textarea cols="30" rows="10" name='content' value={formData?.content}  onChange={handleOnChange}></textarea> */}
+                    <ReactQuill style={{height: '400px', marginBottom: '50px'}} theme="snow" name='content' value={contentUpdate} onChange={setContentUpdate}/>
                 </div>
                 <div className='form-btn'>
                 <button type='submit'>Update</button>

@@ -14,11 +14,9 @@ const BlogDetailPage = () => {
     },[])
   return (
     <div className='blog-detail-container'>
-        <h1>{blog.title}</h1>
+        <h1 className='title'>{blog.title}</h1>
         <img src={blog.image} alt="" />
-        <p>
-            {blog.content}
-        </p>
+        <div className='content' dangerouslySetInnerHTML={{__html: blog.content}}></div>
     </div>
   )
 }

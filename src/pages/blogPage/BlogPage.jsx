@@ -66,10 +66,8 @@ const BlogPage = () => {
                       <img src={data.image} alt="" />
                       <div className='content-desc'>
                           <div className='desc-text'>
-                            <h3>{data.title}</h3>
-                            <p>
-                              {data.content}
-                            </p>
+                            <h3 className='title'>{data.title}</h3>
+                            <div className='content' dangerouslySetInnerHTML={{__html: data.content}}></div>
                           </div>
                           <span onClick={() => handleShowBlogDetail(data.id)}>Read More <i className="fa-solid fa-arrow-right-long"></i></span>
                       </div>

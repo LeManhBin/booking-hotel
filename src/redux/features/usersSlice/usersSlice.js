@@ -94,7 +94,7 @@ export const usersSlice = createSlice({
                 state.accessToken = accessToken;
                 localStorage.setItem(KEY_IS_LOGGER, JSON.parse(true))
                 state.isLogged = true
-                localStorage.setItem(KEY_ACCESS_TOKEN, accessToken)
+                localStorage.setItem(KEY_ACCESS_TOKEN, accessToken) 
             }
             state.isLoading = false
             toast.success('Loggin thành công')

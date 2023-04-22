@@ -31,14 +31,39 @@
       "id": 7
     },
     {
-      "userName": "Test123update",
+      "userName": "Bin update",
       "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "address": "Đà Nẵngád",
+      "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
       "phoneNumber": "0394194501",
       "isAdmin": false,
-      "id": 8,
-      "email": "a@gmail.com",
-      "password": "$2a$10$2Y7f8.OlgqbQqiW/Axbrb.qWLnU35nxULywkcKFqwLuD87tbuM5gG"
+      "id": 9,
+      "email": "demo@gmail.com",
+      "password": "$2a$10$5dgSGUAhuo9aESpKq2H4BuyApoHOmcX5JCJibLY5QeMutG2e31EM2"
+    },
+    {
+      "email": "m2k1@gmail.com",
+      "password": "$2a$10$VYhXYvmCAu9pmF9los49OeXBMEB0ylRngQmwDBMfqsDgk5XCPMtji",
+      "userName": "lemanhbin",
+      "isAdmin": true,
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "address": "Đà Nẵng",
+      "phoneNumber": "039419450111",
+      "id": 10
+    },
+    {
+      "email": "a1111dmin11@gmail.com",
+      "password": "$2a$10$AIb0FZPrY5g2.jarEJYfx.Mm0Q//nh43RXorXY3.n0RxcP1ArWdDi",
+      "userName": "lemanhbin",
+      "isAdmin": true,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD////8/Pz5+fn19fWgoKCvr6/w8PDs7OxQUFAaGhoEBATd3d3Nzc3n5+dnZ2fZ2dlVVVXFxcUlJSUODg6JiYl+fn5bW1siIiKmpqZJSUnQ0NCsrKyZmZkVFRU6Ojpvb28xMTG9vb13d3eRkZEzMzNCQkKamppsbGyLi4uBgYE+Pj79h2aqAAAMNUlEQVR4nNWd6WKqOhSFGQQFERGoWK1V0aqnff/3u+CIkIQMK8Jdv1vlE7Kzp2wMU7fscJW7znzqbRI/HY+N8Tj1k403nTtuPgkH2r/f0PfRg3DiHrLNIjXoSheb7OBqBdVDaA1Xn/PljoH2qmS5/1wNLS3XooMwcqYJN9xTi+lppQESTTjMtxJwT03zIfiKoITBl6eEd9XyM0BeFI4wdDMfwFfqO/sKYdcFIrTj/QKEd9ViG9uYS4MQDpwNFO+q3QmyJAGE0V4D3lXbqHtCazLVxlcqU35Y1QiteKaVr5SnyKhEOMm085WaxR0RRvrv313LVQeEoT77QtJZ2guQJBycsNtfu74PknuHHOFEx/7Xph+55ShDOHjvA/rUWeY2ShC6HfGV+nwD4UjvDt+mTNglFyXM+QN3PUpyrYT2R8d8peZiSR0hwlHXN/CqhdCTKkKYd432kKuF0Dp0zVXRB783zk046NaG1pVxb428hKOfrplqSngXIyfhpGsggjidOD7CfNw1DklfOMLPrlkoOqEI+wpoGGsM4bprDob+IQj74KjRNVcn7DcgB2IbYZ8f0as+1Aj7a2SeajE3bML/A2DbpsEk7E8wwRZz62cRTnrpyZDEcuAYhKOur1tADDecTjjoWzTBUjISJ7T6FQ+2aUYNiamEfYroeUTdFmmE/xcz+hTNoFIINViZZLZ38rhU7sxnMi1FLaJYGzKhDU4bzg6TuikYTdbg+uqCnEclE0Ld7cwNyc1c1iiHQp",
+      "address": "25/5 Đường Tôn Đản, Hòa An, Cẩm Lệ, Đà Nẵng",
+      "phoneNumber": "0365160470",
+      "id": 100
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "$2a$10$qkxW5K2Cnhi9s/mQYhk1b.V1Ntf5cmWYO3tfH7SWh6WMyCnrTZBKu",
+      "id": 101
     }
   ],
   "rooms": [
@@ -86,7 +111,7 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
+      "status": 2,
       "size": 2,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -182,7 +207,7 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
+      "status": 2,
       "size": 2,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -214,7 +239,7 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
+      "status": 3,
       "size": 2,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -262,7 +287,7 @@
         "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
       ],
-      "status": 1,
+      "status": 2,
       "size": 1,
       "description": "đây là 1 đoạn mô tả về căn phòng này"
     },
@@ -297,6 +322,13 @@
       "employeeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwy3vsD_sB6fsIAx-hGUEHHD_aOGg8sti7w&usqp=CAU",
       "dateOfBirth": "19/05/2001",
       "id": 4
+    },
+    {
+      "employeeName": "Lê Mạnh Bin",
+      "position": "manager",
+      "employeeImage": "https://cdn.dribbble.com/users/13584903/avatars/small/1ba3a799f1b298f971d7f1df0bb20a5d.jpg?1666421563",
+      "dateOfBirth": "19/05/2009",
+      "id": 5
     }
   ],
   "bookings": [
@@ -315,41 +347,6 @@
       "status": 2,
       "createAt": "2023-03-22",
       "id": 1
-    },
-    {
-      "checkIn": "2022-11-14",
-      "checkOut": "2022-11-17",
-      "customerId": 6,
-      "roomId": 10,
-      "name": "Phạm Thị Bích",
-      "email": "bichpt@example.com",
-      "phone": "0123456789",
-      "service": [
-        "Pillow",
-        "Parking",
-        "Breakfast"
-      ],
-      "totalPayment": 627,
-      "status": 2,
-      "createAt": "2022-11-13",
-      "id": 2
-    },
-    {
-      "checkIn": "2022-08-29",
-      "checkOut": "2022-09-01",
-      "customerId": 6,
-      "roomId": 12,
-      "name": "Võ Thị Mai",
-      "email": "maivt@example.com",
-      "phone": "0987654321",
-      "service": [
-        "Parking",
-        "Pillow"
-      ],
-      "totalPayment": 370,
-      "status": 2,
-      "createAt": "2022-08-28",
-      "id": 3
     },
     {
       "checkIn": "2023-01-12",
@@ -478,6 +475,74 @@
       "status": 2,
       "createAt": "2023-03-24",
       "id": 11
+    },
+    {
+      "checkIn": "2023-03-25",
+      "checkOut": "2023-03-26",
+      "customerId": 7,
+      "roomId": 19,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Parking",
+        "Break Fast"
+      ],
+      "totalPayment": 226,
+      "status": 2,
+      "createAt": "2023-03-25",
+      "id": 12
+    },
+    {
+      "checkIn": "2023-03-25",
+      "checkOut": "2023-03-26",
+      "customerId": 7,
+      "roomId": 17,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Break Fast",
+        "Parking",
+        "Pillow"
+      ],
+      "totalPayment": 226,
+      "status": 2,
+      "createAt": "2023-03-25",
+      "id": 13
+    },
+    {
+      "checkIn": "2023-03-25",
+      "checkOut": "2023-03-27",
+      "customerId": 9,
+      "roomId": 22,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [
+        "Pillow",
+        "Parking",
+        "Break Fast"
+      ],
+      "totalPayment": 432,
+      "status": 2,
+      "createAt": "2023-03-25",
+      "id": 14
+    },
+    {
+      "checkIn": "2023-03-25",
+      "checkOut": "2023-03-26",
+      "customerId": 9,
+      "roomId": 9,
+      "name": "Lê Mạnh Bin",
+      "email": "pacmam2k1@gmail.com",
+      "phone": "0394194501",
+      "service": [],
+      "totalPayment": 200,
+      "status": 1,
+      "createAt": "2023-03-25",
+      "id": 15
     }
   ],
   "evaluate": [
@@ -532,6 +597,18 @@
       "idRoom": 2,
       "content": "cmt",
       "id": 9
+    },
+    {
+      "idUser": 7,
+      "idRoom": 9,
+      "content": "vip pro luôn",
+      "id": 10
+    },
+    {
+      "idUser": 9,
+      "idRoom": 13,
+      "content": "haha đây là test cmt",
+      "id": 11
     }
   ],
   "blogs": [
@@ -544,8 +621,8 @@
     {
       "id": 3,
       "image": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      "title": "Đây là đoạn title",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt voluptatem quis doloremque numquam nam reprehenderit beatae ipsa minus! Quidem id quod vero modi sit veritatis soluta molestias, unde possimus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt voluptatem quis doloremque numquam nam reprehenderit beatae ipsa minus! Quidem id quod vero modi sit veritatis soluta molestias,"
+      "title": "Đây là đoạn title uuuu",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt voluptatem quis doloremque numquam nam reprehenderit beatae ipsa minus! Quidem id quod vero modi sit veritatis soluta molestias, unde possimus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas incidunt voluptatem quis doloremque numquam nam reprehenderit beatae ipsa minus! Quidem id quod vero modi sit veritatis soluta molestias,1111"
     },
     {
       "id": 5,
@@ -570,6 +647,12 @@
       "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
       "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       "id": 12
+    },
+    {
+      "title": "Bangkok - điểm đến nước ngoài khách Việt đi nhiều nhất dịp 30/4 update",
+      "image": "https://i1-dulich.vnecdn.net/2023/03/24/1-1231-1679626231.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=qEsTVzIf7tGEs-SSIWD5Qg",
+      "content": "<p>Thủ đô của Thái Lan cùng Hàn Quốc, Nhật Bản là ba cái tên đứng đầu danh sách điểm đến quốc tế được khách Việt thích nhất dịp nghỉ lễ sắp tới.</p><p>Ngày 24/3, Booking, ứng dụng đặt phòng tại hơn 220 quốc gia, vùng lãnh thổ, công bố 10 điểm đến được người Việt lựa chọn nhiều nhất khi du lịch nước ngoài dịp 30/4.</p><p>Đứng đầu là thủ đô Thái Lan - Bangkok. 9 thành phố còn lại gồm: Seoul (Hàn Quốc), Tokyo (Nhật Bản), Singapore, Đài Bắc (Đài Loan, Trung Quốc), Sydney (Australia), Osaka (Nhật Bản), Paris (Pháp), Hong Kong (Trung Quốc) và Kyoto (Nhật Bản).</p><p><img src=\"https://i1-dulich.vnecdn.net/2023/03/24/1-1231-1679626231.jpg?w=680&amp;h=0&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=Ax-g-cgO7MfVy497ouCOFw\" alt=\"Cung điện hoàng gia - một trong những điểm du lịch nổi tiếng ở Bangkok, Thái Lan. Ảnh: Hotels\"></p><p>Cung điện hoàng gia - một trong những điểm du lịch nổi tiếng ở Bangkok, Thái Lan. Ảnh:&nbsp;<em>Hotels</em></p><p>Phần lớn khách Việt chọn những điểm đến châu Á. Trong đó, Nhật Bản là quốc gia có nhiều thành phố được yêu thích nhất, với 3 cái tên vào danh sách. Số liệu thống kê từ Cơ quan Xúc tiến Du lịch Nhật Bản chỉ ra lượng khách Việt đến Nhật trong tháng 2 đạt mức&nbsp;<a href=\"https://vnexpress.net/luong-khach-viet-den-nhat-theo-thang-cao-nhat-lich-su-4581750.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(7, 109, 182);\">cao nhất lịch sử.</a>&nbsp;Đứng thứ hai là Trung Quốc với hai điểm đến. update</p>",
+      "id": 13
     }
   ],
   "banner": [

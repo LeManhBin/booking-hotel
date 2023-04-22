@@ -13,6 +13,7 @@ const TableDataStatusRoom = ({ allBookings}) => {
     const [limit, setLimit] = useState(4)
     const lastPageIndex = currentPage * limit;
     const firstPageIndex = lastPageIndex - limit;
+    // const active = allBookings.filter(item => item.status === 2)
     const currentItems = allBookings.filter(item => item.status === 1).slice(firstPageIndex, lastPageIndex);
     const totalPage = allBookings.filter(item => item.status == 2).length
     const {room} = useSelector((state) => state.rooms)
@@ -23,10 +24,18 @@ const TableDataStatusRoom = ({ allBookings}) => {
 
     const handleConfirm = (data) => {
         fetchUpdateRoomStatus(data?.roomId)
+        // const newRoom = {
+        //     ...room,
+        //     // status: 3
+        // }
+        if (room.id) {
         const newRoom = {
             ...room,
-            // status: 3
-        }
+            status: 3
+        };
+        dispatch(actUpdateRoom(room?.id, newRoom))
+        console.log(newRoom);
+    }
         const newBooking = {
             ...data,
             status: 2
@@ -38,16 +47,15 @@ const TableDataStatusRoom = ({ allBookings}) => {
          dispatch(actFetchRoomById(id))
     }
 
-    useEffect(() => {
-        if (room.id) {
-          const newRoom = {
-            ...room,
-            status: 3
-          };
-          dispatch(actUpdateRoom(room?.id, newRoom))
-        console.log(room.id, newRoom, '---------');
-        }
-      }, [room]);
+    // useEffect(() => {
+    //     if (room.id) {
+    //       const newRoom = {
+    //         ...room,
+    //         status: 3
+    //       };
+    //       dispatch(actUpdateRoom(room?.id, newRoom))
+    //     }
+    //   }, [room]);
     
 
   return (

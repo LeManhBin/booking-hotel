@@ -74,7 +74,19 @@
                         flex-direction: column;
                         gap: 10px;
 
-                        p {
+                        .title {
+                            font-size: 18px;
+                            word-break: break-word;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            line-height: 24px; /* fallback */
+                            max-height: 72px; /* fallback */
+                            -webkit-line-clamp: 1; /* number of lines to show */
+                            -webkit-box-orient: vertical;
+                        }
+            
+                        .content {
                             font-size: 13px;
                             word-break: break-word;
                             overflow: hidden;
@@ -99,11 +111,11 @@
                 }
             }
 
-            .content-container:nth-child(even) {
-                display: flex;
-                flex-direction: row-reverse;
-                text-align: right;
-            }
+            // .content-container:nth-child(even) {
+            //     display: flex;
+            //     flex-direction: row-reverse;
+            //     text-align: right;
+            // }
         }
     }
 }

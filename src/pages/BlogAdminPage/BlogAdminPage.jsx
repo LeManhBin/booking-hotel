@@ -64,8 +64,10 @@ const BlogAdminPage = () => {
                 return(
                     <div className='blog' key={blog.id}>
                         <img src={blog.image} alt="" />
-                        <h3>{blog.title}</h3>
-                        <p>{blog.content}</p>
+                        <h3 className='title'>{blog.title}</h3>
+                        <div className='content' dangerouslySetInnerHTML={{__html: blog.content}}>
+
+                        </div>
                         <div className='action'>
                             <button onClick={() => handleViewUpdate(blog.id)}>Edit</button>
                             <button onClick={() => handleShowPopUpDelete(blog.id)}>Delete</button>

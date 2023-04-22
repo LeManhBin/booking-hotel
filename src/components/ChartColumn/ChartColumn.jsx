@@ -110,6 +110,8 @@ const ChartColumn = () => {
       }, {})
     }, [allBookings]) 
 
+
+
     const computedBookingTypeToDay = useMemo(() => {
       return allBookings.reduce((prevObj, booking) => {
         const now = new Date().getDate()
@@ -149,7 +151,9 @@ const ChartColumn = () => {
       return dailySales
     }, [allBookings])
 
-
+    console.log("Theo năm", computedBookingTypeYear);
+    console.log("hôm nay", computedBookingTypeToDay);
+    console.log("Theo tháng", computedBookingTypeMonth);
  
       const filterRevenueByDate = () => {
         const result = {}
